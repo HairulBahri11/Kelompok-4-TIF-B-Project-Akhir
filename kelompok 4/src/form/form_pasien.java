@@ -5,6 +5,7 @@
  */
 package form;
 
+import static form.form_obat.getTanggalFromTable;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Point;
@@ -1313,6 +1314,7 @@ public class form_pasien extends javax.swing.JFrame {
         txt_inisial.setText("");
         txt_alamat.setText("");
         txt_keluhan.setText("");
+        jdate_ttl.setDate(null);
                 
     }
     private void jdate_ttlPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jdate_ttlPropertyChange
@@ -1432,7 +1434,7 @@ nampungtgl = format.format(jdate_ttl.getDate());
             combo_gender.setSelectedItem((String) tabel.getValueAt(i, 3));
          
           
-            
+            jdate_ttl.setDate(getTanggalFromTable(tabel,4));
             //tanggal
             
              
