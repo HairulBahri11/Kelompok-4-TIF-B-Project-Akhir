@@ -1269,7 +1269,7 @@ public class form_pemeriksaan extends javax.swing.JFrame {
             } catch (SQLException ex) {
             Logger.getLogger(form_pemeriksaan.class.getName()).log(Level.SEVERE, null, ex);
             }
-            String file = "C:\\Users\\naufal\\Documents\\NetBeansProjects\\kelompok 4b\\src\\report\\obat.jrxml";;
+            String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\obat.jrxml";;
             HashMap hash = new HashMap();
             hash.put("resep1", kode.getText());
             JasperReport jr;
