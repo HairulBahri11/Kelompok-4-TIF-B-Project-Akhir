@@ -377,7 +377,7 @@ public class Login extends javax.swing.JFrame {
     ResultSet result=statement.executeQuery("SELECT * from login where "+"User_Name='"+Integer.parseInt(txt_kode.getText())+"'");
     if (result.next()){
     if (txt_password.getSelectedText().equals(result.getString("Password"))){
-       new form_petugas().setVisible(true);
+       new dashboard().show();
         this.dispose();
     
     }else{
