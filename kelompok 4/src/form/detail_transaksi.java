@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package form;
-import com.mysql.jdbc.Driver;
+import java.sql.Driver;
 import com.toedter.calendar.JDateChooser;
 import java.awt.HeadlessException;
 import java.io.File;
@@ -31,9 +31,9 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.text.SimpleDateFormat;
-import static javaapplication19.Jadwal.nampungtgl;
-import static javaapplication19.pasien.getTanggalFromTable;
-import static javaapplication19.pasien.nampungtgl;
+//import static javaapplication19.Jadwal.nampungtgl;
+//import static javaapplication19.pasien.getTanggalFromTable;
+//import static javaapplication19.pasien.nampungtgl;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.io.FileUtils;

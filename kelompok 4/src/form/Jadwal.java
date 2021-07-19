@@ -5,7 +5,7 @@
  */
 package form;
 
-import com.mysql.jdbc.Driver;
+import java.sql.Driver;
 import com.toedter.calendar.JDateChooser;
 import java.awt.HeadlessException;
 import java.io.File;
@@ -32,8 +32,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.text.SimpleDateFormat;
-import static javaapplication19.pasien.getTanggalFromTable;
-import static javaapplication19.pasien.nampungtgl;
+//import static javaapplication19.pasien.getTanggalFromTable;
+//import static javaapplication19.pasien.nampungtgl;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.io.FileUtils;
@@ -183,7 +183,6 @@ public class Jadwal extends javax.swing.JFrame {
         jLabel128 = new javax.swing.JLabel();
         jLabel129 = new javax.swing.JLabel();
         jLabel130 = new javax.swing.JLabel();
-        jdate_ttl = new com.toedter.calendar.JDateChooser();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -200,6 +199,7 @@ public class Jadwal extends javax.swing.JFrame {
         btndelete = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         txtPetugas = new javax.swing.JLabel();
+        jdate_ttl = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -687,13 +687,6 @@ public class Jadwal extends javax.swing.JFrame {
         jLabel130.setText("Shift Siang");
         getContentPane().add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, -1));
 
-        jdate_ttl.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jdate_ttlPropertyChange(evt);
-            }
-        });
-        getContentPane().add(jdate_ttl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 260, 30));
-
         jLabel26.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel26.setText(":");
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 10, -1));
@@ -852,6 +845,7 @@ public class Jadwal extends javax.swing.JFrame {
 
         txtPetugas.setForeground(new java.awt.Color(240, 240, 240));
         getContentPane().add(txtPetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 60, 20));
+        getContentPane().add(jdate_ttl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 140, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -979,7 +973,17 @@ public class Jadwal extends javax.swing.JFrame {
             shiftmalam.setText((String) tblJadwal.getValueAt(i, 5));
         }
     }//GEN-LAST:event_tblJadwalMouseClicked
-
+public static Date getTanggalFromTable(JTable table, int kolom){
+        JTable tabel = table;
+        String str_tgl = String.valueOf(tabel.getValueAt(tabel.getSelectedRow(), kolom));
+        Date tanggal = null;
+        try {
+            tanggal = new SimpleDateFormat("yyyy-MM-dd").parse(str_tgl);
+        } catch (ParseException ex) {
+            Logger.getLogger(form_obat.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tanggal;
+    }
     /**
      * @param args the command line arguments
      */

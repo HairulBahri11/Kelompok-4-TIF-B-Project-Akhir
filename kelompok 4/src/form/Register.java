@@ -5,7 +5,8 @@
  */
 package form;
 
-import com.mysql.jdbc.Statement;
+//import com.mysql.jdbc.Statement;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import koneksi.koneksi;
 

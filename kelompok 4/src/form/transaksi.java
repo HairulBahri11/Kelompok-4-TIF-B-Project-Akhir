@@ -5,7 +5,7 @@
  */
 package form;
 
-import com.mysql.jdbc.Driver;
+import java.sql.Driver;
 import com.toedter.calendar.JDateChooser;
 import java.awt.HeadlessException;
 import java.io.File;
@@ -32,9 +32,9 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.text.SimpleDateFormat;
-import static javaapplication19.Jadwal.nampungtgl;
-import static javaapplication19.pasien.getTanggalFromTable;
-import static javaapplication19.pasien.nampungtgl;
+//import static javaapplication19.Jadwal.nampungtgl;
+//import static javaapplication19.pasien.getTanggalFromTable;
+//import static javaapplication19.pasien.nampungtgl;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.io.FileUtils;
@@ -219,7 +219,6 @@ public class transaksi extends javax.swing.JFrame {
         pembayaran = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
         txtkdtransaksi = new javax.swing.JTextField();
-        jdate_ttl = new com.toedter.calendar.JDateChooser();
         cmbPasien = new javax.swing.JComboBox<>();
         txtPetugas = new javax.swing.JLabel();
         jLabel151 = new javax.swing.JLabel();
@@ -246,6 +245,7 @@ public class transaksi extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         btndelete2 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
+        jdate_ttl = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -725,13 +725,6 @@ public class transaksi extends javax.swing.JFrame {
         txtkdtransaksi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(txtkdtransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 320, 30));
 
-        jdate_ttl.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jdate_ttlPropertyChange(evt);
-            }
-        });
-        getContentPane().add(jdate_ttl, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 320, 30));
-
         cmbPasien.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmbPasien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -991,6 +984,7 @@ public class transaksi extends javax.swing.JFrame {
         );
 
         getContentPane().add(btndelete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 330, 240, 40));
+        getContentPane().add(jdate_ttl, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 190, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1125,7 +1119,17 @@ public class transaksi extends javax.swing.JFrame {
             txtkembali.setText((String) tabel.getValueAt(i, 6));
         }
     }//GEN-LAST:event_tabelMouseClicked
-
+public static Date getTanggalFromTable(JTable table, int kolom){
+        JTable tabel = table;
+        String str_tgl = String.valueOf(tabel.getValueAt(tabel.getSelectedRow(), kolom));
+        Date tanggal = null;
+        try {
+            tanggal = new SimpleDateFormat("yyyy-MM-dd").parse(str_tgl);
+        } catch (ParseException ex) {
+            Logger.getLogger(form_obat.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tanggal;
+    }
     private void pembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pembayaranActionPerformed
         // TODO add your handling code here:
         tampilKembalian();
