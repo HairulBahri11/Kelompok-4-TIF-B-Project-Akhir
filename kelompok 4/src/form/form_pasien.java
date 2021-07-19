@@ -12,10 +12,14 @@ import java.awt.Point;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import koneksi.koneksi;
 
@@ -32,6 +36,7 @@ public class form_pasien extends javax.swing.JFrame {
         initComponents();
         datatabel();
     }
+
     private void setColor(JPanel pane) {
         pane.setBackground(new Color(51, 51, 51));
     }
@@ -41,8 +46,9 @@ public class form_pasien extends javax.swing.JFrame {
             pane[i].setBackground(new Color(0, 0, 0));
         }
     }
-    
+
     private String image;
+
     public String getImage() {
         return image;
     }
@@ -50,7 +56,7 @@ public class form_pasien extends javax.swing.JFrame {
     public void setImage(String image) {
         this.image = image;
     }
-    
+
     public void datatabel() {
         DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("Kode Pasien");
@@ -61,7 +67,7 @@ public class form_pasien extends javax.swing.JFrame {
         tbl.addColumn("Alamat");
         tbl.addColumn("Keluhan");
         tbl.addColumn("Poli Tujuan");
-        
+
         tabel.setModel(tbl);
 
         try {
@@ -99,25 +105,25 @@ public class form_pasien extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        btnhome = new javax.swing.JPanel();
-        j1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        btnhome1 = new javax.swing.JPanel();
+        j5 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         btnpasien = new javax.swing.JPanel();
         j2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        btnpetugas = new javax.swing.JPanel();
-        j3 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        btndokter = new javax.swing.JPanel();
-        j4 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
         btnjadwal = new javax.swing.JPanel();
         j7 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         btntransaksi = new javax.swing.JPanel();
         j8 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        btnPetugas = new javax.swing.JPanel();
+        j4 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        btndokter = new javax.swing.JPanel();
+        j3 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -155,6 +161,8 @@ public class form_pasien extends javax.swing.JFrame {
         combo_gender = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1185, 695));
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(18, 239, 38));
@@ -188,27 +196,27 @@ public class form_pasien extends javax.swing.JFrame {
 
         jPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 158, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(5, 4, 4));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.setBackground(new java.awt.Color(5, 4, 4));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnhome.setBackground(new java.awt.Color(0, 0, 0));
-        btnhome.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnhome1.setBackground(new java.awt.Color(0, 0, 0));
+        btnhome1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnhomeMouseClicked(evt);
+                btnhome1MouseClicked(evt);
             }
         });
 
-        j1.setBackground(new java.awt.Color(0, 255, 51));
-        j1.setOpaque(false);
+        j5.setBackground(new java.awt.Color(0, 255, 51));
+        j5.setOpaque(false);
 
-        javax.swing.GroupLayout j1Layout = new javax.swing.GroupLayout(j1);
-        j1.setLayout(j1Layout);
-        j1Layout.setHorizontalGroup(
-            j1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout j5Layout = new javax.swing.GroupLayout(j5);
+        j5.setLayout(j5Layout);
+        j5Layout.setHorizontalGroup(
+            j5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 10, Short.MAX_VALUE)
         );
-        j1Layout.setVerticalGroup(
-            j1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        j5Layout.setVerticalGroup(
+            j5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
@@ -217,28 +225,28 @@ public class form_pasien extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
         jLabel10.setText(" DASHBOARD");
 
-        javax.swing.GroupLayout btnhomeLayout = new javax.swing.GroupLayout(btnhome);
-        btnhome.setLayout(btnhomeLayout);
-        btnhomeLayout.setHorizontalGroup(
-            btnhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnhomeLayout.createSequentialGroup()
-                .addComponent(j1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout btnhome1Layout = new javax.swing.GroupLayout(btnhome1);
+        btnhome1.setLayout(btnhome1Layout);
+        btnhome1Layout.setHorizontalGroup(
+            btnhome1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnhome1Layout.createSequentialGroup()
+                .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addGap(0, 59, Short.MAX_VALUE))
         );
-        btnhomeLayout.setVerticalGroup(
-            btnhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnhomeLayout.createSequentialGroup()
+        btnhome1Layout.setVerticalGroup(
+            btnhome1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnhome1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(j1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnhomeLayout.createSequentialGroup()
+                .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnhome1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addContainerGap())
         );
 
-        jPanel2.add(btnhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 50));
+        jPanel4.add(btnhome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 50));
 
         btnpasien.setBackground(new java.awt.Color(51, 51, 51));
         btnpasien.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -284,100 +292,7 @@ public class form_pasien extends javax.swing.JFrame {
             .addComponent(j2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel2.add(btnpasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 220, 50));
-
-        btnpetugas.setBackground(new java.awt.Color(0, 0, 0));
-        btnpetugas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnpetugasMouseClicked(evt);
-            }
-        });
-
-        j3.setBackground(new java.awt.Color(0, 255, 51));
-        j3.setOpaque(false);
-
-        javax.swing.GroupLayout j3Layout = new javax.swing.GroupLayout(j3);
-        j3.setLayout(j3Layout);
-        j3Layout.setHorizontalGroup(
-            j3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        j3Layout.setVerticalGroup(
-            j3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jLabel14.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Doctor.png"))); // NOI18N
-        jLabel14.setText(" DOKTER");
-
-        javax.swing.GroupLayout btnpetugasLayout = new javax.swing.GroupLayout(btnpetugas);
-        btnpetugas.setLayout(btnpetugasLayout);
-        btnpetugasLayout.setHorizontalGroup(
-            btnpetugasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnpetugasLayout.createSequentialGroup()
-                .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 69, Short.MAX_VALUE))
-        );
-        btnpetugasLayout.setVerticalGroup(
-            btnpetugasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnpetugasLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(btnpetugasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(j3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        jPanel2.add(btnpetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 220, 50));
-
-        btndokter.setBackground(new java.awt.Color(0, 0, 0));
-        btndokter.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btndokterMouseClicked(evt);
-            }
-        });
-
-        j4.setBackground(new java.awt.Color(0, 255, 51));
-        j4.setOpaque(false);
-
-        javax.swing.GroupLayout j4Layout = new javax.swing.GroupLayout(j4);
-        j4.setLayout(j4Layout);
-        j4Layout.setHorizontalGroup(
-            j4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        j4Layout.setVerticalGroup(
-            j4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jLabel16.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/petugas.png"))); // NOI18N
-        jLabel16.setText("PETUGAS");
-
-        javax.swing.GroupLayout btndokterLayout = new javax.swing.GroupLayout(btndokter);
-        btndokter.setLayout(btndokterLayout);
-        btndokterLayout.setHorizontalGroup(
-            btndokterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btndokterLayout.createSequentialGroup()
-                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel16)
-                .addGap(0, 88, Short.MAX_VALUE))
-        );
-        btndokterLayout.setVerticalGroup(
-            btndokterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btndokterLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(btndokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 220, -1));
+        jPanel4.add(btnpasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 220, 50));
 
         btnjadwal.setBackground(new java.awt.Color(0, 0, 0));
         btnjadwal.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -424,7 +339,7 @@ public class form_pasien extends javax.swing.JFrame {
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)))
         );
 
-        jPanel2.add(btnjadwal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
+        jPanel4.add(btnjadwal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
 
         btntransaksi.setBackground(new java.awt.Color(0, 0, 0));
         btntransaksi.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -471,9 +386,102 @@ public class form_pasien extends javax.swing.JFrame {
                     .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jPanel2.add(btntransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
+        jPanel4.add(btntransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
 
-        jPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 206, -1, 523));
+        btnPetugas.setBackground(new java.awt.Color(0, 0, 0));
+        btnPetugas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPetugasMouseClicked(evt);
+            }
+        });
+
+        j4.setBackground(new java.awt.Color(0, 255, 51));
+        j4.setOpaque(false);
+
+        javax.swing.GroupLayout j4Layout = new javax.swing.GroupLayout(j4);
+        j4.setLayout(j4Layout);
+        j4Layout.setHorizontalGroup(
+            j4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        j4Layout.setVerticalGroup(
+            j4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        jLabel16.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/petugas.png"))); // NOI18N
+        jLabel16.setText("PETUGAS");
+
+        javax.swing.GroupLayout btnPetugasLayout = new javax.swing.GroupLayout(btnPetugas);
+        btnPetugas.setLayout(btnPetugasLayout);
+        btnPetugasLayout.setHorizontalGroup(
+            btnPetugasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnPetugasLayout.createSequentialGroup()
+                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel16)
+                .addGap(0, 88, Short.MAX_VALUE))
+        );
+        btnPetugasLayout.setVerticalGroup(
+            btnPetugasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnPetugasLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel4.add(btnPetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 220, -1));
+
+        btndokter.setBackground(new java.awt.Color(0, 0, 0));
+        btndokter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btndokterMouseClicked(evt);
+            }
+        });
+
+        j3.setBackground(new java.awt.Color(0, 255, 51));
+        j3.setOpaque(false);
+
+        javax.swing.GroupLayout j3Layout = new javax.swing.GroupLayout(j3);
+        j3.setLayout(j3Layout);
+        j3Layout.setHorizontalGroup(
+            j3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        j3Layout.setVerticalGroup(
+            j3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        jLabel14.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Doctor.png"))); // NOI18N
+        jLabel14.setText(" DOKTER");
+
+        javax.swing.GroupLayout btndokterLayout = new javax.swing.GroupLayout(btndokter);
+        btndokter.setLayout(btndokterLayout);
+        btndokterLayout.setHorizontalGroup(
+            btndokterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btndokterLayout.createSequentialGroup()
+                .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 69, Short.MAX_VALUE))
+        );
+        btndokterLayout.setVerticalGroup(
+            btndokterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btndokterLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(btndokterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(j3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel4.add(btndokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 220, 50));
+
+        jPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, 520));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
 
@@ -567,7 +575,7 @@ public class form_pasien extends javax.swing.JFrame {
 
         jLabel27.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel27.setText("Data Pasien");
-        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, -1, -1));
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(0, 204, 51));
         jPanel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -721,7 +729,7 @@ public class form_pasien extends javax.swing.JFrame {
         combo_gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "L", "P" }));
         getContentPane().add(combo_gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 86, 30));
 
-        setSize(new java.awt.Dimension(1156, 762));
+        setSize(new java.awt.Dimension(1188, 731));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -739,7 +747,7 @@ public class form_pasien extends javax.swing.JFrame {
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
-        
+
         int kode_pasien = Integer.parseInt(txt_kode.getText());
         String nama_lengkap = txt_nama.getText();
         String nama_inisial = txt_inisial.getText();
@@ -751,81 +759,72 @@ public class form_pasien extends javax.swing.JFrame {
 //        } else if (jRadioButton2.isSelected()){
 //            gender = "P";
 //        }
-        
-        
+
         String alamat = txt_alamat.getText();
         String keluhan = txt_keluhan.getText();
         String poli_tujuan = (String) combo_poli.getSelectedItem();
-        
-         try {
+
+        try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
-            statement.executeUpdate("insert into pasien VALUES ('" + kode_pasien + "','" + 
-                    nama_lengkap + "','" + nama_inisial + "','" + gender + "','"+tgl+ "','"
-                  +alamat + "','" + keluhan + "','" + poli_tujuan + "');");
+            statement.executeUpdate("insert into pasien VALUES ('" + kode_pasien + "','"
+                    + nama_lengkap + "','" + nama_inisial + "','" + gender + "','" + tgl + "','"
+                    + alamat + "','" + keluhan + "','" + poli_tujuan + "');");
             statement.close();
             JOptionPane.showMessageDialog(null, "data berhasil disimpan");
         } catch (Exception t) {
             JOptionPane.showMessageDialog(null, "data gagal disimpan");
-             System.out.println(t.getMessage());
+            System.out.println(t.getMessage());
         }
 
         datatabel();
         kosong();
-        
+
     }//GEN-LAST:event_jLabel28MouseClicked
-    public void kosong(){
-      txt_kode.setText("");
+    public void kosong() {
+        txt_kode.setText("");
         txt_nama.setText("");
         txt_inisial.setText("");
         txt_alamat.setText("");
         txt_keluhan.setText("");
-        jdate_ttl.setDate(null);       
+        jdate_ttl.setDate(null);
     }
     private void jdate_ttlPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jdate_ttlPropertyChange
         // TODO add your handling code here:
-  
 
- if(jdate_ttl.getDate()!=null)
-{
-SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
-nampungtgl = format.format(jdate_ttl.getDate());
-    System.out.println(nampungtgl);
-    
-}
+        if (jdate_ttl.getDate() != null) {
+            SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
+            nampungtgl = format.format(jdate_ttl.getDate());
+            System.out.println(nampungtgl);
+
+        }
     }//GEN-LAST:event_jdate_ttlPropertyChange
-
+    
     private void tabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelMouseClicked
         // TODO add your handling code here:
         int i = tabel.getSelectedRow();
-        
-       String tgl = nampungtgl;
-        if(jdate_ttl.getDate()!=null)
-{
-SimpleDateFormat format = new SimpleDateFormat("MM,dd,yyyy");
-nampungtgl = format.format(jdate_ttl.getDate());
-    System.out.println(nampungtgl);
-    
-}
-        if(i >= 0){
+
+        String tgl = nampungtgl;
+        if (jdate_ttl.getDate() != null) {
+            SimpleDateFormat format = new SimpleDateFormat("MM,dd,yyyy");
+            nampungtgl = format.format(jdate_ttl.getDate());
+            System.out.println(nampungtgl);
+
+        }
+        if (i >= 0) {
             txt_kode.setText((String) tabel.getValueAt(i, 0));
             txt_nama.setText((String) tabel.getValueAt(i, 1));
             txt_inisial.setText((String) tabel.getValueAt(i, 2));
             combo_gender.setSelectedItem((String) tabel.getValueAt(i, 3));
-         
-          
-            jdate_ttl.setDate(getTanggalFromTable(tabel,4));
+
+            jdate_ttl.setDate(getTanggalFromTable(tabel, 4));
             //tanggal
-            
-             
-            
+
             txt_alamat.setText((String) tabel.getValueAt(i, 5));
             txt_keluhan.setText((String) tabel.getValueAt(i, 6));
             combo_poli.setSelectedItem((String) tabel.getValueAt(i, 7));
 
-
-            
         }
-                 
+
     }//GEN-LAST:event_tabelMouseClicked
 
     private void editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseClicked
@@ -834,17 +833,17 @@ nampungtgl = format.format(jdate_ttl.getDate());
         String nama_lengkap = txt_nama.getText();
         String nama_inisial = txt_inisial.getText();
         String tgl = nampungtgl;
-        
+
         String gender = (String) combo_gender.getSelectedItem();
         String alamat = txt_alamat.getText();
         String keluhan = txt_keluhan.getText();
         String poli_tujuan = (String) combo_poli.getSelectedItem();
 
         try {
-            
+
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
-            statement.executeUpdate("update pasien set Nama_Lengkap = '"+ nama_lengkap + "',Nama_Inisial='"+nama_inisial  + "',Gender='"+gender+ "',Tanggal_Lahir='"+tgl+"',alamat='"+alamat+"',Keluhan='"+keluhan+"',Poli_Tujuan='"+poli_tujuan+
-                    "' where Kode_Pasien='" + kode_pasien + "'");
+            statement.executeUpdate("update pasien set Nama_Lengkap = '" + nama_lengkap + "',Nama_Inisial='" + nama_inisial + "',Gender='" + gender + "',Tanggal_Lahir='" + tgl + "',alamat='" + alamat + "',Keluhan='" + keluhan + "',Poli_Tujuan='" + poli_tujuan
+                    + "' where Kode_Pasien='" + kode_pasien + "'");
             statement.close();
             JOptionPane.showMessageDialog(null, "data berhasil disimpan");
         } catch (SQLException ex) {
@@ -872,35 +871,48 @@ nampungtgl = format.format(jdate_ttl.getDate());
         datatabel();
     }//GEN-LAST:event_jLabel33MouseClicked
 
-    private void btnhomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhomeMouseClicked
-        // TODO add your handling code here:;
-    }//GEN-LAST:event_btnhomeMouseClicked
-
-    private void btnpasienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpasienMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnpasienMouseClicked
-
-    private void btnpetugasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpetugasMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnpetugasMouseClicked
-
-    private void btndokterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndokterMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btndokterMouseClicked
-
-    private void btnjadwalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjadwalMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnjadwalMouseClicked
-
-    private void btntransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btntransaksiMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btntransaksiMouseClicked
-
     private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel30MouseClicked
-public static String nampungtgl;
+
+    private void btntransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btntransaksiMouseClicked
+        // TODO add your handling code here:
+        new transaksi().show();
+        this.dispose();
+    }//GEN-LAST:event_btntransaksiMouseClicked
+
+    private void btnjadwalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjadwalMouseClicked
+        // TODO add your handling code here:
+        new Jadwal().show();
+        this.dispose();
+    }//GEN-LAST:event_btnjadwalMouseClicked
+
+    private void btnpasienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpasienMouseClicked
+        // TODO add your handling code here:
+        new form_pasien().show();
+        this.dispose();
+    }//GEN-LAST:event_btnpasienMouseClicked
+
+    private void btnhome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhome1MouseClicked
+        // TODO add your handling code here:
+        new dashboard().show();
+        this.dispose();
+    }//GEN-LAST:event_btnhome1MouseClicked
+
+    private void btnPetugasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPetugasMouseClicked
+        // TODO add your handling code here:
+        new petugas().show();
+        this.dispose();
+    }//GEN-LAST:event_btnPetugasMouseClicked
+
+    private void btndokterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndokterMouseClicked
+        // TODO add your handling code here:;
+        new dokter().show();
+        this.dispose();
+    }//GEN-LAST:event_btndokterMouseClicked
+    public static String nampungtgl;
+
     /**
      * @param args the command line arguments
      */
@@ -937,19 +949,19 @@ public static String nampungtgl;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnPetugas;
     private javax.swing.JPanel btndokter;
-    private javax.swing.JPanel btnhome;
+    private javax.swing.JPanel btnhome1;
     private javax.swing.JPanel btnjadwal;
     private javax.swing.JPanel btnpasien;
-    private javax.swing.JPanel btnpetugas;
     private javax.swing.JPanel btntransaksi;
     private javax.swing.JComboBox<String> combo_gender;
     private javax.swing.JComboBox<String> combo_poli;
     private javax.swing.JLabel edit;
-    private javax.swing.JPanel j1;
     private javax.swing.JPanel j2;
     private javax.swing.JPanel j3;
     private javax.swing.JPanel j4;
+    private javax.swing.JPanel j5;
     private javax.swing.JPanel j7;
     private javax.swing.JPanel j8;
     private javax.swing.JLabel jLabel1;
@@ -981,8 +993,8 @@ public static String nampungtgl;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;

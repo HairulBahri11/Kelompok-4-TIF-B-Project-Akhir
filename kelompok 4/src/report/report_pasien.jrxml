@@ -44,39 +44,35 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="103" splitType="Stretch">
-			<image>
-				<reportElement x="725" y="0" width="77" height="102" uuid="ea2946f8-d2f1-44a9-8ced-b71e8c988005"/>
-				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
-			</image>
-			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="dbdabf61-d5f4-4fcb-865a-20f01d6ee6cf"/>
-				<staticText>
-					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="b0aa50fc-7b12-41bb-a23c-1bd3b4a3e507"/>
-					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
-					<textElement verticalAlignment="Bottom">
-						<font isBold="false"/>
-					</textElement>
-					<text><![CDATA[Data Pasien]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="9b2de99e-bbc9-48d6-bcf0-cc1e27bc5cf9"/>
-					<textElement textAlignment="Right">
-						<font size="22" isBold="false"/>
-					</textElement>
-					<text><![CDATA[Cherry SubTitle]]></text>
-				</staticText>
-			</frame>
-			<frame>
-				<reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="85629a26-bf0d-4175-944a-2f92b5ada273"/>
-				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="cb87567d-ebf6-4a6f-8a8a-fd47cd53e260"/>
-					<textElement textAlignment="Right">
-						<font size="12"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-				</textField>
-			</frame>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement x="276" y="40" width="238" height="20" uuid="1dc5c23b-b95d-4382-809c-110487d7babb"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="20" width="272" height="20" uuid="c3b30638-7b3c-4a57-bbea-99f9f6b5e41f"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="0" width="331" height="20" uuid="14011f64-27a0-4ee0-b125-ba89a47627ff"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="336" y="86" width="133" height="18" forecolor="#000000" uuid="05d734c8-26b7-4b89-a151-009d387de397"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Pasien]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
@@ -216,32 +212,7 @@
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="25" splitType="Stretch">
-			<frame>
-				<reportElement mode="Opaque" x="-5" y="0" width="802" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="31b88385-6565-41fc-9258-1f956492bd60"/>
-				<textField evaluationTime="Report">
-					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="509a47fa-f59f-4a75-ac4b-15e7bba0bf77"/>
-					<textElement verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="cc347824-7866-487e-9300-14977aecd4ea"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
-				</textField>
-				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="97652b2d-44a9-4159-8e31-db6fce8e64d5"/>
-					<textElement verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-				</textField>
-			</frame>
-		</band>
+		<band height="25" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
 		<band splitType="Stretch"/>
