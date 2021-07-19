@@ -5,72 +5,35 @@
  */
 package form;
 
-import com.mysql.jdbc.Driver;
-import java.awt.HeadlessException;
-import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import static form.form_obat.getTanggalFromTable;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Point;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-import javax.swing.JFileChooser;
-=======
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
 import javax.swing.JOptionPane;
-import koneksi.koneksi;
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-import java.text.SimpleDateFormat;
-=======
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import org.apache.commons.io.FileUtils;
+import koneksi.koneksi;
 
 /**
  *
- * @author MUHAMMAD YUSRIL
+ * @author user
  */
-public class pasien extends javax.swing.JFrame {
-
-    JFileChooser jfc;
-    File file;
+public class form_pasien extends javax.swing.JFrame {
 
     /**
-     * Creates new form petugas
+     * Creates new form form_pasien
      */
-    public pasien() {
+    public form_pasien() {
         initComponents();
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-        this.setLocationRelativeTo(null);
-        datatabelPasien();
-    }
-
-    // pasien
-    public static String nampungtgl;
-
-    public void datatabelPasien() {
-=======
         datatabel();
     }
 
@@ -95,7 +58,6 @@ public class pasien extends javax.swing.JFrame {
     }
 
     public void datatabel() {
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
         DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("Kode Pasien");
         tbl.addColumn("Nama Lengkap");
@@ -121,7 +83,6 @@ public class pasien extends javax.swing.JFrame {
                     res.getString("Alamat"),
                     res.getString("Keluhan"),
                     res.getString("Poli_Tujuan")
-
                 });
                 tabel.setModel(tbl);
             }
@@ -130,19 +91,6 @@ public class pasien extends javax.swing.JFrame {
         }
     }
 
-    public void kosongPasien() {
-        txt_kode.setText("");
-        txt_nama.setText("");
-        txt_inisial.setText("");
-        txt_alamat.setText("");
-        jdate_ttl.setCalendar(null);
-        txt_keluhan.setText("");
-        combo_gender.setSelectedItem("L");
-        combo_poli.setSelectedItem("Poli Umum");
-
-    }
-
-    // end pasien
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -152,9 +100,6 @@ public class pasien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-        genderDokter = new javax.swing.ButtonGroup();
-=======
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -179,379 +124,46 @@ public class pasien extends javax.swing.JFrame {
         btndokter = new javax.swing.JPanel();
         j3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txt_kode = new javax.swing.JTextField();
         txt_nama = new javax.swing.JTextField();
         txt_inisial = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         txt_alamat = new javax.swing.JTextField();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        btnsimpan = new javax.swing.JPanel();
-        jLabel48 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        txt_keluhan = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jLabel49 = new javax.swing.JLabel();
-        btnedit = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
         edit = new javax.swing.JLabel();
-        btndelete = new javax.swing.JPanel();
-        jLabel50 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabel = new javax.swing.JTable();
         combo_poli = new javax.swing.JComboBox<>();
         jdate_ttl = new com.toedter.calendar.JDateChooser();
         combo_gender = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txt_keluhan = new javax.swing.JTextArea();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        btnhome1 = new javax.swing.JPanel();
-        j5 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        btnpasien = new javax.swing.JPanel();
-        j2 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        btnjadwal = new javax.swing.JPanel();
-        j7 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        btntransaksi = new javax.swing.JPanel();
-        j8 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        btnPetugas = new javax.swing.JPanel();
-        j4 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        btndokter = new javax.swing.JPanel();
-        j3 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(15, 88, 5));
-
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/close.png"))); // NOI18N
-        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel21MouseClicked(evt);
-            }
-        });
-
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/minimize.png"))); // NOI18N
-
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/maximize.png"))); // NOI18N
-
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logo.png"))); // NOI18N
-
-        jLabel7.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("PUSKESMAS");
-
-        jLabel6.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("TERPADU");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel6))
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 630, Short.MAX_VALUE)
-                .addComponent(jLabel22)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel23)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addGap(20, 20, 20))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(53, 53, 53))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addComponent(jLabel6))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel22)
-                                .addComponent(jLabel23)
-                                .addComponent(jLabel21))
-                            .addComponent(jLabel7)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel20)
-                        .addComponent(jLabel1)))
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 970, 90));
-
-        txt_kode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_kodeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_kode, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 200, 40));
-
-        txt_nama.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_namaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 370, 40));
-
-        txt_inisial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_inisialActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_inisial, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 370, 40));
-
-        jLabel24.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel24.setText("Kode");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
-
-        jLabel37.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel37.setText("Nama");
-        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
-
-        jLabel41.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel41.setText("Nama Inisial");
-        getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
-
-        jLabel42.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel42.setText("Gender");
-        getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, -1));
-        getContentPane().add(txt_alamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 370, 40));
-
-        jLabel43.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel43.setText("TTL");
-        getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, -1, -1));
-
-        jLabel44.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel44.setText("Alamat");
-        getContentPane().add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, -1, -1));
-
-        jLabel45.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel45.setText("Keluhan");
-        getContentPane().add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 180, -1, -1));
-
-        jLabel46.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel46.setText("Poli Tujuan");
-        getContentPane().add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, -1, -1));
-
-        jLabel47.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jLabel47.setText("Data Pasien");
-        getContentPane().add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, -1, -1));
-
-        btnsimpan.setBackground(new java.awt.Color(0, 204, 51));
-        btnsimpan.setForeground(new java.awt.Color(255, 255, 255));
-        btnsimpan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnsimpanMouseClicked(evt);
-            }
-        });
-
-        jLabel48.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel48.setText("Simpan");
-
-        javax.swing.GroupLayout btnsimpanLayout = new javax.swing.GroupLayout(btnsimpan);
-        btnsimpan.setLayout(btnsimpanLayout);
-        btnsimpanLayout.setHorizontalGroup(
-            btnsimpanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnsimpanLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel48)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        btnsimpanLayout.setVerticalGroup(
-            btnsimpanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnsimpanLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel48)
-                .addContainerGap())
-        );
-
-        getContentPane().add(btnsimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, -1, 40));
-
-        jPanel7.setBackground(new java.awt.Color(204, 204, 0));
-        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel49.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel49.setText("Cetak");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel49)
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel49)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, -1, 40));
-
-        btnedit.setBackground(new java.awt.Color(0, 0, 255));
-        btnedit.setForeground(new java.awt.Color(255, 255, 255));
-        btnedit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btneditMouseClicked(evt);
-            }
-        });
-
-        edit.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        edit.setForeground(new java.awt.Color(255, 255, 255));
-        edit.setText("Edit");
-
-        javax.swing.GroupLayout btneditLayout = new javax.swing.GroupLayout(btnedit);
-        btnedit.setLayout(btneditLayout);
-        btneditLayout.setHorizontalGroup(
-            btneditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btneditLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(edit)
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
-        btneditLayout.setVerticalGroup(
-            btneditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btneditLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(edit)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, -1, 40));
-
-        btndelete.setBackground(new java.awt.Color(255, 0, 0));
-        btndelete.setForeground(new java.awt.Color(255, 255, 255));
-        btndelete.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btndeleteMouseClicked(evt);
-            }
-        });
-
-        jLabel50.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel50.setText("Delete");
-
-        javax.swing.GroupLayout btndeleteLayout = new javax.swing.GroupLayout(btndelete);
-        btndelete.setLayout(btndeleteLayout);
-        btndeleteLayout.setHorizontalGroup(
-            btndeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btndeleteLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel50)
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        btndeleteLayout.setVerticalGroup(
-            btndeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btndeleteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel50)
-                .addContainerGap())
-        );
-
-        getContentPane().add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, -1, 40));
-
-        tabel.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Kode", "Nama", "Nama Inisial", "Gender", "TTL", "Alamat", "Keluhan", "Poli Tujuan"
-            }
-        ));
-        tabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(tabel);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 880, 130));
-
-        combo_poli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Poli Umum", "Poli Gizi", "Poli KIA", "Poli Gigi" }));
-        getContentPane().add(combo_poli, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 310, 30));
-
-        jdate_ttl.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jdate_ttlPropertyChange(evt);
-            }
-        });
-        getContentPane().add(jdate_ttl, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 260, 30));
-
-        combo_gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "L", "P" }));
-        getContentPane().add(combo_gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 100, -1));
-
-        txt_keluhan.setColumns(20);
-        txt_keluhan.setRows(5);
-        jScrollPane1.setViewportView(txt_keluhan);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 180, 310, 100));
 
         jPanel5.setBackground(new java.awt.Color(18, 239, 38));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -775,11 +387,6 @@ public class pasien extends javax.swing.JFrame {
         );
 
         jPanel4.add(btntransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-
-        btnPetugas.setBackground(new java.awt.Color(0, 0, 0));
-        btnPetugas.addMouseListener(new java.awt.event.MouseAdapter() {
-=======
 
         btnPetugas.setBackground(new java.awt.Color(0, 0, 0));
         btnPetugas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -884,16 +491,40 @@ public class pasien extends javax.swing.JFrame {
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/close.png"))); // NOI18N
         jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPetugasMouseClicked(evt);
+                jLabel30MouseClicked(evt);
             }
         });
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(908, 30, -1, -1));
 
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-        j4.setBackground(new java.awt.Color(0, 255, 51));
-        j4.setOpaque(false);
-=======
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/minimize.png"))); // NOI18N
+        jPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(848, 30, -1, -1));
+
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/maximize.png"))); // NOI18N
+        jPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(878, 30, -1, -1));
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logo.png"))); // NOI18N
+        jPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 17, 60, -1));
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("PUSKESMAS");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 24, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("TERPADU");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 44, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 970, 90));
+
+        txt_kode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_kodeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_kode, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 200, 40));
+
         txt_nama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_namaActionPerformed(evt);
@@ -957,113 +588,150 @@ public class pasien extends javax.swing.JFrame {
                 jLabel28MouseClicked(evt);
             }
         });
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
 
-        javax.swing.GroupLayout j4Layout = new javax.swing.GroupLayout(j4);
-        j4.setLayout(j4Layout);
-        j4Layout.setHorizontalGroup(
-            j4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel28)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
-        j4Layout.setVerticalGroup(
-            j4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jLabel16.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/petugas.png"))); // NOI18N
-        jLabel16.setText("PETUGAS");
-
-        javax.swing.GroupLayout btnPetugasLayout = new javax.swing.GroupLayout(btnPetugas);
-        btnPetugas.setLayout(btnPetugasLayout);
-        btnPetugasLayout.setHorizontalGroup(
-            btnPetugasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPetugasLayout.createSequentialGroup()
-                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel16)
-                .addGap(0, 88, Short.MAX_VALUE))
-        );
-        btnPetugasLayout.setVerticalGroup(
-            btnPetugasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPetugasLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel28)
+                .addContainerGap())
         );
 
-        jPanel4.add(btnPetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 220, -1));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, -1, 40));
 
-        btndokter.setBackground(new java.awt.Color(0, 0, 0));
-        btndokter.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel7.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel29.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("Cetak");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel29)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel29)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, -1, 40));
+
+        jPanel8.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel8.setForeground(new java.awt.Color(255, 255, 255));
+
+        edit.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        edit.setForeground(new java.awt.Color(255, 255, 255));
+        edit.setText("Edit");
+        edit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btndokterMouseClicked(evt);
+                editMouseClicked(evt);
             }
         });
 
-        j3.setBackground(new java.awt.Color(0, 255, 51));
-        j3.setOpaque(false);
-
-        javax.swing.GroupLayout j3Layout = new javax.swing.GroupLayout(j3);
-        j3.setLayout(j3Layout);
-        j3Layout.setHorizontalGroup(
-            j3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(edit)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
-        j3Layout.setVerticalGroup(
-            j3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jLabel14.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Doctor.png"))); // NOI18N
-        jLabel14.setText(" DOKTER");
-
-        javax.swing.GroupLayout btndokterLayout = new javax.swing.GroupLayout(btndokter);
-        btndokter.setLayout(btndokterLayout);
-        btndokterLayout.setHorizontalGroup(
-            btndokterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btndokterLayout.createSequentialGroup()
-                .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 69, Short.MAX_VALUE))
-        );
-        btndokterLayout.setVerticalGroup(
-            btndokterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btndokterLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(btndokterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(j3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(edit)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.add(btndokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 220, 50));
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, -1, 40));
 
-        jPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, 520));
+        jPanel9.setBackground(new java.awt.Color(255, 0, 0));
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
+        jLabel33.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Delete");
+        jLabel33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel33MouseClicked(evt);
+            }
+        });
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel33)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel33)
+                .addContainerGap())
+        );
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jLabel5MouseClicked
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, -1, 40));
 
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jLabel21MouseClicked
-=======
+        tabel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Kode", "Nama", "Nama Inisial", "Gender", "TTL", "Alamat", "Keluhan", "Poli Tujuan"
+            }
+        ));
+        tabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tabel);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 880, 130));
+
+        combo_poli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Poli Umum", "Poli Gizi", "Poli KIA", "Poli Gigi" }));
+        getContentPane().add(combo_poli, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 280, 290, 30));
+
+        jdate_ttl.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jdate_ttlPropertyChange(evt);
+            }
+        });
+        getContentPane().add(jdate_ttl, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 231, 30));
+
+        combo_gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "L", "P" }));
+        getContentPane().add(combo_gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 86, 30));
+
         setSize(new java.awt.Dimension(1188, 731));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
 
     private void txt_kodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_kodeActionPerformed
         // TODO add your handling code here:
@@ -1077,19 +745,6 @@ public class pasien extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_inisialActionPerformed
 
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-     public static Date getTanggalFromTable(JTable table, int kolom) {
-        JTable tabel = table;
-        String str_tgl = String.valueOf(tabel.getValueAt(tabel.getSelectedRow(), kolom));
-        Date tanggal = null;
-        try {
-            tanggal = new SimpleDateFormat("yyyy-MM-dd").parse(str_tgl);
-        } catch (ParseException ex) {
-            Logger.getLogger(pasien.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return tanggal;
-    }
-=======
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
 
@@ -1143,16 +798,11 @@ public class pasien extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jdate_ttlPropertyChange
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
     
     private void tabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelMouseClicked
         // TODO add your handling code here:
         int i = tabel.getSelectedRow();
 
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-        String tgl;
-
-=======
         String tgl = nampungtgl;
         if (jdate_ttl.getDate() != null) {
             SimpleDateFormat format = new SimpleDateFormat("MM,dd,yyyy");
@@ -1160,78 +810,30 @@ public class pasien extends javax.swing.JFrame {
             System.out.println(nampungtgl);
 
         }
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
         if (i >= 0) {
             txt_kode.setText((String) tabel.getValueAt(i, 0));
             txt_nama.setText((String) tabel.getValueAt(i, 1));
             txt_inisial.setText((String) tabel.getValueAt(i, 2));
             combo_gender.setSelectedItem((String) tabel.getValueAt(i, 3));
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-=======
 
             jdate_ttl.setDate(getTanggalFromTable(tabel, 4));
             //tanggal
 
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
             txt_alamat.setText((String) tabel.getValueAt(i, 5));
             txt_keluhan.setText((String) tabel.getValueAt(i, 6));
             combo_poli.setSelectedItem((String) tabel.getValueAt(i, 7));
-            jdate_ttl.setDate(getTanggalFromTable(tabel, 4));
-        }
-    }//GEN-LAST:event_tabelMouseClicked
 
-    private void jdate_ttlPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jdate_ttlPropertyChange
-        // TODO add your handling code here:
-        if (jdate_ttl.getDate() != null) {
-            SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
-            nampungtgl = format.format(jdate_ttl.getDate());
-            System.out.println(nampungtgl);
-        }
-    }//GEN-LAST:event_jdate_ttlPropertyChange
-
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-    private void btnsimpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsimpanMouseClicked
-        // TODO add your handling code here:
-          int kode_pasien = Integer.parseInt(txt_kode.getText());
-        String nama_lengkap = txt_nama.getText();
-        String nama_inisial = txt_inisial.getText();
-        String tgl = nampungtgl;
-        String gender = (String) combo_gender.getSelectedItem();
-        String alamat = txt_alamat.getText();
-        String keluhan = txt_keluhan.getText();
-        String poli_tujuan = (String) combo_poli.getSelectedItem();
-
-        try {
-            Statement statement = (Statement) koneksi.GetConnection().createStatement();
-            statement.executeUpdate("insert into pasien VALUES ('" + kode_pasien + "','"
-                    + nama_lengkap + "','" + nama_inisial + "','" + gender + "','" + tgl + "','"
-                    + alamat + "','" + keluhan + "','" + poli_tujuan + "');");
-            statement.close();
-            JOptionPane.showMessageDialog(null, "data berhasil disimpan");
-        } catch (Exception t) {
-            JOptionPane.showMessageDialog(null, "data gagal disimpan");
-            System.out.println(t.getMessage());
-        }
-=======
         }
 
     }//GEN-LAST:event_tabelMouseClicked
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
 
-        datatabelPasien();
-        kosongPasien();
-    }//GEN-LAST:event_btnsimpanMouseClicked
-
-    private void btneditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneditMouseClicked
+    private void editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseClicked
         // TODO add your handling code here:
         int kode_pasien = Integer.parseInt(txt_kode.getText());
         String nama_lengkap = txt_nama.getText();
         String nama_inisial = txt_inisial.getText();
         String tgl = nampungtgl;
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-=======
 
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
         String gender = (String) combo_gender.getSelectedItem();
         String alamat = txt_alamat.getText();
         String keluhan = txt_keluhan.getText();
@@ -1243,44 +845,32 @@ public class pasien extends javax.swing.JFrame {
             statement.executeUpdate("update pasien set Nama_Lengkap = '" + nama_lengkap + "',Nama_Inisial='" + nama_inisial + "',Gender='" + gender + "',Tanggal_Lahir='" + tgl + "',alamat='" + alamat + "',Keluhan='" + keluhan + "',Poli_Tujuan='" + poli_tujuan
                     + "' where Kode_Pasien='" + kode_pasien + "'");
             statement.close();
-            JOptionPane.showMessageDialog(null, "data berhasil Di Update");
+            JOptionPane.showMessageDialog(null, "data berhasil disimpan");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "terdapat KESALAHAN");
             System.out.println(ex.getMessage());
         }
-        datatabelPasien();
-        kosongPasien();
-    }//GEN-LAST:event_btneditMouseClicked
+        datatabel();
+        kosong();
+    }//GEN-LAST:event_editMouseClicked
 
-    private void btndeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteMouseClicked
+    private void jLabel33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseClicked
         // TODO add your handling code here:
         int kode_pasien = Integer.parseInt(txt_kode.getText());
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
             statement.executeUpdate("DELETE from pasien where Kode_Pasien=('" + kode_pasien + "');");
             JOptionPane.showMessageDialog(rootPane, "data berhasil di HAPUS");
-            kosongPasien();
+            kosong();
             txt_kode.requestFocus();
 
         } catch (Exception t) {
             JOptionPane.showConfirmDialog(rootPane, "Data Tidak Berhasil Disimpan");
             System.out.println(t.getMessage());
         }
-        datatabelPasien();
-        kosongPasien();
-    }//GEN-LAST:event_btndeleteMouseClicked
+        datatabel();
+    }//GEN-LAST:event_jLabel33MouseClicked
 
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-    private void btnhome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhome1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnhome1MouseClicked
-
-    private void btnpasienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpasienMouseClicked
-        // TODO add your handling code here:
-        new pasien().show();
-        this.dispose();
-    }//GEN-LAST:event_btnpasienMouseClicked
-=======
     private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
         // TODO add your handling code here:
         System.exit(0);
@@ -1291,7 +881,6 @@ public class pasien extends javax.swing.JFrame {
         new transaksi().show();
         this.dispose();
     }//GEN-LAST:event_btntransaksiMouseClicked
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
 
     private void btnjadwalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnjadwalMouseClicked
         // TODO add your handling code here:
@@ -1301,14 +890,6 @@ public class pasien extends javax.swing.JFrame {
 
     private void btnpasienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpasienMouseClicked
         // TODO add your handling code here:
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-        new transaksi().show();
-        this.dispose();
-    }//GEN-LAST:event_btntransaksiMouseClicked
-
-    private void btnPetugasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPetugasMouseClicked
-        // TODO add your handling code here:
-=======
         new form_pasien().show();
         this.dispose();
     }//GEN-LAST:event_btnpasienMouseClicked
@@ -1321,7 +902,6 @@ public class pasien extends javax.swing.JFrame {
 
     private void btnPetugasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPetugasMouseClicked
         // TODO add your handling code here:
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
         new petugas().show();
         this.dispose();
     }//GEN-LAST:event_btnPetugasMouseClicked
@@ -1331,10 +911,7 @@ public class pasien extends javax.swing.JFrame {
         new dokter().show();
         this.dispose();
     }//GEN-LAST:event_btndokterMouseClicked
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-=======
     public static String nampungtgl;
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
 
     /**
      * @param args the command line arguments
@@ -1353,51 +930,34 @@ public class pasien extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(pasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_pasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(pasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_pasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(pasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_pasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(pasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_pasien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pasien().setVisible(true);
+                new form_pasien().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnPetugas;
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-    private javax.swing.JPanel btndelete;
-    private javax.swing.JPanel btndokter;
-    private javax.swing.JPanel btnedit;
-    private javax.swing.JPanel btnhome1;
-    private javax.swing.JPanel btnjadwal;
-    private javax.swing.JPanel btnpasien;
-    private javax.swing.JPanel btnsimpan;
-=======
     private javax.swing.JPanel btndokter;
     private javax.swing.JPanel btnhome1;
     private javax.swing.JPanel btnjadwal;
     private javax.swing.JPanel btnpasien;
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
     private javax.swing.JPanel btntransaksi;
     private javax.swing.JComboBox<String> combo_gender;
     private javax.swing.JComboBox<String> combo_poli;
     private javax.swing.JLabel edit;
-<<<<<<< HEAD:kelompok 4/src/form/pasien.java
-    private javax.swing.ButtonGroup genderDokter;
-=======
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5:kelompok 4/src/form/form_pasien.java
     private javax.swing.JPanel j2;
     private javax.swing.JPanel j3;
     private javax.swing.JPanel j4;
@@ -1411,26 +971,23 @@ public class pasien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1439,14 +996,16 @@ public class pasien extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
     private com.toedter.calendar.JDateChooser jdate_ttl;
     private javax.swing.JTable tabel;
     private javax.swing.JTextField txt_alamat;
     private javax.swing.JTextField txt_inisial;
-    private javax.swing.JTextArea txt_keluhan;
+    private javax.swing.JTextField txt_keluhan;
     private javax.swing.JTextField txt_kode;
     private javax.swing.JTextField txt_nama;
     // End of variables declaration//GEN-END:variables

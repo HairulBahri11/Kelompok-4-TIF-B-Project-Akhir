@@ -978,21 +978,13 @@ public class dokter extends javax.swing.JFrame {
 
     private void btnhome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhome1MouseClicked
         // TODO add your handling code here:
-<<<<<<< HEAD
-        new form_dokter().show();
-=======
         new dashboard().show();
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5
         this.dispose();
     }//GEN-LAST:event_btnhome1MouseClicked
 
     private void btnpasienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpasienMouseClicked
         // TODO add your handling code here:
-<<<<<<< HEAD
-        new pasien().show();
-=======
         new form_pasien().show();
->>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5
         this.dispose();
     }//GEN-LAST:event_btnpasienMouseClicked
 
