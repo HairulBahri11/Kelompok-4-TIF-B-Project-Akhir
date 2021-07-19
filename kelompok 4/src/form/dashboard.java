@@ -5,7 +5,7 @@
  */
 package form;
 
-import com.mysql.jdbc.Driver;
+import java.sql.Driver;
 import java.awt.HeadlessException;
 import java.io.File;
 import java.sql.Connection;

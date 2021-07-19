@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package form;
-import com.mysql.jdbc.Driver;
+import java.sql.Driver;
 import com.toedter.calendar.JDateChooser;
 import java.awt.HeadlessException;
 import java.io.File;

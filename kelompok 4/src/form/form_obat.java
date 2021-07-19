@@ -145,9 +145,9 @@ public class form_obat extends javax.swing.JFrame {
         btnhapus = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jdate_kadaluarsa = new com.toedter.calendar.JDateChooser();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
+        jdate_kadaluarsa = new com.toedter.calendar.JDateChooser();
         jdate_input = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -783,28 +783,11 @@ public class form_obat extends javax.swing.JFrame {
         jLabel36.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel36.setText(":");
 
-        jdate_kadaluarsa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jdate_kadaluarsaMouseClicked(evt);
-            }
-        });
-        jdate_kadaluarsa.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jdate_kadaluarsaPropertyChange(evt);
-            }
-        });
-
         jLabel37.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel37.setText("Tgl Input Data");
 
         jLabel38.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel38.setText(":");
-
-        jdate_input.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jdate_inputPropertyChange(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -840,26 +823,29 @@ public class form_obat extends javax.swing.JFrame {
                                     .addComponent(jLabel24)
                                     .addGap(24, 24, 24)
                                     .addComponent(txt_kuantitas, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel37)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jdate_input, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel34)
-                                .addGap(72, 72, 72)
-                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addComponent(txt_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel34)
+                                        .addGap(72, 72, 72)
+                                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(20, 20, 20)
+                                        .addComponent(txt_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel37)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jdate_input, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel35)
-                                .addGap(18, 18, 18)
+                                .addGap(53, 53, 53)
                                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jdate_kadaluarsa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jdate_kadaluarsa, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(37, 37, 37))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(160, 160, 160)
@@ -899,8 +885,10 @@ public class form_obat extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(txt_nama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(17, 17, 17)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txt_nama, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel35))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
@@ -926,17 +914,15 @@ public class form_obat extends javax.swing.JFrame {
                         .addGap(32, 32, 32))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jdate_kadaluarsa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel35)
-                                .addComponent(jLabel36)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel36)
+                            .addComponent(jdate_kadaluarsa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jdate_input, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel37)
-                                .addComponent(jLabel38)))
+                                .addComponent(jLabel38))
+                            .addComponent(jdate_input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(162, 162, 162)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(103, 103, 103))
@@ -1031,14 +1017,14 @@ public class form_obat extends javax.swing.JFrame {
         String satuan = (String) combo_satuan.getSelectedItem();
         String harga = txt_harga.getText();
         jdate_kadaluarsa.getDate();
-        jdate_input.getDate();
+        jdate_kadaluarsa.getDate();
         
         
         try {
             
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
             statement.executeUpdate("update obat set Nama_Obat = '"+ nama_obat + "',kuantitas='"+kuantitas  + "',harga='"+harga+
-                    "',tgl_kadaluarsa='"+jdate_kadaluarsa.getDate()+"',tgl_kadaluarsa='"+jdate_input.getDate() +
+                    "',tgl_kadaluarsa='"+jdate_kadaluarsa.getDate()+"',tgl_kadaluarsa='"+jdate_kadaluarsa.getDate() +
                     "' where Kode_Obat='" + kode_obat + "'");
             statement.close();
             JOptionPane.showMessageDialog(null, "data berhasil disimpan");
@@ -1062,7 +1048,7 @@ public class form_obat extends javax.swing.JFrame {
             combo_satuan.setSelectedItem((String) tabel.getValueAt(i, 3));
             txt_harga.setText((String) tabel.getValueAt(i, 4));
             jdate_kadaluarsa.setDate(getTanggalFromTable(tabel,5));
-            jdate_input.setDate(getTanggalFromTable(tabel,6));
+            jdate_kadaluarsa.setDate(getTanggalFromTable(tabel,6));
 
 
             
@@ -1095,7 +1081,7 @@ public class form_obat extends javax.swing.JFrame {
     private void jdate_kadaluarsaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jdate_kadaluarsaPropertyChange
         // TODO add your handling code here:
         String tgl_kadaluarsa = nampungtgl;
-        if(jdate_input.getDate()!=null)
+        if(jdate_kadaluarsa.getDate()!=null)
 {
 SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
 nampungtgl = format.format(jdate_kadaluarsa.getDate());
@@ -1107,7 +1093,7 @@ nampungtgl = format.format(jdate_kadaluarsa.getDate());
     private void jdate_inputPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jdate_inputPropertyChange
         // TODO add your handling code here:
         String tgl_input = nampungtgl;
-        if(jdate_input.getDate()!=null)
+        if(jdate_kadaluarsa.getDate()!=null)
 {
 SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
 nampungtgl = format.format(jdate_kadaluarsa.getDate());

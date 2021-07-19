@@ -31,7 +31,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import koneksi.koneksi;
-import com.mysql.jdbc.Driver;
+import java.sql.Driver;
 //import org.apache.commons.io.FileUtils;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
