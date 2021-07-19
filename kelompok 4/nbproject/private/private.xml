@@ -3,16 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/detail_transaksi.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/Jadwal.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/report/obat.jrxml</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/petugas.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/form_dokter.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/dokter.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/Register.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/transaksi.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/pemeriksaan.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/form_login.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/koneksi/koneksi.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/obat.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/pasien.java</file>
+            <file>file:/C:/Folder1/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/dashboard.java</file>
+=======
             <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/form_dokter.java</file>
+            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/dashboard.java</file>
+            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/form_pasien.java</file>
+            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/form_login.java</file>
+            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/Login.java</file>
+            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/form_obat.java</file>
+            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/Jadwal.java</file>
             <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/dokter.java</file>
             <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/detail_transaksi.java</file>
             <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/transaksi.java</file>
-            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/dashboard.java</file>
-            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/form_pasien.java</file>
+            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/form_pemeriksaan2.java</file>
             <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/petugas.java</file>
             <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/form_petugas.java</file>
-            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/Login.java</file>
-            <file>file:/D:/Mata%20Kuliah/Workshop%20Sistem%20Operasi%20Berbasis%20Dekstop/Belajar%20Github/E41200772-Muhammad-Yusril-Amin/Kelompok-4-TIF-B-Project-Akhir/kelompok%204/src/form/Jadwal.java</file>
+>>>>>>> edce4dffe6f69d8da05407b48720e8b1ff6270f5
         </group>
     </open-files>
 </project-private>
