@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dbef75ca-1c41-4369-b216-db8ef294f1f1">
 	<property name="ireport.zoom" value="1.3310000000000004"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="3"/>
+	<property name="ireport.y" value="252"/>
 	<parameter name="resep1" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select * from hasil_diagnosis2 where Kode_Diagnosis = $P{resep1}]]>
@@ -83,7 +83,7 @@
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="195" splitType="Stretch">
+		<band height="222" splitType="Stretch">
 			<staticText>
 				<reportElement x="15" y="145" width="109" height="20" uuid="31c09d08-23fb-427e-b377-647248ce25e6"/>
 				<textElement>
@@ -169,42 +169,35 @@
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="445" y="175" width="109" height="20" uuid="6d1851fc-9330-4ef8-a590-a809edf49de6"/>
+				<reportElement x="430" y="195" width="109" height="20" uuid="6d1851fc-9330-4ef8-a590-a809edf49de6"/>
 				<textElement textAlignment="Center">
 					<font fontName="Calibri" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Pemakaian]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="112" y="175" width="109" height="20" uuid="03a889b5-3ce6-45ff-bce3-2bc8e2a9ffbd"/>
+				<reportElement x="15" y="195" width="109" height="20" uuid="03a889b5-3ce6-45ff-bce3-2bc8e2a9ffbd"/>
 				<textElement textAlignment="Center">
 					<font fontName="Calibri" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nama Obat]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="221" y="175" width="109" height="20" uuid="45ba6bbc-24ad-4b07-8740-643c9a47aa04"/>
+				<reportElement x="145" y="195" width="109" height="20" uuid="45ba6bbc-24ad-4b07-8740-643c9a47aa04"/>
 				<textElement textAlignment="Center">
 					<font fontName="Calibri" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Jenis Obat]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="174" width="109" height="20" uuid="ddd1516e-0210-427a-bf08-de2064b832c9"/>
-				<textElement textAlignment="Center">
-					<font fontName="Calibri" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Kode Resep]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="333" y="175" width="109" height="20" uuid="d6e056ba-a551-4dc8-8b85-84bcb268c512"/>
+				<reportElement x="282" y="195" width="109" height="20" uuid="d6e056ba-a551-4dc8-8b85-84bcb268c512"/>
 				<textElement textAlignment="Center">
 					<font fontName="Calibri" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Jumlah]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="142" y="10" width="300" height="20" uuid="5e4c0545-3bee-449b-bd77-eca4710a0755"/>
+				<reportElement x="145" y="10" width="300" height="20" uuid="5e4c0545-3bee-449b-bd77-eca4710a0755"/>
 				<textFieldExpression><![CDATA[$F{Kode_Diagnosis}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -227,39 +220,37 @@
 				<reportElement x="142" y="145" width="157" height="20" uuid="db70cfc9-2721-432e-8962-0c66483ab67a"/>
 				<textFieldExpression><![CDATA[$F{Nama_Dokter}]]></textFieldExpression>
 			</textField>
+			<line>
+				<reportElement x="12" y="221" width="530" height="1" uuid="4183356b-bd74-414b-80eb-3773e05b2f84"/>
+			</line>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="31" splitType="Stretch">
+		<band height="33" splitType="Stretch">
 			<textField>
-				<reportElement x="4" y="6" width="100" height="20" uuid="5522a728-f881-474b-8224-b7765f59afbb"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{Id_Resep}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="109" y="6" width="100" height="20" uuid="56358461-f13a-45ed-93c9-56d62afdf5ab"/>
+				<reportElement x="18" y="6" width="100" height="20" uuid="56358461-f13a-45ed-93c9-56d62afdf5ab"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{Nama_Obat}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="230" y="6" width="100" height="20" uuid="add2b8b5-049c-4212-8475-0b3c596a09ab"/>
+				<reportElement x="146" y="6" width="100" height="20" uuid="add2b8b5-049c-4212-8475-0b3c596a09ab"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{jenis_obat}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="342" y="6" width="100" height="20" uuid="f635fc38-4fc7-470d-89d1-a6e9258553a2"/>
+				<reportElement x="287" y="6" width="100" height="20" uuid="f635fc38-4fc7-470d-89d1-a6e9258553a2"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="449" y="6" width="100" height="20" uuid="80c601cd-73b0-42d5-b744-372085d37268"/>
+				<reportElement x="435" y="6" width="100" height="20" uuid="80c601cd-73b0-42d5-b744-372085d37268"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{Pemakaian}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="5" splitType="Stretch"/>
+		<band height="40" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
 		<band height="7" splitType="Stretch"/>
