@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="24df7987-def1-44a2-b693-c638a2313d55">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     hasil_diagnosis.`Kode_Diagnosis` AS hasil_diagnosis_Kode_Diagnosis,
+     hasil_diagnosis.`Kode_Pasien` AS hasil_diagnosis_Kode_Pasien,
+     hasil_diagnosis.`Hasil_Diagnosis` AS hasil_diagnosis_Hasil_Diagnosis,
+     hasil_diagnosis.`Resep_Obat` AS hasil_diagnosis_Resep_Obat,
+     hasil_diagnosis.`Id_Dokter` AS hasil_diagnosis_Id_Dokter
+FROM
+     `hasil_diagnosis` hasil_diagnosis]]>
+	</queryString>
+	<field name="hasil_diagnosis_Kode_Diagnosis" class="java.lang.String"/>
+	<field name="hasil_diagnosis_Kode_Pasien" class="java.lang.Integer"/>
+	<field name="hasil_diagnosis_Hasil_Diagnosis" class="java.lang.String"/>
+	<field name="hasil_diagnosis_Resep_Obat" class="java.lang.String"/>
+	<field name="hasil_diagnosis_Id_Dokter" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<image>
+				<reportElement x="28" y="-1" width="61" height="83" uuid="cdd0e0d4-3515-4d48-8e59-d9ee55660963"/>
+				<imageExpression><![CDATA["C:\\Users\\MUHAMMAD YUSRIL\\Documents\\icon\\io.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="144" y="59" width="238" height="20" uuid="a33ef280-c494-4b5b-92f6-d7e88992632d"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="109" y="19" width="331" height="20" uuid="bcf5d0b0-de44-4d0c-b9be-30750cf4c1b6"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="456" y="3" width="56" height="79" uuid="aeecb6fa-b7fa-4e14-8d72-9cbd35da3a54"/>
+				<imageExpression><![CDATA["C:\\Users\\MUHAMMAD YUSRIL\\Documents\\icon\\gh.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="133" y="39" width="272" height="20" uuid="af3203c9-994c-48bd-a248-14e30f99f94d"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="17" y="90" width="506" height="2" uuid="50106a35-5de5-4c14-b312-f639f98a2a87"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="225" splitType="Stretch">
+			<staticText>
+				<reportElement x="143" y="89" width="13" height="20" uuid="5908b875-8ef5-4850-adb8-7ac247078162"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="120" width="89" height="20" uuid="63356365-30bc-46ae-b8e7-359d1e45a0d8"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Resep Obat]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="158" width="288" height="20" uuid="8048461e-80d2-4f1f-8001-d3ea6ac8e737"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hasil_diagnosis_Id_Dokter}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="144" y="158" width="13" height="20" uuid="419cadb3-dc9a-4dbd-9615-28dfaecaf75c"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="21" width="13" height="20" uuid="7d432fb7-7458-4a7a-8251-5fb740e2f083"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="120" width="13" height="20" uuid="6d6ec4b4-efe0-412a-8e7c-c4b60ee1b353"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="120" width="288" height="20" uuid="7f72dca5-b633-466b-9d63-739a8c00f56e"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hasil_diagnosis_Resep_Obat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="28" y="87" width="89" height="20" uuid="741af2a1-2bb8-48c8-b790-aaebc92163dc"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Hasil Diagnosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="51" width="13" height="20" uuid="ad19cdd1-c2a7-4299-b5bd-a30d737a1380"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="158" width="105" height="20" uuid="1cef5b74-b3d0-4c2a-b501-3b8eb3211c98"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Dokter]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="51" width="89" height="20" uuid="ef1ccfd0-7a9f-408e-8653-0efd84295caf"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="87" width="13" height="20" uuid="1bb4e26e-7d7a-4bfe-baad-b5a38cceef98"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="21" width="288" height="20" uuid="7a9ccb53-ca4e-465e-9d03-316579699fcb"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hasil_diagnosis_Kode_Diagnosis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="87" width="288" height="20" uuid="d38ea6e0-5d42-4b0e-a5e0-b5b0ceff995d"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hasil_diagnosis_Hasil_Diagnosis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="28" y="21" width="89" height="20" uuid="11836e26-3f11-44a8-ad87-7a1dc36a36c5"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kode Diagnosis]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="168" y="51" width="288" height="20" uuid="3d8bc98c-7610-45ea-a561-7ae7278be1be"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hasil_diagnosis_Kode_Pasien}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
