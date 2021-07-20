@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="36c9bc20-2841-4c28-8106-e17beb5ce7f6">
+	<property name="ireport.zoom" value="1.464100000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from jadwal]]>
+	</queryString>
+	<field name="Kode_Jadwal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Id_Petugas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tanggal_Tugas" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Shift_Pagi" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Shif Siang" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Shift_Malam" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="225" y="10" width="331" height="20" uuid="6c489a17-adf2-4e69-9f39-2d0b60745c3b"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="30" width="272" height="20" uuid="8cebf7c5-8ac3-4fc9-8d80-7aa52c7873ce"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="50" width="238" height="20" uuid="e8d1efe8-777c-486d-a242-b7cb98c06328"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="271" y="7" width="219" height="46" uuid="bcfd48f9-7435-4e66-a185-a3d323653a47"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="36"/>
+				</textElement>
+				<text><![CDATA[JADWAL]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="25" y="40" width="100" height="20" uuid="9e6f334a-8eb0-435b-8eaf-44751a029309"/>
+				<text><![CDATA[Kode_Jadwal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="40" width="100" height="20" uuid="35734370-d2fc-4dd0-8381-09356bf13fde"/>
+				<text><![CDATA[Id_Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="40" width="100" height="20" uuid="2ccda5f4-440e-4045-a3f2-eca6f868193b"/>
+				<text><![CDATA[Tanggal_Tugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="41" width="100" height="20" uuid="7454ff27-ca4c-44b0-8ab3-f60c8f754ee7"/>
+				<text><![CDATA[Shift_Pagi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="557" y="41" width="100" height="20" uuid="1370e017-ea6d-4765-8b29-2b3560deee45"/>
+				<text><![CDATA[Shif Siang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="683" y="41" width="100" height="20" uuid="f71152e5-3669-4e36-aa35-5603afa28c42"/>
+				<text><![CDATA[Shift_Malam]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="25" y="-1" width="100" height="20" uuid="5b23fdcc-c65c-4bb5-95e0-113a5b19959d"/>
+				<textFieldExpression><![CDATA[$F{Kode_Jadwal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="100" height="20" uuid="47771a6b-8c89-4ca4-b217-6b29e8f39096"/>
+				<textFieldExpression><![CDATA[$F{Id_Petugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="0" width="100" height="20" uuid="de475f67-b12f-46a0-81df-da74c97978bf"/>
+				<textFieldExpression><![CDATA[$F{Tanggal_Tugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="0" width="100" height="20" uuid="843f6817-193e-4cda-b72a-bf1ba2526506"/>
+				<textFieldExpression><![CDATA[$F{Shift_Pagi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="556" y="0" width="100" height="20" uuid="ebc00dba-5944-4597-8a2f-7aeba9016cce"/>
+				<textFieldExpression><![CDATA[$F{Shif Siang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="682" y="0" width="100" height="20" uuid="b1b73f81-e107-4c2a-90c4-ac91162e2c58"/>
+				<textFieldExpression><![CDATA[$F{Shift_Malam}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="10" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

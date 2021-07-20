@@ -253,7 +253,6 @@ public class transaksi extends javax.swing.JFrame {
         btndokter = new javax.swing.JPanel();
         j3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        txt_kode = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -967,7 +966,6 @@ public class transaksi extends javax.swing.JFrame {
         jPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, 520));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
-        getContentPane().add(txt_kode, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 390, 230, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1106,9 +1104,9 @@ public class transaksi extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(pemeriksaan.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\report_transaksi.jrxml";;
+        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\transaksi1.jrxml";;
         HashMap hash = new HashMap();
-        hash.put("parameter1", txt_kode.getText());
+        hash.put("detail", txtkdtransaksi.getText());
         JasperReport jr;
         try {
             jr = JasperCompileManager.compileReport(file);
@@ -1272,7 +1270,6 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JLabel txtPetugas;
     private javax.swing.JLabel txtPetugas1;
     private javax.swing.JPanel txt_cetak;
-    private javax.swing.JTextField txt_kode;
     private javax.swing.JLabel txtharga;
     private javax.swing.JTextField txtkdtransaksi;
     private javax.swing.JLabel txtkembali;
