@@ -171,7 +171,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="33">
+		<band height="157">
 			<textField>
 				<reportElement x="177" y="7" width="100" height="20" uuid="084ffc0c-bfc5-48c9-afe2-bb0472f9e7c7"/>
 				<textElement textAlignment="Center"/>
