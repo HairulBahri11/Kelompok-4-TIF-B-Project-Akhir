@@ -37,7 +37,7 @@ import org.apache.commons.io.FileUtils;
 
 /**
  *
- * @author MUHAMMAD YUSRIL
+ * 
  */
 public class dokter extends javax.swing.JFrame {
 

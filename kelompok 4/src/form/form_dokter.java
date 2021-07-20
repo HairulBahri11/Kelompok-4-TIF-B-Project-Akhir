@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author MUHAMMAD YUSRIL
+ * 
  */
 public class form_dokter extends javax.swing.JFrame {
 

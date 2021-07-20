@@ -47,7 +47,7 @@ import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
- * @author MUHAMMAD YUSRIL
+ * 
  */
 public class pemeriksaan extends javax.swing.JFrame {
 

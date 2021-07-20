@@ -40,7 +40,7 @@ import org.apache.commons.io.FileUtils;
 
 /**
  *
- * @author MUHAMMAD YUSRIL
+ * 
  */
 public class Jadwal extends javax.swing.JFrame {
 

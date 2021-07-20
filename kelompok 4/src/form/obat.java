@@ -40,7 +40,7 @@ import org.apache.commons.io.FileUtils;
 
 /**
  *
- * @author MUHAMMAD YUSRIL
+ * 
  */
 public class obat extends javax.swing.JFrame {
 

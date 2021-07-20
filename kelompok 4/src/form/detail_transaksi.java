@@ -39,7 +39,7 @@ import javax.swing.table.DefaultTableModel;
 import org.apache.commons.io.FileUtils;
 /**
  *
- * @author MUHAMMAD YUSRIL
+ * 
  */
 public class detail_transaksi extends javax.swing.JFrame {
 

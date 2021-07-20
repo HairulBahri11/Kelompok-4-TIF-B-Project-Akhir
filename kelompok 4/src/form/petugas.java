@@ -37,7 +37,7 @@ import org.apache.commons.io.FileUtils;
 
 /**
  *
- * @author MUHAMMAD YUSRIL
+ * 
  */
 public class petugas extends javax.swing.JFrame {
 
