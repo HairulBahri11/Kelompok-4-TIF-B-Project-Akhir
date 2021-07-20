@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="adbb9791-cad8-4887-b472-3c3e8403a2f5">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="275"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="detail" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT * FROM detail_transaksi dt INNER JOIN transaksi t ON dt.Id_transaksi=t.Id_Transaksi WHERE dt.Id_transaksi = $P{detail}]]>
@@ -49,10 +49,6 @@
 				</textElement>
 				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
 			</staticText>
-			<image>
-				<reportElement x="464" y="15" width="56" height="79" uuid="54c787b6-d47c-414c-90c4-f4650b7a92d6"/>
-				<imageExpression><![CDATA["C:\\Users\\MUHAMMAD YUSRIL\\Documents\\icon\\gh.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="123" y="25" width="331" height="20" uuid="522183ec-2220-41ab-ab6a-41a977988bdf"/>
 				<textElement>
@@ -60,10 +56,6 @@
 				</textElement>
 				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
 			</staticText>
-			<image>
-				<reportElement x="36" y="11" width="61" height="83" uuid="6158c121-9ac9-4736-bb04-f169ad3a5994"/>
-				<imageExpression><![CDATA["C:\\Users\\MUHAMMAD YUSRIL\\Documents\\icon\\io.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="158" y="65" width="238" height="20" uuid="d35f5d2f-9504-48c3-9261-1e8210ac709b"/>
 				<textElement>
@@ -171,7 +163,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="33">
+		<band height="157">
 			<textField>
 				<reportElement x="177" y="7" width="100" height="20" uuid="084ffc0c-bfc5-48c9-afe2-bb0472f9e7c7"/>
 				<textElement textAlignment="Center"/>
