@@ -968,7 +968,7 @@ public class petugas extends javax.swing.JFrame {
 
     private void btnpasienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpasienMouseClicked
         // TODO add your handling code here:
-        new form_pasien().show();
+        new pasien().show();
         this.dispose();
     }//GEN-LAST:event_btnpasienMouseClicked
 
