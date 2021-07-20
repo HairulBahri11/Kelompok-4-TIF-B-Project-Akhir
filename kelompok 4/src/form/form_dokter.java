@@ -69,21 +69,6 @@ public class form_dokter extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel5 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        btnhome = new javax.swing.JPanel();
-        j1 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        btnobat = new javax.swing.JPanel();
-        j5 = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
-        btnpemeriksaan = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        j6 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -106,223 +91,23 @@ public class form_dokter extends javax.swing.JFrame {
         jLabel155 = new javax.swing.JLabel();
         jLabel157 = new javax.swing.JLabel();
         jCalendar2 = new com.toedter.calendar.JCalendar();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        btnhome = new javax.swing.JPanel();
+        j1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        btnpemeriksaan = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        j6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel5.setBackground(new java.awt.Color(18, 239, 38));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/profil.png"))); // NOI18N
-
-        jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Andi Wijaya");
-
-        jLabel9.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("DOKTER");
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 130, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 5, Short.MAX_VALUE)
-        );
-
-        jPanel2.setBackground(new java.awt.Color(5, 4, 4));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnhome.setBackground(new java.awt.Color(51, 51, 51));
-        btnhome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnhomeMouseClicked(evt);
-            }
-        });
-
-        j1.setBackground(new java.awt.Color(0, 255, 51));
-
-        javax.swing.GroupLayout j1Layout = new javax.swing.GroupLayout(j1);
-        j1.setLayout(j1Layout);
-        j1Layout.setHorizontalGroup(
-            j1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        j1Layout.setVerticalGroup(
-            j1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jLabel10.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
-        jLabel10.setText(" DASHBOARD");
-
-        javax.swing.GroupLayout btnhomeLayout = new javax.swing.GroupLayout(btnhome);
-        btnhome.setLayout(btnhomeLayout);
-        btnhomeLayout.setHorizontalGroup(
-            btnhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnhomeLayout.createSequentialGroup()
-                .addComponent(j1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addGap(0, 59, Short.MAX_VALUE))
-        );
-        btnhomeLayout.setVerticalGroup(
-            btnhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnhomeLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(j1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnhomeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addContainerGap())
-        );
-
-        jPanel2.add(btnhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 50));
-
-        btnobat.setBackground(new java.awt.Color(0, 0, 0));
-        btnobat.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnobatMouseClicked(evt);
-            }
-        });
-
-        j5.setBackground(new java.awt.Color(0, 255, 51));
-        j5.setOpaque(false);
-
-        javax.swing.GroupLayout j5Layout = new javax.swing.GroupLayout(j5);
-        j5.setLayout(j5Layout);
-        j5Layout.setHorizontalGroup(
-            j5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        j5Layout.setVerticalGroup(
-            j5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jLabel24.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/obat.png"))); // NOI18N
-        jLabel24.setText("OBAT");
-
-        javax.swing.GroupLayout btnobatLayout = new javax.swing.GroupLayout(btnobat);
-        btnobat.setLayout(btnobatLayout);
-        btnobatLayout.setHorizontalGroup(
-            btnobatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnobatLayout.createSequentialGroup()
-                .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 78, Short.MAX_VALUE))
-        );
-        btnobatLayout.setVerticalGroup(
-            btnobatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnobatLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(btnobatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(j5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(67, 67, 67))
-        );
-
-        jPanel2.add(btnobat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 220, 50));
-
-        btnpemeriksaan.setBackground(new java.awt.Color(0, 0, 0));
-        btnpemeriksaan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnpemeriksaanMouseClicked(evt);
-            }
-        });
-
-        jLabel17.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/laporan.png"))); // NOI18N
-        jLabel17.setText("PEMERIKSAAN");
-
-        j6.setBackground(new java.awt.Color(0, 255, 51));
-        j6.setOpaque(false);
-
-        javax.swing.GroupLayout j6Layout = new javax.swing.GroupLayout(j6);
-        j6.setLayout(j6Layout);
-        j6Layout.setHorizontalGroup(
-            j6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        j6Layout.setVerticalGroup(
-            j6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout btnpemeriksaanLayout = new javax.swing.GroupLayout(btnpemeriksaan);
-        btnpemeriksaan.setLayout(btnpemeriksaanLayout);
-        btnpemeriksaanLayout.setHorizontalGroup(
-            btnpemeriksaanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnpemeriksaanLayout.createSequentialGroup()
-                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel17)
-                .addGap(0, 50, Short.MAX_VALUE))
-        );
-        btnpemeriksaanLayout.setVerticalGroup(
-            btnpemeriksaanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnpemeriksaanLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(btnpemeriksaan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 220, 50));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel8))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel9)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
 
         jPanel1.setBackground(new java.awt.Color(15, 88, 5));
 
@@ -452,26 +237,172 @@ public class form_dokter extends javax.swing.JFrame {
         jCalendar2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         getContentPane().add(jCalendar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 490, 270));
 
+        jPanel5.setBackground(new java.awt.Color(18, 239, 38));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/profil.png"))); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Andi Wijaya");
+
+        jLabel9.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("DOKTER");
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
+        );
+
+        jPanel2.setBackground(new java.awt.Color(5, 4, 4));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnhome.setBackground(new java.awt.Color(51, 51, 51));
+        btnhome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnhomeMouseClicked(evt);
+            }
+        });
+
+        j1.setBackground(new java.awt.Color(0, 255, 51));
+
+        javax.swing.GroupLayout j1Layout = new javax.swing.GroupLayout(j1);
+        j1.setLayout(j1Layout);
+        j1Layout.setHorizontalGroup(
+            j1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        j1Layout.setVerticalGroup(
+            j1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        jLabel10.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/home.png"))); // NOI18N
+        jLabel10.setText(" DASHBOARD");
+
+        javax.swing.GroupLayout btnhomeLayout = new javax.swing.GroupLayout(btnhome);
+        btnhome.setLayout(btnhomeLayout);
+        btnhomeLayout.setHorizontalGroup(
+            btnhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnhomeLayout.createSequentialGroup()
+                .addComponent(j1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addGap(0, 59, Short.MAX_VALUE))
+        );
+        btnhomeLayout.setVerticalGroup(
+            btnhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnhomeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(j1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnhomeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addContainerGap())
+        );
+
+        jPanel2.add(btnhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 50));
+
+        btnpemeriksaan.setBackground(new java.awt.Color(0, 0, 0));
+        btnpemeriksaan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnpemeriksaanMouseClicked(evt);
+            }
+        });
+
+        jLabel17.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/laporan.png"))); // NOI18N
+        jLabel17.setText("PEMERIKSAAN");
+
+        j6.setBackground(new java.awt.Color(0, 255, 51));
+        j6.setOpaque(false);
+
+        javax.swing.GroupLayout j6Layout = new javax.swing.GroupLayout(j6);
+        j6.setLayout(j6Layout);
+        j6Layout.setHorizontalGroup(
+            j6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        j6Layout.setVerticalGroup(
+            j6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout btnpemeriksaanLayout = new javax.swing.GroupLayout(btnpemeriksaan);
+        btnpemeriksaan.setLayout(btnpemeriksaanLayout);
+        btnpemeriksaanLayout.setHorizontalGroup(
+            btnpemeriksaanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnpemeriksaanLayout.createSequentialGroup()
+                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel17)
+                .addGap(0, 50, Short.MAX_VALUE))
+        );
+        btnpemeriksaanLayout.setVerticalGroup(
+            btnpemeriksaanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnpemeriksaanLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(btnpemeriksaan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 220, 50));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel8))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel9)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnpemeriksaanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpemeriksaanMouseClicked
-        // TODO add your handling code here:
-        new pemeriksaan().show();
-        this.dispose();
-    }//GEN-LAST:event_btnpemeriksaanMouseClicked
-
-    private void btnobatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnobatMouseClicked
-        // TODO add your handling code here:
-        new obat().show();
-        this.dispose();
-    }//GEN-LAST:event_btnobatMouseClicked
-
-    private void btnhomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhomeMouseClicked
-        // TODO add your handling code here:
-        new form_dokter().show();
-        this.dispose();
-    }//GEN-LAST:event_btnhomeMouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
@@ -482,6 +413,18 @@ public class form_dokter extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jLabel21MouseClicked
+
+    private void btnhomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhomeMouseClicked
+        // TODO add your handling code here:
+        new form_dokter().show();
+        this.dispose();
+    }//GEN-LAST:event_btnhomeMouseClicked
+
+    private void btnpemeriksaanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpemeriksaanMouseClicked
+        // TODO add your handling code here:
+        new pemeriksaan().show();
+        this.dispose();
+    }//GEN-LAST:event_btnpemeriksaanMouseClicked
 
     /**
      * @param args the command line arguments
@@ -527,10 +470,8 @@ public class form_dokter extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnhome;
-    private javax.swing.JPanel btnobat;
     private javax.swing.JPanel btnpemeriksaan;
     private javax.swing.JPanel j1;
-    private javax.swing.JPanel j5;
     private javax.swing.JPanel j6;
     private com.toedter.calendar.JCalendar jCalendar2;
     private javax.swing.JLabel jLabel1;
@@ -550,7 +491,6 @@ public class form_dokter extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

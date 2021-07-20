@@ -63,6 +63,7 @@ public class Register extends javax.swing.JFrame {
         keluar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel9.setBackground(new java.awt.Color(0, 102, 0));
 
@@ -276,6 +277,11 @@ public class Register extends javax.swing.JFrame {
         keluar.setForeground(new java.awt.Color(255, 255, 255));
         keluar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         keluar.setText("Keluar");
+        keluar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                keluarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -343,7 +349,7 @@ public class Register extends javax.swing.JFrame {
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        setSize(new java.awt.Dimension(458, 576));
+        setSize(new java.awt.Dimension(442, 537));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -381,6 +387,11 @@ public class Register extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_simpanMouseClicked
+
+    private void keluarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_keluarMouseClicked
+        // TODO add your handling code here:
+         System.exit(0);
+    }//GEN-LAST:event_keluarMouseClicked
 
     /**
      * @param args the command line arguments

@@ -184,6 +184,11 @@ public class form_login extends javax.swing.JFrame {
         keluar.setForeground(new java.awt.Color(255, 255, 255));
         keluar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         keluar.setText("Keluar");
+        keluar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                keluarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -277,6 +282,11 @@ public class form_login extends javax.swing.JFrame {
         // TODO add your handling code here:
         tampilObat();
     }//GEN-LAST:event_txt_kodeKeyReleased
+
+    private void keluarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_keluarMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_keluarMouseClicked
 
     /**
      * @param args the command line arguments

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5382f516-0dba-4530-a3e5-2b462a8925b5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="detail" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT dt.id_detail, dt.Id_Transaksi, o.Nama_Obat, dt.harga, t.Id_Transaksi, ps.Nama_Lengkap, t.Tanggal_Transaksi, p.Nama_Petugas, t.biaya, t.tunai, t.kembalian FROM detail_transaksi dt INNER JOIN transaksi t ON dt.Id_transaksi=t.Id_Transaksi INNER JOIN obat o ON dt.kode_obat=o.Kode_Obat INNER JOIN petugas p ON t.Id_Petugas=p.Id_Petugas INNER JOIN pasien ps ON t.Id_Pasien=ps.Kode_Pasien WHERE dt.Id_transaksi = $P{detail}]]>
+	</queryString>
+	<field name="id_detail" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Id_Transaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Obat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Lengkap" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tanggal_Transaksi" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Petugas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="biaya" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tunai" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kembalian" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="147" y="38" width="272" height="20" uuid="a73376a0-357b-4994-b1b5-cec7392016b6"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="18" width="331" height="20" uuid="0c68a13c-f197-4200-a6dd-5f2e3345262a"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="58" width="238" height="20" uuid="5271710a-37dd-4039-93d9-63e331545864"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="28" y="6" width="61" height="83" uuid="2509184d-c5ff-47cc-a2db-e030ceb4f989"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="468" y="10" width="56" height="79" uuid="eb9bbace-c0b9-4542-ab3d-b70375362c8a"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="184" y="11" width="219" height="46" uuid="56b9906c-7429-4c71-9f8c-6777c7717641"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="36"/>
+				</textElement>
+				<text><![CDATA[TRANSAKSI]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="3" width="550" height="1" uuid="645b3c3c-18d8-4935-86fb-7ddabdb60810"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="323" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="86" width="100" height="20" uuid="448d47c2-c65f-4c95-836d-1dd3e6e407a8"/>
+				<text><![CDATA[Tanggal                  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="17" width="100" height="20" uuid="c3a09aae-1806-493b-b307-eeb222554c03"/>
+				<text><![CDATA[ID Transaksi            :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="54" width="100" height="20" uuid="b82774b2-f430-47ad-9b3d-44894dac696c"/>
+				<text><![CDATA[Nama Pasien          :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="122" width="100" height="20" uuid="35b9233f-69c0-4430-aed8-ca25c1f4a4fd"/>
+				<text><![CDATA[Nama Petugas        :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="152" y="17" width="100" height="20" uuid="21ced1a1-f11c-43de-9416-b0148ac116e9"/>
+				<textFieldExpression><![CDATA[$F{Id_Transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="54" width="100" height="20" uuid="f52fe3d1-9729-446a-940f-444be0db644c"/>
+				<textFieldExpression><![CDATA[$F{Nama_Lengkap}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="86" width="136" height="20" uuid="6b92d434-3f07-4b3a-864b-935f672d32e4"/>
+				<textFieldExpression><![CDATA[$F{Tanggal_Transaksi}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="16" y="178" width="530" height="1" uuid="f5b752c9-1515-4260-ba40-c73a8df8d8ad"/>
+			</line>
+			<staticText>
+				<reportElement x="303" y="191" width="100" height="20" uuid="bce5a76e-5a02-40cb-aa3e-fa84c3f8b2b7"/>
+				<text><![CDATA[Biaya]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="256" width="100" height="20" uuid="3cdbe16f-1701-42db-99ea-a6b1d1fc565a"/>
+				<text><![CDATA[Kembalian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="225" width="100" height="20" uuid="4a666f13-bff4-4e92-8970-1f6a409234a8"/>
+				<text><![CDATA[Tunai]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="424" y="191" width="100" height="20" uuid="f8e07cc9-82a3-4f2e-a22a-8f42a6ad98df"/>
+				<textFieldExpression><![CDATA[$F{biaya}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="225" width="100" height="20" uuid="ee96342d-eaa2-4ce3-a8ca-88281294b0bc"/>
+				<textFieldExpression><![CDATA[$F{tunai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="256" width="100" height="20" uuid="d1ecc964-8d2f-4af2-8271-087925457e84"/>
+				<textFieldExpression><![CDATA[$F{kembalian}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="295" width="100" height="20" uuid="104cde85-c754-49a1-a551-8238605af153"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Obat]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="320" width="530" height="1" uuid="ffc41534-b1aa-4d11-963f-e0457fcc0281"/>
+			</line>
+			<line>
+				<reportElement x="12" y="288" width="530" height="1" uuid="3f017365-e175-4767-902d-719606237ab8"/>
+			</line>
+			<staticText>
+				<reportElement x="174" y="295" width="100" height="20" uuid="1eeeddff-989e-4c45-9ede-46935a05d610"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="152" y="122" width="100" height="20" uuid="bfb310d6-44d4-4c8a-acbd-e8b7a9c395b2"/>
+				<textFieldExpression><![CDATA[$F{Nama_Petugas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="10" width="100" height="20" uuid="795f9f46-a790-4063-88e8-27e605b981ee"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Nama_Obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="10" width="100" height="20" uuid="5b4ac8d1-7e29-41e8-a5f4-5c0d63204a4a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="96" splitType="Stretch">
+			<staticText>
+				<reportElement x="56" y="16" width="440" height="55" uuid="774fa016-ba08-4284-b990-04d075b5ce58"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="20"/>
+				</textElement>
+				<text><![CDATA[PELAYANAN PRIMA YANG KAMI BERIKAN DEMI KESEMBUHAN DAN KEPUASAN ANDA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="1" width="550" height="1" uuid="6c93420b-0b3d-4692-bab5-562909631b7b"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="3" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>
