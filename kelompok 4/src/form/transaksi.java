@@ -5,7 +5,8 @@
  */
 package form;
 
-import com.mysql.jdbc.Driver;
+//import com.mysql.jdbc.Driver;
+import java.sql.Driver;
 import com.toedter.calendar.JDateChooser;
 import java.awt.HeadlessException;
 import java.io.File;
@@ -1100,9 +1101,9 @@ public class transaksi extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             koneksi = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/puskesmas", "root", "");
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(pemeriksaan.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(pemeriksaan.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
         }
         String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\transaksi1.jrxml";;
         HashMap hash = new HashMap();
@@ -1113,7 +1114,7 @@ public class transaksi extends javax.swing.JFrame {
             JasperPrint jp = JasperFillManager.fillReport(jr, hash, koneksi);
             JasperViewer.viewReport(jp);
         } catch (JRException ex) {
-            Logger.getLogger(pemeriksaan.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_txt_cetakMouseClicked
 
