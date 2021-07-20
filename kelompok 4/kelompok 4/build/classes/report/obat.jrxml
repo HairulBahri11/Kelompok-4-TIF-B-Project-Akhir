@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dbef75ca-1c41-4369-b216-db8ef294f1f1">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="resep1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from hasil_diagnosis2 where Kode_Diagnosis = $P{resep1}]]>
+	</queryString>
+	<field name="Nomer" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Kode_Diagnosis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Kode_Pasien" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pasien" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hasil_pemeriksaan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_pemeriksaan" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Dokter" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Id_Resep" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Obat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis_obat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pemakaian" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="118" y="19" width="331" height="20" uuid="28d58530-f98d-4283-a51c-07d1f2386ec3"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="39" width="272" height="20" uuid="0ceb8f68-5441-4a45-8637-d5b653f67585"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="59" width="238" height="20" uuid="8ac3d14c-e874-4887-aeb2-58d878de25ee"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="153" y="10" width="219" height="46" uuid="eddb1f4c-a80b-4f4d-9bf4-9f8f9e11f76e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="36"/>
+				</textElement>
+				<text><![CDATA[RESEP OBAT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="195" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="145" width="109" height="20" uuid="31c09d08-23fb-427e-b377-647248ce25e6"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Dokter]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="118" width="10" height="18" uuid="17328584-0684-4a9c-93c1-abebbc491500"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="10" width="109" height="20" uuid="ec649f00-4319-402d-8bd6-f12b49867d93"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kode Diagnosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="118" width="109" height="20" uuid="d9b15fa4-b3f3-4c58-8a9e-e3369aac7826"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal Pemeriksaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="145" width="10" height="18" uuid="f8f52572-9689-4943-8d3b-9c6e9412f24d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="36" width="109" height="20" uuid="bcaec1d7-65a9-46c3-aa9a-eb73f5e6cd78"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kode Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="63" width="109" height="20" uuid="788157b6-e7ca-4735-a670-0381258de3be"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="36" width="10" height="18" uuid="bb685dfa-aacb-4846-aa1e-a8e9be6319c2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="63" width="10" height="18" uuid="94cf6940-5b8f-4543-aa89-c693046a6dbb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="91" width="10" height="18" uuid="255ff5f8-29be-40fd-a425-2014facebdb8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="91" width="109" height="20" uuid="f57353d0-60c5-403e-9031-dd08b3667948"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Hasil Pemeriksaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="10" width="10" height="18" uuid="d2853415-557d-4177-af5d-54ff3d45ab39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="175" width="109" height="20" uuid="6d1851fc-9330-4ef8-a590-a809edf49de6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pemakaian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="175" width="109" height="20" uuid="03a889b5-3ce6-45ff-bce3-2bc8e2a9ffbd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="175" width="109" height="20" uuid="45ba6bbc-24ad-4b07-8740-643c9a47aa04"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jenis Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="174" width="109" height="20" uuid="ddd1516e-0210-427a-bf08-de2064b832c9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Resep]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="175" width="109" height="20" uuid="d6e056ba-a551-4dc8-8b85-84bcb268c512"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="142" y="10" width="300" height="20" uuid="5e4c0545-3bee-449b-bd77-eca4710a0755"/>
+				<textFieldExpression><![CDATA[$F{Kode_Diagnosis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="36" width="100" height="20" uuid="c557a420-4ee2-4403-bd68-205a81e45559"/>
+				<textFieldExpression><![CDATA[$F{Kode_Pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="63" width="100" height="20" uuid="68a37077-3947-4336-85fc-80dba49d0c2d"/>
+				<textFieldExpression><![CDATA[$F{nama_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="91" width="157" height="20" uuid="3322854a-baa8-4da2-9da8-515135603aae"/>
+				<textFieldExpression><![CDATA[$F{hasil_pemeriksaan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="118" width="157" height="20" uuid="2135aa15-8a83-4633-a7d4-4dce3d5d07be"/>
+				<textFieldExpression><![CDATA[$F{tanggal_pemeriksaan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="145" width="157" height="20" uuid="db70cfc9-2721-432e-8962-0c66483ab67a"/>
+				<textFieldExpression><![CDATA[$F{Nama_Dokter}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="6" width="100" height="20" uuid="5522a728-f881-474b-8224-b7765f59afbb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Id_Resep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="6" width="100" height="20" uuid="56358461-f13a-45ed-93c9-56d62afdf5ab"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Nama_Obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="6" width="100" height="20" uuid="add2b8b5-049c-4212-8475-0b3c596a09ab"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{jenis_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="6" width="100" height="20" uuid="f635fc38-4fc7-470d-89d1-a6e9258553a2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="6" width="100" height="20" uuid="80c601cd-73b0-42d5-b744-372085d37268"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Pemakaian}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="7" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="5" splitType="Stretch"/>
+	</summary>
+</jasperReport>
