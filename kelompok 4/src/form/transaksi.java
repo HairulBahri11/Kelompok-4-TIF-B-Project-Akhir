@@ -226,8 +226,6 @@ public class transaksi extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         btndelete = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
-        btnpindah = new javax.swing.JPanel();
-        jLabel41 = new javax.swing.JLabel();
         txt_cetak = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -577,37 +575,6 @@ public class transaksi extends javax.swing.JFrame {
 
         getContentPane().add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, -1, 40));
 
-        btnpindah.setBackground(new java.awt.Color(255, 102, 0));
-        btnpindah.setForeground(new java.awt.Color(255, 255, 255));
-        btnpindah.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnpindahMouseClicked(evt);
-            }
-        });
-
-        jLabel41.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("Tambah Obat");
-
-        javax.swing.GroupLayout btnpindahLayout = new javax.swing.GroupLayout(btnpindah);
-        btnpindah.setLayout(btnpindahLayout);
-        btnpindahLayout.setHorizontalGroup(
-            btnpindahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnpindahLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel41)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        btnpindahLayout.setVerticalGroup(
-            btnpindahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnpindahLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel41)
-                .addContainerGap())
-        );
-
-        getContentPane().add(btnpindah, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 140, 40));
-
         txt_cetak.setBackground(new java.awt.Color(102, 204, 0));
         txt_cetak.setForeground(new java.awt.Color(255, 255, 255));
         txt_cetak.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -625,9 +592,9 @@ public class transaksi extends javax.swing.JFrame {
         txt_cetakLayout.setHorizontalGroup(
             txt_cetakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(txt_cetakLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(81, 81, 81)
                 .addComponent(jLabel42)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         txt_cetakLayout.setVerticalGroup(
             txt_cetakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -637,7 +604,7 @@ public class transaksi extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(txt_cetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 290, 130, 40));
+        getContentPane().add(txt_cetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 220, 40));
 
         jPanel5.setBackground(new java.awt.Color(18, 239, 38));
 
@@ -1155,11 +1122,6 @@ public class transaksi extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tabelMouseClicked
 
-    private void btnpindahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpindahMouseClicked
-        // TODO add your handling code here:
-        new detail_transaksi("").show();
-    }//GEN-LAST:event_btnpindahMouseClicked
-
     private void txt_cetakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_cetakMouseClicked
         // TODO add your handling code here:
         
@@ -1286,7 +1248,6 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JPanel btnobat;
     private javax.swing.JPanel btnpasien;
     private javax.swing.JPanel btnpetugas;
-    private javax.swing.JPanel btnpindah;
     private javax.swing.JPanel btnrefresh;
     private javax.swing.JPanel btnsimpan4;
     private javax.swing.JPanel btntransaksi;
@@ -1331,7 +1292,6 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
