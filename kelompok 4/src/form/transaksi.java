@@ -59,6 +59,7 @@ public class transaksi extends javax.swing.JFrame {
     /**
      * Creates new form dashboard
      */
+    public static String kode;
     public transaksi() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -200,7 +201,6 @@ public class transaksi extends javax.swing.JFrame {
         jLabel138 = new javax.swing.JLabel();
         jLabel140 = new javax.swing.JLabel();
         jLabel141 = new javax.swing.JLabel();
-        pembayaran = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
         txtkdtransaksi = new javax.swing.JTextField();
         jdate_ttl = new com.toedter.calendar.JDateChooser();
@@ -257,6 +257,7 @@ public class transaksi extends javax.swing.JFrame {
         btnpasien = new javax.swing.JPanel();
         j2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        pembayaran = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -346,7 +347,7 @@ public class transaksi extends javax.swing.JFrame {
 
         jLabel136.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel136.setText("Pembayaran");
-        getContentPane().add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
+        getContentPane().add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, -1, -1));
 
         jLabel137.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel137.setText(":");
@@ -362,20 +363,7 @@ public class transaksi extends javax.swing.JFrame {
 
         jLabel141.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel141.setText(":");
-        getContentPane().add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, -1, -1));
-
-        pembayaran.setText("0");
-        pembayaran.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pembayaranActionPerformed(evt);
-            }
-        });
-        pembayaran.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                pembayaranKeyReleased(evt);
-            }
-        });
-        getContentPane().add(pembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 320, 30));
+        getContentPane().add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 180, -1, -1));
 
         jLabel56.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel56.setText("PEMBAYARAN");
@@ -423,27 +411,27 @@ public class transaksi extends javax.swing.JFrame {
 
         txtkembali.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         txtkembali.setText("0");
-        getContentPane().add(txtkembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 230, 200, -1));
+        getContentPane().add(txtkembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, 200, -1));
 
         jLabel159.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel159.setText(":");
-        getContentPane().add(jLabel159, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 190, -1, -1));
+        getContentPane().add(jLabel159, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 210, -1, -1));
 
         jLabel160.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel160.setText("Kembalian");
-        getContentPane().add(jLabel160, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, -1, -1));
+        getContentPane().add(jLabel160, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, -1, -1));
 
         jLabel161.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel161.setText(":");
-        getContentPane().add(jLabel161, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 230, -1, -1));
+        getContentPane().add(jLabel161, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 250, -1, -1));
 
         jLabel162.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel162.setText("Harga");
-        getContentPane().add(jLabel162, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 190, -1, -1));
+        getContentPane().add(jLabel162, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, -1, -1));
 
         txtharga.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         txtharga.setText("0");
-        getContentPane().add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 190, -1, -1));
+        getContentPane().add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 210, -1, -1));
 
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -463,7 +451,7 @@ public class transaksi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabel);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 910, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 910, 150));
 
         btnsimpan4.setBackground(new java.awt.Color(0, 204, 51));
         btnsimpan4.setForeground(new java.awt.Color(255, 255, 255));
@@ -494,7 +482,7 @@ public class transaksi extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(btnsimpan4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, -1, 40));
+        getContentPane().add(btnsimpan4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, -1, 40));
 
         btnrefresh.setBackground(new java.awt.Color(204, 204, 0));
         btnrefresh.setForeground(new java.awt.Color(255, 255, 255));
@@ -525,7 +513,7 @@ public class transaksi extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, -1, 40));
+        getContentPane().add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, 40));
 
         btnedit.setBackground(new java.awt.Color(0, 0, 255));
         btnedit.setForeground(new java.awt.Color(255, 255, 255));
@@ -556,7 +544,7 @@ public class transaksi extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, -1, 40));
+        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, -1, 40));
 
         btndelete.setBackground(new java.awt.Color(255, 0, 0));
         btndelete.setForeground(new java.awt.Color(255, 255, 255));
@@ -587,7 +575,7 @@ public class transaksi extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, -1, 40));
+        getContentPane().add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, -1, 40));
 
         btnpindah.setBackground(new java.awt.Color(255, 102, 0));
         btnpindah.setForeground(new java.awt.Color(255, 255, 255));
@@ -606,19 +594,19 @@ public class transaksi extends javax.swing.JFrame {
         btnpindahLayout.setHorizontalGroup(
             btnpindahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnpindahLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel41)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         btnpindahLayout.setVerticalGroup(
             btnpindahLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnpindahLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnpindahLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel41)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        getContentPane().add(btnpindah, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 280, 240, 40));
+        getContentPane().add(btnpindah, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 140, 40));
 
         txt_cetak.setBackground(new java.awt.Color(102, 204, 0));
         txt_cetak.setForeground(new java.awt.Color(255, 255, 255));
@@ -637,9 +625,9 @@ public class transaksi extends javax.swing.JFrame {
         txt_cetakLayout.setHorizontalGroup(
             txt_cetakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(txt_cetakLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel42)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         txt_cetakLayout.setVerticalGroup(
             txt_cetakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -649,7 +637,7 @@ public class transaksi extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(txt_cetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 330, 240, 40));
+        getContentPane().add(txt_cetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 290, 130, 40));
 
         jPanel5.setBackground(new java.awt.Color(18, 239, 38));
 
@@ -1051,6 +1039,10 @@ public class transaksi extends javax.swing.JFrame {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
 
+        pembayaran.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        pembayaran.setText("0");
+        getContentPane().add(pembayaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 180, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1086,18 +1078,20 @@ public class transaksi extends javax.swing.JFrame {
         String transaksi = pembayaran.getText();
         String harga = txtharga.getText();
         String kembali = txtkembali.getText();
-
+        
+        
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
             statement.executeUpdate("insert into transaksi VALUES ('" + txtkd + "','" + pasien + "','" + tgl + "','" + petugas + "','" + transaksi + "','" + harga + "','" + kembali + "')");
             statement.close();
-            new detail_transaksi().show();
+            kode = txtkdtransaksi.getText();
+            detail_transaksi dt = new detail_transaksi(kode);
+            dt.setVisible(true);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "data gagal disimpan");
             System.out.println(e.getMessage());
         }
         datatableTransaksi();
-        kosong();
     }//GEN-LAST:event_btnsimpan4btnsimpanMouseClicked
 
     private void btnrefreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnrefreshMouseClicked
@@ -1161,19 +1155,9 @@ public class transaksi extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tabelMouseClicked
 
-    private void pembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pembayaranActionPerformed
-        // TODO add your handling code here:
-        tampilKembalian();
-    }//GEN-LAST:event_pembayaranActionPerformed
-
-    private void pembayaranKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pembayaranKeyReleased
-        // TODO add your handling code here:
-        tampilKembalian();
-    }//GEN-LAST:event_pembayaranKeyReleased
-
     private void btnpindahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpindahMouseClicked
         // TODO add your handling code here:
-        new detail_transaksi().show();
+        new detail_transaksi("").show();
     }//GEN-LAST:event_btnpindahMouseClicked
 
     private void txt_cetakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_cetakMouseClicked
@@ -1360,7 +1344,7 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private com.toedter.calendar.JDateChooser jdate_ttl;
-    private javax.swing.JTextField pembayaran;
+    private javax.swing.JLabel pembayaran;
     private javax.swing.JTable tabel;
     private javax.swing.JLabel txtPetugas;
     private javax.swing.JLabel txtPetugas1;

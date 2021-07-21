@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package form;
+
 import com.mysql.jdbc.Driver;
 import com.toedter.calendar.JDateChooser;
 import java.awt.HeadlessException;
@@ -34,28 +35,32 @@ import java.text.SimpleDateFormat;
 import static form.Jadwal.nampungtgl;
 import static form.pasien.getTanggalFromTable;
 import static form.pasien.nampungtgl;
+import static form.transaksi.kode;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.io.FileUtils;
+
 /**
  *
- * 
+ *
  */
 public class detail_transaksi extends javax.swing.JFrame {
 
     /**
      * Creates new form detail_transaksi
      */
-    public detail_transaksi() {
+    String kode;
+    String kode1;
+    public detail_transaksi(String kode) {
         initComponents();
         this.setLocationRelativeTo(null);;
         datatableTransaksi();
         comboBoxObat();
-        comboBoxTransaksi();
+        this.kode = kode;
+        txttransaksi.setText(kode);
     }
-    
+
     public void kosong() {
-        cmbDetail.setSelectedItem("-- Select --");
         cmbObat.setSelectedItem("-- Select --");
         txtharga.setText("");
     }
@@ -67,7 +72,7 @@ public class detail_transaksi extends javax.swing.JFrame {
         tbl.addColumn("ID Detail");
         tbl.addColumn("ID Transaksi");
         tbl.addColumn("Nama Obat");
-        tbl.addColumn("Harga"); 
+        tbl.addColumn("Harga");
         tabel.setModel(tbl);
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
@@ -86,21 +91,7 @@ public class detail_transaksi extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
-    
-    public void comboBoxTransaksi() {
-        try {
-            Statement statement = (Statement) koneksi.GetConnection().createStatement();
-            ResultSet res = statement.executeQuery("SELECT * FROM transaksi");
-            while (res.next()) {
-                cmbDetail.addItem(res.getString("Id_Transaksi"));
-            }
-            res.last();
-            int jumlahdata = res.getRow();
-            res.first();
-        } catch (Exception e) {
-        }
-    }
-    
+
     public void comboBoxObat() {
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
@@ -129,6 +120,7 @@ public class detail_transaksi extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -148,11 +140,9 @@ public class detail_transaksi extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel56 = new javax.swing.JLabel();
-        cmbDetail = new javax.swing.JComboBox<>();
         txtharga = new javax.swing.JTextField();
         jLabel136 = new javax.swing.JLabel();
-        jLabel151 = new javax.swing.JLabel();
-        jLabel156 = new javax.swing.JLabel();
+        txttransaksi = new javax.swing.JLabel();
         jLabel141 = new javax.swing.JLabel();
         txtObat = new javax.swing.JLabel();
         btnsimpan4 = new javax.swing.JPanel();
@@ -168,14 +158,15 @@ public class detail_transaksi extends javax.swing.JFrame {
         jLabel157 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabel = new javax.swing.JTable();
-        btnedit1 = new javax.swing.JPanel();
+        btnKembali = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
         txtDetail = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 153));
-        setMinimumSize(new java.awt.Dimension(570, 515));
+        setMinimumSize(new java.awt.Dimension(559, 469));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(559, 469));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(15, 88, 5));
@@ -253,34 +244,21 @@ public class detail_transaksi extends javax.swing.JFrame {
         jLabel56.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         jLabel56.setText("Detail Pembayaran");
         jPanel2.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, -1));
-
-        cmbDetail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
-        cmbDetail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbDetailActionPerformed(evt);
-            }
-        });
-        jPanel2.add(cmbDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 320, 30));
-        jPanel2.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 320, 30));
+        jPanel2.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 320, 30));
 
         jLabel136.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel136.setText("Harga");
-        jPanel2.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+        jPanel2.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
 
-        jLabel151.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel151.setText("Kode Transaksi");
-        jPanel2.add(jLabel151, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
-
-        jLabel156.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel156.setText(":");
-        jPanel2.add(jLabel156, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+        txttransaksi.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPanel2.add(txttransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 70, 20));
 
         jLabel141.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel141.setText(":");
-        jPanel2.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
+        jPanel2.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
 
         txtObat.setForeground(new java.awt.Color(240, 240, 240));
-        jPanel2.add(txtObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 60, 20));
+        jPanel2.add(txtObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 60, 20));
 
         btnsimpan4.setBackground(new java.awt.Color(0, 204, 51));
         btnsimpan4.setForeground(new java.awt.Color(255, 255, 255));
@@ -311,7 +289,7 @@ public class detail_transaksi extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(btnsimpan4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, 40));
+        jPanel2.add(btnsimpan4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, 40));
 
         btnrefresh.setBackground(new java.awt.Color(204, 204, 0));
         btnrefresh.setForeground(new java.awt.Color(255, 255, 255));
@@ -342,7 +320,7 @@ public class detail_transaksi extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, 40));
+        jPanel2.add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, 40));
 
         btnedit.setBackground(new java.awt.Color(0, 0, 255));
         btnedit.setForeground(new java.awt.Color(255, 255, 255));
@@ -373,7 +351,7 @@ public class detail_transaksi extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, 40));
+        jPanel2.add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, 40));
 
         btndelete.setBackground(new java.awt.Color(255, 0, 0));
         btndelete.setForeground(new java.awt.Color(255, 255, 255));
@@ -404,7 +382,7 @@ public class detail_transaksi extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, -1, 40));
+        jPanel2.add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, 40));
 
         cmbObat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --" }));
         cmbObat.addActionListener(new java.awt.event.ActionListener() {
@@ -412,15 +390,15 @@ public class detail_transaksi extends javax.swing.JFrame {
                 cmbObatActionPerformed(evt);
             }
         });
-        jPanel2.add(cmbObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 320, 30));
+        jPanel2.add(cmbObat, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 320, 30));
 
         jLabel152.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel152.setText("Nama Obat");
-        jPanel2.add(jLabel152, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        jPanel2.add(jLabel152, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
         jLabel157.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel157.setText(":");
-        jPanel2.add(jLabel157, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
+        jPanel2.add(jLabel157, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -440,43 +418,43 @@ public class detail_transaksi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabel);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 490, 100));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 490, 100));
 
-        btnedit1.setBackground(new java.awt.Color(255, 102, 0));
-        btnedit1.setForeground(new java.awt.Color(255, 255, 255));
-        btnedit1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnKembali.setBackground(new java.awt.Color(255, 102, 0));
+        btnKembali.setForeground(new java.awt.Color(255, 255, 255));
+        btnKembali.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnedit1MouseClicked(evt);
+                btnKembaliMouseClicked(evt);
             }
         });
 
         jLabel42.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel42.setText("kembali");
+        jLabel42.setText("Bayar");
 
-        javax.swing.GroupLayout btnedit1Layout = new javax.swing.GroupLayout(btnedit1);
-        btnedit1.setLayout(btnedit1Layout);
-        btnedit1Layout.setHorizontalGroup(
-            btnedit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnedit1Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnKembaliLayout = new javax.swing.GroupLayout(btnKembali);
+        btnKembali.setLayout(btnKembaliLayout);
+        btnKembaliLayout.setHorizontalGroup(
+            btnKembaliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnKembaliLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(jLabel42)
                 .addContainerGap(43, Short.MAX_VALUE))
         );
-        btnedit1Layout.setVerticalGroup(
-            btnedit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnedit1Layout.createSequentialGroup()
+        btnKembaliLayout.setVerticalGroup(
+            btnKembaliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnKembaliLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel42)
                 .addContainerGap())
         );
 
-        jPanel2.add(btnedit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, 40));
+        jPanel2.add(btnKembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, 40));
 
         txtDetail.setForeground(new java.awt.Color(240, 240, 240));
-        jPanel2.add(txtDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 60, 20));
+        jPanel2.add(txtDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 60, 20));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 560, 430));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 560, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -486,13 +464,9 @@ public class detail_transaksi extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel21MouseClicked
 
-    private void cmbDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDetailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbDetailActionPerformed
-
     private void btnsimpan4btnsimpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsimpan4btnsimpanMouseClicked
         // TODO add your handling code here:
-        String detail = (String) cmbDetail.getSelectedItem();
+        String detail = txttransaksi.getText();
         String obat = txtObat.getText();
         String harga = txtharga.getText();
 
@@ -516,11 +490,10 @@ public class detail_transaksi extends javax.swing.JFrame {
 
     private void btneditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneditMouseClicked
         // TODO add your handling code here:
-         String txtkd = txtDetail.getText();
-        String detail = (String) cmbDetail.getSelectedItem();
+        String txtkd = txtDetail.getText();
         String obat = txtObat.getText();
+        String detail = txttransaksi.getText();
         String harga = txtharga.getText();
-;
 
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
@@ -555,21 +528,23 @@ public class detail_transaksi extends javax.swing.JFrame {
         tampilObat();
     }//GEN-LAST:event_cmbObatActionPerformed
 
-    private void btnedit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnedit1MouseClicked
+    private void btnKembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKembaliMouseClicked
         // TODO add your handling code here:
-        new transaksi().show();
+        kode1 = txttransaksi.getText();
+        detail_pembayaran dp = new detail_pembayaran(kode1);
+        dp.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnedit1MouseClicked
+    }//GEN-LAST:event_btnKembaliMouseClicked
 
     private void tabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelMouseClicked
         // TODO add your handling code here:
-         int i = tabel.getSelectedRow();
+        int i = tabel.getSelectedRow();
 
         String tgl;
 
         if (i >= 0) {
             txtDetail.setText((String) tabel.getValueAt(i, 0));
-            cmbDetail.setSelectedItem((String) tabel.getValueAt(i, 1));
+            txttransaksi.setText((String) tabel.getValueAt(i, 1));
             cmbObat.setSelectedItem((String) tabel.getValueAt(i, 2));
             txtharga.setText((String) tabel.getValueAt(i, 3));
         }
@@ -606,26 +581,23 @@ public class detail_transaksi extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new detail_transaksi().setVisible(true);
+                new detail_transaksi("").setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnKembali;
     private javax.swing.JPanel btndelete;
     private javax.swing.JPanel btnedit;
-    private javax.swing.JPanel btnedit1;
     private javax.swing.JPanel btnrefresh;
     private javax.swing.JPanel btnsimpan4;
-    private javax.swing.JComboBox<String> cmbDetail;
     private javax.swing.JComboBox<String> cmbObat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel141;
-    private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel152;
-    private javax.swing.JLabel jLabel156;
     private javax.swing.JLabel jLabel157;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -645,5 +617,6 @@ public class detail_transaksi extends javax.swing.JFrame {
     private javax.swing.JLabel txtDetail;
     private javax.swing.JLabel txtObat;
     private javax.swing.JTextField txtharga;
+    private javax.swing.JLabel txttransaksi;
     // End of variables declaration//GEN-END:variables
 }
