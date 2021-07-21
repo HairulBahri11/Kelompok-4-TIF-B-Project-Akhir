@@ -1010,7 +1010,7 @@
             <Container class="javax.swing.JPanel" name="btnjadwal">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
+                  <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -1051,7 +1051,6 @@
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="ff" red="0" type="rgb"/>
                     </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
 
                   <Layout>

@@ -171,6 +171,8 @@ public class obat extends javax.swing.JFrame {
         btnpasien = new javax.swing.JPanel();
         j2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        btnrefresh = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -884,6 +886,37 @@ public class obat extends javax.swing.JFrame {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
 
+        btnrefresh.setBackground(new java.awt.Color(204, 204, 0));
+        btnrefresh.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel43.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel43.setText("Refresh");
+        jLabel43.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel43MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnrefreshLayout = new javax.swing.GroupLayout(btnrefresh);
+        btnrefresh.setLayout(btnrefreshLayout);
+        btnrefreshLayout.setHorizontalGroup(
+            btnrefreshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnrefreshLayout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addComponent(jLabel43)
+                .addGap(37, 37, 37))
+        );
+        btnrefreshLayout.setVerticalGroup(
+            btnrefreshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnrefreshLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel43)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 430, 140, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1089,6 +1122,10 @@ public class obat extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnpasienMouseClicked
 
+    private void jLabel43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel43MouseClicked
+       kosong();
+    }//GEN-LAST:event_jLabel43MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1151,6 +1188,7 @@ public class obat extends javax.swing.JFrame {
     private javax.swing.JPanel btnobat;
     private javax.swing.JPanel btnpasien;
     private javax.swing.JPanel btnpetugas;
+    private javax.swing.JPanel btnrefresh;
     private javax.swing.JLabel btnsimpan;
     private javax.swing.JPanel btntransaksi;
     private javax.swing.JComboBox<String> combo_satuan;
@@ -1191,6 +1229,7 @@ public class obat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

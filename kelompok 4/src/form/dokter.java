@@ -958,6 +958,7 @@ public class dokter extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "data berhasil disimpan");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "data gagal disimpan");
+            System.out.println(e.getMessage());
         }
         datatableDokter();
         kosong_dokter();

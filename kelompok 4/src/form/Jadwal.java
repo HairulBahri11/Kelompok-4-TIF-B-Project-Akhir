@@ -668,7 +668,7 @@ public class Jadwal extends javax.swing.JFrame {
 
         jPanel2.add(btndokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 220, -1));
 
-        btnjadwal.setBackground(new java.awt.Color(0, 0, 0));
+        btnjadwal.setBackground(new java.awt.Color(51, 51, 51));
         btnjadwal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnjadwalMouseClicked(evt);
@@ -676,7 +676,6 @@ public class Jadwal extends javax.swing.JFrame {
         });
 
         j7.setBackground(new java.awt.Color(0, 255, 51));
-        j7.setOpaque(false);
 
         javax.swing.GroupLayout j7Layout = new javax.swing.GroupLayout(j7);
         j7.setLayout(j7Layout);

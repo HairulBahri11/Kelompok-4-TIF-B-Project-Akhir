@@ -37,7 +37,7 @@ import org.apache.commons.io.FileUtils;
 
 /**
  *
- * @author MUHAMMAD YUSRIL
+ * 
  */
 public class pasien extends javax.swing.JFrame {
 
@@ -140,8 +140,6 @@ public class pasien extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         btnsimpan = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel49 = new javax.swing.JLabel();
         btnedit = new javax.swing.JPanel();
         edit = new javax.swing.JLabel();
         btndelete = new javax.swing.JPanel();
@@ -180,6 +178,8 @@ public class pasien extends javax.swing.JFrame {
         btnpasien = new javax.swing.JPanel();
         j2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        btnrefresh = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -363,32 +363,6 @@ public class pasien extends javax.swing.JFrame {
 
         getContentPane().add(btnsimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, -1, 40));
 
-        jPanel7.setBackground(new java.awt.Color(204, 204, 0));
-        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel49.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel49.setText("Cetak");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel49)
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel49)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, -1, 40));
-
         btnedit.setBackground(new java.awt.Color(0, 0, 255));
         btnedit.setForeground(new java.awt.Color(255, 255, 255));
         btnedit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -418,7 +392,7 @@ public class pasien extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, -1, 40));
+        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, -1, 40));
 
         btndelete.setBackground(new java.awt.Color(255, 0, 0));
         btndelete.setForeground(new java.awt.Color(255, 255, 255));
@@ -449,7 +423,7 @@ public class pasien extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, -1, 40));
+        getContentPane().add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, -1, 40));
 
         tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -890,6 +864,37 @@ public class pasien extends javax.swing.JFrame {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
 
+        btnrefresh.setBackground(new java.awt.Color(204, 204, 0));
+        btnrefresh.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel51.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setText("Refresh");
+        jLabel51.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel51MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnrefreshLayout = new javax.swing.GroupLayout(btnrefresh);
+        btnrefresh.setLayout(btnrefreshLayout);
+        btnrefreshLayout.setHorizontalGroup(
+            btnrefreshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnrefreshLayout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addComponent(jLabel51)
+                .addGap(23, 23, 23))
+        );
+        btnrefreshLayout.setVerticalGroup(
+            btnrefreshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnrefreshLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel51)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 110, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1067,6 +1072,10 @@ public class pasien extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnpasienMouseClicked
 
+    private void jLabel51MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel51MouseClicked
+        kosongPasien();
+    }//GEN-LAST:event_jLabel51MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1114,6 +1123,7 @@ public class pasien extends javax.swing.JFrame {
     private javax.swing.JPanel btnobat;
     private javax.swing.JPanel btnpasien;
     private javax.swing.JPanel btnpetugas;
+    private javax.swing.JPanel btnrefresh;
     private javax.swing.JPanel btnsimpan;
     private javax.swing.JPanel btntransaksi;
     private javax.swing.JComboBox<String> combo_gender;
@@ -1152,9 +1162,9 @@ public class pasien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1163,7 +1173,6 @@ public class pasien extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private com.toedter.calendar.JDateChooser jdate_ttl;
