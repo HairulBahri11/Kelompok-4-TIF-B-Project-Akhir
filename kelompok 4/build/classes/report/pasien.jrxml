@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3f36d22-523b-4460-888f-9b4aa2bc3b30">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="1200" pageHeight="595" orientation="Landscape" columnWidth="1160" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3f36d22-523b-4460-888f-9b4aa2bc3b30">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="344"/>
+	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT * from pasien]]>
 	</queryString>
@@ -31,24 +34,193 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="99" splitType="Stretch">
+			<image>
+				<reportElement x="902" y="11" width="56" height="79" uuid="f45c8c80-f8c3-49d0-82af-f4cce07838c7"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="423" y="21" width="331" height="24" uuid="f326efbf-d041-4dd9-9326-740901747454"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="65" width="238" height="20" uuid="7917d75f-b203-4f3f-a70b-9b5a2edf60ff"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="188" y="7" width="61" height="83" uuid="2166ca09-0743-4f3a-bdb6-8657f2df39d4"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="454" y="45" width="272" height="20" uuid="fbd39980-e5bc-4f3f-ba4e-9bc45bdb9dd2"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="500" y="16" width="192" height="25" uuid="d10d3a98-8881-4c61-81be-b7b45ac752c8"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Pasien Rawat Jalan]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="1160" height="3" uuid="2f4f2bbc-04bd-4273-a98d-7f4544a6dea7"/>
+			</line>
+		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="28" width="100" height="20" uuid="9d5ddff8-5b70-423d-a606-77e8d95f736c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Kode Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="28" width="178" height="20" uuid="264aae75-125f-4983-a7cb-d378f6e0f414"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Lengkap]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="28" width="100" height="20" uuid="95730797-2c29-492f-bc39-abce8a068531"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Inisial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="434" y="28" width="73" height="20" uuid="8a04acf3-5ecb-4f9d-bec6-1d586dc1632f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="523" y="28" width="100" height="20" uuid="810a83c9-f465-496b-abc4-96960e8620ef"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="636" y="28" width="205" height="20" uuid="92691e18-7a1c-491a-96e7-040f6e8bbb34"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="853" y="28" width="182" height="20" uuid="cf177252-7ddd-4dd4-aa8d-44e346d62683"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Keluhan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1048" y="28" width="100" height="20" uuid="914eb9aa-21ae-4e24-bc7b-141da39113cd"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Poli Tujuan]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="45" width="1160" height="3" uuid="18c050ba-cd03-400e-b48d-d27857252fe5"/>
+			</line>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="127" y="16" width="178" height="20" uuid="5a43b669-49fe-48e3-9da4-1dfb68f7d8e1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nama_Lengkap}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="16" width="100" height="20" uuid="40a31f9d-5239-47c7-9173-7513c5150c42"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nama_Inisial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="434" y="16" width="73" height="20" uuid="81f05833-0453-4c0c-bad5-64505318acf1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="523" y="16" width="100" height="20" uuid="8019b43f-0cda-4c98-abb2-931fec21c0a9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tanggal_Lahir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="637" y="16" width="205" height="20" uuid="f78810c7-d20c-48c6-a6b7-53201036ccf6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="855" y="16" width="182" height="20" uuid="479fd6f8-b300-43a8-a51d-0fda965d1469"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Keluhan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1048" y="16" width="100" height="20" uuid="5dc7d7fd-8cae-4679-aaec-be6109397192"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Poli_Tujuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="16" width="100" height="20" uuid="0e155752-f6f4-4df2-975c-a3e940af258e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Kode_Pasien}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="414" y="17" width="440" height="55" uuid="754038fb-575e-4fd0-a708-edc4888f055d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="20"/>
+				</textElement>
+				<text><![CDATA[PELAYANAN PRIMA YANG KAMI BERIKAN DEMI KESEMBUHAN DAN KEPUASAN ANDA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="1160" height="3" uuid="78629906-acae-4a64-88d7-ad47b7001484"/>
+			</line>
+		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="10" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="7" splitType="Stretch"/>
 	</summary>
 </jasperReport>

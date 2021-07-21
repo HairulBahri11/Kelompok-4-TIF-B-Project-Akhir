@@ -386,7 +386,7 @@ public class transaksi extends javax.swing.JFrame {
         getContentPane().add(cmbPasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 320, 30));
 
         txtPetugas.setForeground(new java.awt.Color(240, 240, 240));
-        getContentPane().add(txtPetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 60, 20));
+        getContentPane().add(txtPetugas, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 60, 20));
 
         jLabel151.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel151.setText("Nama Petugas");
@@ -449,7 +449,7 @@ public class transaksi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabel);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 910, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 910, 240));
 
         btnsimpan4.setBackground(new java.awt.Color(0, 204, 51));
         btnsimpan4.setForeground(new java.awt.Color(255, 255, 255));
@@ -1094,7 +1094,9 @@ public class transaksi extends javax.swing.JFrame {
         String txtkd = txtkdtransaksi.getText();
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
+            statement.executeUpdate("delete from detail_transaksi where id_transaksi = '" + txtkd + "';");
             statement.executeUpdate("delete from transaksi where Id_Transaksi = '" + txtkd + "';");
+            
             statement.close();
             JOptionPane.showMessageDialog(null, "data berhasil Dihapus");
         } catch (Exception e) {

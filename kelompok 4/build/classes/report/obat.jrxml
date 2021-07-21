@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dbef75ca-1c41-4369-b216-db8ef294f1f1">
 	<property name="ireport.zoom" value="1.3310000000000004"/>
-	<property name="ireport.x" value="75"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="143"/>
+	<property name="ireport.y" value="193"/>
 	<parameter name="resep1" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select * from hasil_diagnosis2 where Kode_Diagnosis = $P{resep1}]]>
@@ -49,32 +49,32 @@
 	<title>
 		<band height="98" splitType="Stretch">
 			<staticText>
-				<reportElement x="120" y="21" width="331" height="20" uuid="9b0b78d0-07e7-46e1-93de-28944a692e9a"/>
+				<reportElement x="158" y="21" width="331" height="20" uuid="9b0b78d0-07e7-46e1-93de-28944a692e9a"/>
 				<textElement>
 					<font fontName="Calibri" size="16"/>
 				</textElement>
 				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="144" y="41" width="272" height="20" uuid="e8b02f92-7f68-4507-82e8-37c39c7299e3"/>
+				<reportElement x="182" y="41" width="272" height="20" uuid="e8b02f92-7f68-4507-82e8-37c39c7299e3"/>
 				<textElement>
 					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="155" y="61" width="238" height="20" uuid="b4f6baaf-4bd0-4055-ac3e-bc013443741e"/>
+				<reportElement x="193" y="61" width="238" height="20" uuid="b4f6baaf-4bd0-4055-ac3e-bc013443741e"/>
 				<textElement>
 					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
 			</staticText>
 			<image>
-				<reportElement x="35" y="3" width="61" height="83" uuid="d4f4b5e9-624a-4ede-b781-162bda11253e"/>
+				<reportElement x="73" y="3" width="61" height="83" uuid="d4f4b5e9-624a-4ede-b781-162bda11253e"/>
 				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement x="486" y="7" width="56" height="79" uuid="1909c8a2-423d-404b-be50-db9861f81d5f"/>
+				<reportElement x="524" y="7" width="56" height="79" uuid="1909c8a2-423d-404b-be50-db9861f81d5f"/>
 				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
 			</image>
 		</band>
