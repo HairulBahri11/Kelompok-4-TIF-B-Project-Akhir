@@ -118,7 +118,7 @@ public class login1 extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Password");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 76, 29));
-        jPanel1.add(txtAkses, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 50, 20));
+        jPanel1.add(txtAkses, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 50, 20));
         jPanel1.add(txt_passwordr, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 183, 36));
         jPanel1.add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 183, 36));
 
@@ -185,7 +185,7 @@ public class login1 extends javax.swing.JFrame {
                 jLabel18MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, -1, 24));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 150, 24));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 22, 26));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/form/img_login.png"))); // NOI18N
