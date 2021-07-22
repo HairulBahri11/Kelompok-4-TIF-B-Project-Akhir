@@ -59,7 +59,7 @@ public class pasien extends javax.swing.JFrame {
     public void datatabelPasien() {
         DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("Kode Pasien");
-        tbl.addColumn("Nama Lengkap");
+        tbl.addColumn("Nama Pasien");
         tbl.addColumn("Nama Inisial");
         tbl.addColumn("Gender");
         tbl.addColumn("Tanggal Lahir");

@@ -47,36 +47,21 @@ import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
- * 
+ *
  */
-public class pemeriksaan extends javax.swing.JFrame {
+public class diagnosis extends javax.swing.JFrame {
 
     /**
      * Creates new form dashboard
      */
-    public pemeriksaan() {
+    public static String kode;
+
+    public diagnosis() {
         initComponents();
         this.setLocationRelativeTo(null);
         data_pasien();
         data_dokter();
-    }
-
-    public void tampil() {
-        try {
-            Statement statement = (Statement) koneksi.GetConnection().createStatement();
-            String sql = "SELECT Nama_Lengkap from pasien where Kode_Pasien='" + cmbkdpasien.getSelectedItem() + "'";
-            ResultSet res = statement.executeQuery(sql);
-
-            while (res.next()) {
-                Object[] ob = new Object[1];
-                ob[0] = res.getString(1);
-                txtnmpasien.setText((String) ob[0]);
-            }
-            res.close();
-            statement.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        datatableDiagnosis();
     }
 
     public void data_pasien() {
@@ -86,11 +71,25 @@ public class pemeriksaan extends javax.swing.JFrame {
 
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                String jns = rs.getString("Kode_Pasien");
-                cmbkdpasien.addItem(jns);
+                String jns = rs.getString("Nama_Lengkap");
+                cmbpasien.addItem(jns);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    public void tampil_pasien() {
+        try {
+            Statement statement = (Statement) koneksi.GetConnection().createStatement();
+            ResultSet res = statement.executeQuery("SELECT * FROM pasien WHERE Nama_Lengkap = '" + cmbpasien.getSelectedItem() + "'");
+            while (res.next()) {
+                txtkdpasien.setText(res.getString("Kode_Pasien"));
+            }
+            res.close();
+            statement.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -98,28 +97,64 @@ public class pemeriksaan extends javax.swing.JFrame {
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
             String sql = "SELECT * FROM dokter";
+
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                String js = rs.getString("Nama_Lengkap");
-                cmb_namadokter.addItem(js);
+                String jns = rs.getString("Nama_Dokter");
+                cmbnamadokter.addItem(jns);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
 
+    public void tampil_dokter() {
+        try {
+            Statement statement = (Statement) koneksi.GetConnection().createStatement();
+            ResultSet res = statement.executeQuery("SELECT * FROM dokter WHERE Nama_Dokter = '" + cmbnamadokter.getSelectedItem() + "'");
+            while (res.next()) {
+                txtkddokter.setText(res.getString("Id_Dokter"));
+            }
+            res.close();
+            statement.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public void refresh() {
         txtkdpemer.setText("");
-        cmbkdpasien.setSelectedItem("-PILIH-");
-        txtnmpasien.setText("");
-        txthslpemer.setText("");
+        cmbpasien.setSelectedItem("-PILIH-");
         tglpemer.setDate(null);
-        cmb_namadokter.setSelectedItem("--PILIH--");
-        txtkdresep.setText("");
-        txtnmobat.setText("");
-        cmb_jenis.setSelectedItem("--PILIH--");
-        txtjumlah.setText("");
-        cmb_pemakaian.setSelectedItem("--PILIH--");
+        cmbnamadokter.setSelectedItem("--PILIH--");
+        txthasil.setText("");
+    }
+
+    public void datatableDiagnosis() {
+        DefaultTableModel tbl = new DefaultTableModel();
+        tbl.addColumn("Kode Diagnosis");
+        tbl.addColumn("Nama Pasien");
+        tbl.addColumn("Hasil Diagnosis");
+        tbl.addColumn("Tanggal Pemeriksaan");
+        tbl.addColumn("Nama Dokter");
+        table.setModel(tbl);
+        try {
+            Statement statement = (Statement) koneksi.GetConnection().createStatement();
+            ResultSet res = statement.executeQuery("SELECT * FROM hasil_diagnosis INNER JOIN pasien ON hasil_diagnosis.Kode_Pasien=pasien.Kode_Pasien INNER JOIN dokter ON hasil_diagnosis.Id_Dokter=dokter.Id_Dokter");
+            while (res.next()) {
+                tbl.addRow(new Object[]{
+                    res.getString("hasil_diagnosis.Kode_Diagnosis"),
+                    res.getString("pasien.Nama_Lengkap"),
+                    res.getString("hasil_diagnosis.Hasil_Diagnosis"),
+                    res.getString("hasil_diagnosis.tanggal_pemeriksaan"),
+                    res.getString("dokter.Nama_Dokter")
+                });
+                table.setModel(tbl);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "salah");
+            System.out.println(e.getMessage());
+        }
     }
 
     /**
@@ -145,38 +180,16 @@ public class pemeriksaan extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        txtnmobat = new javax.swing.JTextField();
-        txtjumlah = new javax.swing.JTextField();
-        cmb_jenis = new javax.swing.JComboBox<>();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        txtkdresep = new javax.swing.JTextField();
-        cmb_pemakaian = new javax.swing.JComboBox<>();
         txtkdpemer = new javax.swing.JTextField();
-        txtnmpasien = new javax.swing.JTextField();
-        txthslpemer = new javax.swing.JTextField();
         jLabel90 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
-        cmbkdpasien = new javax.swing.JComboBox<>();
+        cmbpasien = new javax.swing.JComboBox<>();
         btndelete = new javax.swing.JPanel();
         btn_delete = new javax.swing.JLabel();
         btnedit = new javax.swing.JPanel();
@@ -185,12 +198,9 @@ public class pemeriksaan extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         btnsimpan = new javax.swing.JPanel();
         btn_simpan = new javax.swing.JLabel();
-        cmb_namadokter = new javax.swing.JComboBox<>();
+        cmbnamadokter = new javax.swing.JComboBox<>();
         btncetak = new javax.swing.JPanel();
         btn_cetak = new javax.swing.JLabel();
-        kode = new javax.swing.JTextField();
-        jLabel46 = new javax.swing.JLabel();
-        nomer = new javax.swing.JTextField();
         tglpemer = new com.toedter.calendar.JDateChooser();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -204,6 +214,12 @@ public class pemeriksaan extends javax.swing.JFrame {
         btnpemeriksaan = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         j6 = new javax.swing.JPanel();
+        txtkdpasien = new javax.swing.JLabel();
+        txtkddokter = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txthasil = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -304,148 +320,52 @@ public class pemeriksaan extends javax.swing.JFrame {
 
         jLabel25.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel25.setText("Kode Pemeriksaan");
-        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, 30));
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, -1, 30));
 
         jLabel26.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel26.setText(":");
-        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 10, -1));
-
-        jLabel27.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel27.setText("Nama Pasien");
-        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
-
-        jLabel28.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel28.setText(":");
-        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 10, -1));
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 10, -1));
 
         jLabel29.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel29.setText("Hasil Pemeriksaan");
-        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, -1, -1));
+        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, 20));
 
         jLabel30.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel30.setText(":");
-        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, 10, -1));
+        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, 10, 20));
 
         jLabel31.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel31.setText("Tanggal Pemeriksaan");
-        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, -1));
 
         jLabel32.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel32.setText(":");
-        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 10, -1));
+        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 10, -1));
 
         jLabel33.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel33.setText("Nama Dokter");
-        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, -1, -1));
 
         jLabel34.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel34.setText(":");
-        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 10, -1));
-
-        jPanel4.setBackground(new java.awt.Color(255, 0, 0));
-
-        jLabel18.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Resep Obat");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, -1));
-
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel35.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel35.setText(":");
-        jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 52, 10, 30));
-
-        jLabel36.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel36.setText("Nama Obat");
-        jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 52, -1, 30));
-
-        jLabel37.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel37.setText(":");
-        jPanel6.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 88, 10, -1));
-
-        jLabel38.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel38.setText("Jenis Obat");
-        jPanel6.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 88, -1, 30));
-
-        jLabel39.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel39.setText(":");
-        jPanel6.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 129, 10, 30));
-
-        jLabel40.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel40.setText("Jumlah");
-        jPanel6.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 129, 84, 31));
-
-        jLabel41.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel41.setText(":");
-        jPanel6.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 166, 10, 30));
-
-        jLabel42.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel42.setText("Pemakaian");
-        jPanel6.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 166, -1, 32));
-
-        txtnmobat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnmobatActionPerformed(evt);
-            }
-        });
-        jPanel6.add(txtnmobat, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 52, 234, 30));
-        jPanel6.add(txtjumlah, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 130, 234, 30));
-
-        cmb_jenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--PILIH--", "Kapsul", "Sirup" }));
-        jPanel6.add(cmb_jenis, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 88, 179, 30));
-
-        jLabel44.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel44.setText(":");
-        jPanel6.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 17, 10, -1));
-
-        jLabel45.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel45.setText("Kode Resep");
-        jPanel6.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 95, 30));
-        jPanel6.add(txtkdresep, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 14, 234, 30));
-
-        cmb_pemakaian.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--PILIH--", "3x1/hari", "2x1/hari", "1x1/hari" }));
-        jPanel6.add(cmb_pemakaian, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 166, 181, 32));
-
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 630, -1));
-        getContentPane().add(txtkdpemer, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 170, 30));
-        getContentPane().add(txtnmpasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 410, 30));
-        getContentPane().add(txthslpemer, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, 410, 30));
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 10, -1));
+        getContentPane().add(txtkdpemer, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 190, 30));
 
         jLabel90.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel90.setText("Kode Pasien");
-        getContentPane().add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, -1, 30));
+        jLabel90.setText("Nama Pasien");
+        getContentPane().add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, 30));
 
         jLabel91.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel91.setText(":");
-        getContentPane().add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 10, 30));
+        getContentPane().add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 10, 30));
 
-        cmbkdpasien.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-PILIH-" }));
-        cmbkdpasien.addActionListener(new java.awt.event.ActionListener() {
+        cmbpasien.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-PILIH-" }));
+        cmbpasien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbkdpasienActionPerformed(evt);
+                cmbpasienActionPerformed(evt);
             }
         });
-        getContentPane().add(cmbkdpasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 170, 30));
+        getContentPane().add(cmbpasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, 190, 30));
 
         btndelete.setBackground(new java.awt.Color(255, 0, 0));
         btndelete.setForeground(new java.awt.Color(255, 255, 255));
@@ -476,7 +396,7 @@ public class pemeriksaan extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 470, 140, 40));
+        getContentPane().add(btndelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 450, 140, 40));
 
         btnedit.setBackground(new java.awt.Color(0, 0, 255));
         btnedit.setForeground(new java.awt.Color(255, 255, 255));
@@ -507,7 +427,7 @@ public class pemeriksaan extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 410, 140, 40));
+        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 140, 40));
 
         btnrefresh.setBackground(new java.awt.Color(204, 204, 0));
         btnrefresh.setForeground(new java.awt.Color(255, 255, 255));
@@ -538,7 +458,7 @@ public class pemeriksaan extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 290, 140, 40));
+        getContentPane().add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 140, 40));
 
         btnsimpan.setBackground(new java.awt.Color(0, 204, 51));
         btnsimpan.setForeground(new java.awt.Color(255, 255, 255));
@@ -574,15 +494,15 @@ public class pemeriksaan extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(btnsimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 230, 140, 40));
+        getContentPane().add(btnsimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, 140, 40));
 
-        cmb_namadokter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--PILIH--" }));
-        cmb_namadokter.addActionListener(new java.awt.event.ActionListener() {
+        cmbnamadokter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--PILIH--" }));
+        cmbnamadokter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmb_namadokterActionPerformed(evt);
+                cmbnamadokterActionPerformed(evt);
             }
         });
-        getContentPane().add(cmb_namadokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, 260, 29));
+        getContentPane().add(cmbnamadokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 260, 29));
 
         btncetak.setBackground(new java.awt.Color(255, 102, 0));
 
@@ -599,10 +519,10 @@ public class pemeriksaan extends javax.swing.JFrame {
         btncetak.setLayout(btncetakLayout);
         btncetakLayout.setHorizontalGroup(
             btncetakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btncetakLayout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+            .addGroup(btncetakLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addComponent(btn_cetak)
-                .addGap(48, 48, 48))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         btncetakLayout.setVerticalGroup(
             btncetakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -612,26 +532,14 @@ public class pemeriksaan extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(btncetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 350, 140, -1));
+        getContentPane().add(btncetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 330, 110, 100));
 
-        kode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kodeActionPerformed(evt);
+        tglpemer.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                tglpemerPropertyChange(evt);
             }
         });
-        getContentPane().add(kode, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, 170, 45));
-
-        jLabel46.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel46.setText("Nomer :");
-        getContentPane().add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 140, -1, -1));
-
-        nomer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomerActionPerformed(evt);
-            }
-        });
-        getContentPane().add(nomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 140, 91, 30));
-        getContentPane().add(tglpemer, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 260, 30));
+        getContentPane().add(tglpemer, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 260, 30));
 
         jPanel5.setBackground(new java.awt.Color(18, 239, 38));
 
@@ -797,6 +705,38 @@ public class pemeriksaan extends javax.swing.JFrame {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
 
+        txtkdpasien.setForeground(new java.awt.Color(240, 240, 240));
+        getContentPane().add(txtkdpasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 390, 60, 20));
+
+        txtkddokter.setForeground(new java.awt.Color(240, 240, 240));
+        getContentPane().add(txtkddokter, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 60, 20));
+
+        txthasil.setColumns(20);
+        txthasil.setRows(5);
+        jScrollPane1.setViewportView(txthasil);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 340, -1));
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+            }
+        ));
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(table);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 520, 630, 120));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -810,50 +750,43 @@ public class pemeriksaan extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel21MouseClicked
 
-    private void cmbkdpasienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbkdpasienActionPerformed
+    private void cmbpasienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbpasienActionPerformed
         // TODO add your handling code here:
-        tampil();
-
-    }//GEN-LAST:event_cmbkdpasienActionPerformed
+        tampil_pasien();
+    }//GEN-LAST:event_cmbpasienActionPerformed
 
     private void btn_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_deleteMouseClicked
         String kode = txtkdpemer.getText();
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
-            statement.executeUpdate("delete from hasil_diagnosis2 where Kode_Diagnosis='" + kode + "';");
+            statement.executeUpdate("delete from hasil_diagnosis where Kode_Diagnosis ='" + kode + "';");
             JOptionPane.showMessageDialog(null, "Data berhasil di HAPUS");
             refresh();
             txtkdpemer.requestFocus();
         } catch (Exception t) {
             JOptionPane.showMessageDialog(null, "Data gagal di HAPUS");
         }
+        datatableDiagnosis();
     }//GEN-LAST:event_btn_deleteMouseClicked
 
     private void btn_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editMouseClicked
-        String Nomer = nomer.getText();
-        String Kode_Diagnosis = txtkdpemer.getText();
-        String Id_Pasien = (String) cmbkdpasien.getSelectedItem();
-        String Nama_Pasien = txtnmpasien.getText();
-        String Hasil_Diagnosis = txthslpemer.getText();
-        String nama_dokter = (String) cmb_namadokter.getSelectedItem();
-        SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
-        String nampungtgl = format.format(tglpemer.getDate());
-        String kode_resep = txtkdresep.getText();
-        String nama_obat = txtnmobat.getText();
-        String jenis_obat = (String) cmb_jenis.getSelectedItem();
-        String jumlah = txtjumlah.getText();
-        String pemakaian = (String) cmb_pemakaian.getSelectedItem();
+        String kode_diagnosis = txtkdpemer.getText();
+        String id_pasien = txtkdpasien.getText();
+        String nama_dokter = txtkddokter.getText();
+        String tgl = nampungtgl;
+        String hasil = txthasil.getText();
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
-            statement.executeUpdate("UPDATE hasil_diagnosis2 SET Kode_Diagnosis = '" + Kode_Diagnosis + "',Kode_Pasien = '" + Id_Pasien
-                    + "', Nama_Pasien='" + Nama_Pasien + "', hasil_pemeriksaan='" + Hasil_Diagnosis + "', Tanggal_Pemeriksaan='" + nampungtgl
-                    + "', Nama_Dokter='" + nama_dokter + "',Id_Resep = '" + kode_resep + "',Nama_Obat = '" + nama_obat + "', jenis_obat='" + jenis_obat
-                    + "', jumlah='" + jumlah + "', Pemakaian='" + pemakaian + "' where Nomer = '" + Nomer + "'");
+            statement.executeUpdate("UPDATE hasil_diagnosis SET Kode_Pasien = '" + id_pasien
+                    + "', Hasil_Diagnosis ='" + hasil + "', tanggal_pemeriksaan='" + tgl
+                    + "', Id_Dokter='" + nama_dokter + "' where Kode_Diagnosis = '" + kode_diagnosis + "'");
             JOptionPane.showMessageDialog(null, "Data Pemeriksaan Berhasil di Update");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Data Pemeriksaan Gagal di Update");
             System.out.println(e.getMessage());
         }
+        datatableDiagnosis();
+        refresh();
     }//GEN-LAST:event_btn_editMouseClicked
 
     private void jLabel43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel43MouseClicked
@@ -862,64 +795,45 @@ public class pemeriksaan extends javax.swing.JFrame {
 
     private void btn_simpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_simpanMouseClicked
         // TODO add your handling code here:
-        String Nomer = nomer.getText();
-        String Kode_Diagnosis = txtkdpemer.getText();
-        String Id_Pasien = (String) cmbkdpasien.getSelectedItem();
-        String Nama_Pasien = txtnmpasien.getText();
-        String Hasil_Diagnosis = txthslpemer.getText();
-        String nama_dokter = (String) cmb_namadokter.getSelectedItem();
-        SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
-        String nampungtgl = format.format(tglpemer.getDate());
-        String kode_resep = txtkdresep.getText();
-        String nama_obat = txtnmobat.getText();
-        String jenis_obat = (String) cmb_jenis.getSelectedItem();
-        String jumlah = txtjumlah.getText();
-        String pemakaian = (String) cmb_pemakaian.getSelectedItem();
+        String kode_diagnosis = txtkdpemer.getText();
+        String id_pasien = txtkdpasien.getText();
+        String nama_dokter = txtkddokter.getText();
+        String tgl = nampungtgl;
+        String hasil = txthasil.getText();
         try {
             if (txtkdpemer.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (txtnmpasien.getText().equals("")) {
+            } else if (cmbnamadokter.getSelectedItem().equals("")) {
                 JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (txthslpemer.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (cmb_namadokter.getSelectedItem().equals("")) {
-                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (nomer.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (cmb_namadokter.getSelectedItem().equals("")) {
+            } else if (cmbnamadokter.getSelectedItem().equals("")) {
                 JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
             } else if (nampungtgl.equals("")) {
                 JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (kode_resep.equals("")) {
-                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (nama_obat.equals("")) {
-                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (jenis_obat.equals("")) {
-                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (jumlah.equals("")) {
-                JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
-            } else if (pemakaian.equals("")) {
+            } else if (hasil.equals("")) {
                 JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
             } else {
                 Statement statement = (Statement) koneksi.GetConnection().createStatement();
-                statement.executeUpdate("INSERT INTO `hasil_diagnosis2`(`Nomer`,`Kode_Diagnosis`,`Kode_Pasien`,`nama_pasien`,`hasil_pemeriksaan`,`tanggal_pemeriksaan`,`Nama_Dokter`,`Id_Resep`,`Nama_Obat`,`jenis_obat`,`jumlah`,`Pemakaian`)VALUES('"
-                        + Nomer + "','" + Kode_Diagnosis + "','" + Id_Pasien + "','" + Nama_Pasien + "','" + Hasil_Diagnosis + "','" + nampungtgl + "','" + nama_dokter + "','" + kode_resep + "','" + nama_obat + "','" + jenis_obat + "','" + jumlah + "','" + pemakaian + "');");
+                statement.executeUpdate("INSERT INTO hasil_diagnosis VALUES('" + kode_diagnosis + "','"
+                        + id_pasien + "','" + hasil + "','" + tgl + "','" + nama_dokter + "');");
                 statement.close();
-                JOptionPane.showMessageDialog(null, "Data Pemeriksaan Berhasil Disimpan");
+                kode = txtkdpemer.getText();
+                resep_obat rs = new resep_obat(kode);
+                rs.setVisible(true);
             }
         } catch (Exception t) {
             JOptionPane.showMessageDialog(null, "Data Pemeriksaan Gagal Disimpan");
             System.out.println(t.getMessage());
         }
+        datatableDiagnosis();
     }//GEN-LAST:event_btn_simpanMouseClicked
 
     private void btnsimpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsimpanMouseClicked
 
     }//GEN-LAST:event_btnsimpanMouseClicked
 
-    private void cmb_namadokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_namadokterActionPerformed
-
-    }//GEN-LAST:event_cmb_namadokterActionPerformed
+    private void cmbnamadokterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbnamadokterActionPerformed
+        tampil_dokter();
+    }//GEN-LAST:event_cmbnamadokterActionPerformed
 
     private void btn_cetakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cetakMouseClicked
         Connection koneksi = null;
@@ -927,30 +841,22 @@ public class pemeriksaan extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             koneksi = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/puskesmas", "root", "");
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(pemeriksaan.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(diagnosis.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(pemeriksaan.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(diagnosis.class.getName()).log(Level.SEVERE, null, ex);
         }
         String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\obat.jrxml";;
         HashMap hash = new HashMap();
-        hash.put("resep1", kode.getText());
+        hash.put("resep1", txtkdpemer.getText());
         JasperReport jr;
         try {
             jr = JasperCompileManager.compileReport(file);
             JasperPrint jp = JasperFillManager.fillReport(jr, hash, koneksi);
             JasperViewer.viewReport(jp);
         } catch (JRException ex) {
-            Logger.getLogger(pemeriksaan.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(diagnosis.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_cetakMouseClicked
-
-    private void kodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kodeActionPerformed
-
-    private void nomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomerActionPerformed
 
     private void btnhomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhomeMouseClicked
         // TODO add your handling code here:
@@ -960,13 +866,33 @@ public class pemeriksaan extends javax.swing.JFrame {
 
     private void btnpemeriksaanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpemeriksaanMouseClicked
         // TODO add your handling code here:
-        new pemeriksaan().show();
+        new diagnosis().show();
         this.dispose();
     }//GEN-LAST:event_btnpemeriksaanMouseClicked
 
-    private void txtnmobatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnmobatActionPerformed
+    private void tglpemerPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tglpemerPropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtnmobatActionPerformed
+        if (tglpemer.getDate() != null) {
+            SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
+            nampungtgl = format.format(tglpemer.getDate());
+            System.out.println(nampungtgl);
+        }
+    }//GEN-LAST:event_tglpemerPropertyChange
+
+    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+        // TODO add your handling code here:
+        int i = table.getSelectedRow();
+
+        String tgl;
+
+        if (i >= 0) {
+            txtkdpemer.setText((String) table.getValueAt(i, 0));
+            cmbpasien.setSelectedItem((String) table.getValueAt(i, 1));
+            tglpemer.setDate(getTanggalFromTable(table, 3));
+            cmbnamadokter.setSelectedItem((String) table.getValueAt(i, 4));
+            txthasil.setText((String) table.getValueAt(i, 2));
+        }
+    }//GEN-LAST:event_tableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -985,14 +911,30 @@ public class pemeriksaan extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(pemeriksaan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(diagnosis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(pemeriksaan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(diagnosis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(pemeriksaan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(diagnosis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(pemeriksaan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(diagnosis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -1013,7 +955,7 @@ public class pemeriksaan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pemeriksaan().setVisible(true);
+                new diagnosis().setVisible(true);
             }
         });
     }
@@ -1030,16 +972,13 @@ public class pemeriksaan extends javax.swing.JFrame {
     private javax.swing.JPanel btnpemeriksaan;
     private javax.swing.JPanel btnrefresh;
     private javax.swing.JPanel btnsimpan;
-    private javax.swing.JComboBox<String> cmb_jenis;
-    private javax.swing.JComboBox<String> cmb_namadokter;
-    private javax.swing.JComboBox<String> cmb_pemakaian;
-    private javax.swing.JComboBox<String> cmbkdpasien;
+    private javax.swing.JComboBox<String> cmbnamadokter;
+    private javax.swing.JComboBox<String> cmbpasien;
     private javax.swing.JPanel j1;
     private javax.swing.JPanel j6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1048,8 +987,6 @@ public class pemeriksaan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -1057,19 +994,8 @@ public class pemeriksaan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1080,17 +1006,14 @@ public class pemeriksaan extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextField kode;
-    private javax.swing.JTextField nomer;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable table;
     private com.toedter.calendar.JDateChooser tglpemer;
-    private javax.swing.JTextField txthslpemer;
-    private javax.swing.JTextField txtjumlah;
+    private javax.swing.JTextArea txthasil;
+    private javax.swing.JLabel txtkddokter;
+    private javax.swing.JLabel txtkdpasien;
     private javax.swing.JTextField txtkdpemer;
-    private javax.swing.JTextField txtkdresep;
-    private javax.swing.JTextField txtnmobat;
-    private javax.swing.JTextField txtnmpasien;
     // End of variables declaration//GEN-END:variables
 }

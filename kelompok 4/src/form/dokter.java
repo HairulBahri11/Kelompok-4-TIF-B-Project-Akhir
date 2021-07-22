@@ -69,7 +69,7 @@ public class dokter extends javax.swing.JFrame {
     public void datatableDokter() {
         DefaultTableModel tbl = new DefaultTableModel();
         tbl.addColumn("Kode Dokter");
-        tbl.addColumn("Nama Lengkap");
+        tbl.addColumn("Nama Dokter");
         tbl.addColumn("Nama Inisial");
         tbl.addColumn("Gender");
         tbl.addColumn("Spesialis");
@@ -83,7 +83,7 @@ public class dokter extends javax.swing.JFrame {
             while (res.next()) {
                 tbl.addRow(new Object[]{
                     res.getString("Id_Dokter"),
-                    res.getString("Nama_Lengkap"),
+                    res.getString("Nama_Dokter"),
                     res.getString("Nama_Inisial"),
                     res.getString("Gender"),
                     res.getString("Spesialis"),
@@ -984,7 +984,7 @@ public class dokter extends javax.swing.JFrame {
 
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
-            statement.executeUpdate("UPDATE dokter SET Nama_Lengkap ='" + nama + "', Nama_Inisial ='" + inisial + "', Gender ='" + gender + "', Spesialis ='" + cmbspesialis.getSelectedItem() + "', alamat ='" + alamat + "', no_telp ='" + no_telp + "', gambar='" + lblnmfile.getText() + "' WHERE Id_Dokter ='" + txtkd + "'");
+            statement.executeUpdate("UPDATE dokter SET Nama_Dokter ='" + nama + "', Nama_Inisial ='" + inisial + "', Gender ='" + gender + "', Spesialis ='" + cmbspesialis.getSelectedItem() + "', alamat ='" + alamat + "', no_telp ='" + no_telp + "', gambar='" + lblnmfile.getText() + "' WHERE Id_Dokter ='" + txtkd + "'");
             String path = new File(".").getCanonicalPath();
             FileUtils.copyFileToDirectory(file, new File(path + "/image"));
             statement.close();
