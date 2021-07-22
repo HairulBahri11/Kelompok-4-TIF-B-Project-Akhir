@@ -454,6 +454,11 @@ public class resep_obat extends javax.swing.JFrame {
         jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 10, -1));
 
         cmb_obat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--PILIH--" }));
+        cmb_obat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_obatActionPerformed(evt);
+            }
+        });
         jPanel2.add(cmb_obat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 350, 30));
         jPanel2.add(txtjumlah, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 350, 30));
 
@@ -575,6 +580,11 @@ public class resep_obat extends javax.swing.JFrame {
             cmb_pemakaian.setSelectedItem((String) tabel.getValueAt(i, 5));
         }
     }//GEN-LAST:event_tabelMouseClicked
+
+    private void cmb_obatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_obatActionPerformed
+        // TODO add your handling code here:
+        tampilObat();
+    }//GEN-LAST:event_cmb_obatActionPerformed
 
     /**
      * @param args the command line arguments

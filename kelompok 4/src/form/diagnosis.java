@@ -845,7 +845,7 @@ public class diagnosis extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(diagnosis.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\obat.jrxml";;
+        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\obat_1.jrxml";;
         HashMap hash = new HashMap();
         hash.put("resep1", txtkdpemer.getText());
         JasperReport jr;

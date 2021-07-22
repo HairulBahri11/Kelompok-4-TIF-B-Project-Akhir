@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dbef75ca-1c41-4369-b216-db8ef294f1f1">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="17"/>
+	<parameter name="resep1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT rs.Kode_Diagnosa, o.Nama_Obat, rs.jenis_obat, rs.jumlah,rs.pemakaian,hd.Kode_Diagnosis,p.Nama_Lengkap,hd.Hasil_Diagnosis,hd.tanggal_pemeriksaan, d.Nama_Dokter FROM Resep_Obat rs INNER JOIN  Hasil_Diagnosis hd ON rs.Kode_Diagnosa = hd.Kode_Diagnosis INNER JOIN obat o ON rs.kode_obat=o.Kode_Obat INNER JOIN pasien p ON hd.Kode_Pasien=p.Kode_Pasien INNER JOIN dokter d ON hd.Id_Dokter= d.Id_Dokter WHERE rs.Kode_Diagnosa = $P{resep1}]]>
+	</queryString>
+	<field name="Kode_Diagnosa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Obat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis_obat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pemakaian" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Kode_Diagnosis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Lengkap" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Hasil_Diagnosis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_pemeriksaan" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Dokter" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="105" y="21" width="331" height="20" uuid="9b0b78d0-07e7-46e1-93de-28944a692e9a"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="41" width="272" height="20" uuid="e8b02f92-7f68-4507-82e8-37c39c7299e3"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="61" width="238" height="20" uuid="b4f6baaf-4bd0-4055-ac3e-bc013443741e"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="3" width="61" height="83" uuid="d4f4b5e9-624a-4ede-b781-162bda11253e"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="471" y="7" width="56" height="79" uuid="1909c8a2-423d-404b-be50-db9861f81d5f"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="193" y="9" width="219" height="46" uuid="eddb1f4c-a80b-4f4d-9bf4-9f8f9e11f76e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="36"/>
+				</textElement>
+				<text><![CDATA[RESEP OBAT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="3" y="1" width="550" height="1" uuid="9408ab2d-e7b9-447e-8c32-548dc56e03ba"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="223" splitType="Stretch">
+			<staticText>
+				<reportElement x="31" y="121" width="109" height="20" uuid="31c09d08-23fb-427e-b377-647248ce25e6"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Dokter]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="94" width="10" height="18" uuid="17328584-0684-4a9c-93c1-abebbc491500"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="11" width="109" height="20" uuid="ec649f00-4319-402d-8bd6-f12b49867d93"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kode Diagnosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="94" width="109" height="20" uuid="d9b15fa4-b3f3-4c58-8a9e-e3369aac7826"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal Pemeriksaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="121" width="10" height="18" uuid="f8f52572-9689-4943-8d3b-9c6e9412f24d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="39" width="109" height="20" uuid="788157b6-e7ca-4735-a670-0381258de3be"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="39" width="10" height="18" uuid="94cf6940-5b8f-4543-aa89-c693046a6dbb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="67" width="10" height="18" uuid="255ff5f8-29be-40fd-a425-2014facebdb8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="67" width="109" height="20" uuid="f57353d0-60c5-403e-9031-dd08b3667948"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Hasil Pemeriksaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="11" width="10" height="18" uuid="d2853415-557d-4177-af5d-54ff3d45ab39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="195" width="109" height="20" uuid="6d1851fc-9330-4ef8-a590-a809edf49de6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pemakaian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="195" width="109" height="20" uuid="03a889b5-3ce6-45ff-bce3-2bc8e2a9ffbd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="195" width="109" height="20" uuid="45ba6bbc-24ad-4b07-8740-643c9a47aa04"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jenis Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="195" width="109" height="20" uuid="d6e056ba-a551-4dc8-8b85-84bcb268c512"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<line>
+				<reportElement x="12" y="221" width="530" height="1" uuid="4183356b-bd74-414b-80eb-3773e05b2f84"/>
+			</line>
+			<textField>
+				<reportElement x="158" y="15" width="100" height="20" uuid="0974c5a5-82a2-4c54-8638-cb21ef3846a4"/>
+				<textFieldExpression><![CDATA[$F{Kode_Diagnosa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="43" width="100" height="20" uuid="3ca45806-60ba-47ce-84c6-a3d7d630dede"/>
+				<textFieldExpression><![CDATA[$F{Nama_Lengkap}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="71" width="100" height="20" uuid="cfbc9619-f60f-4fc1-9ed8-e55131220a4c"/>
+				<textFieldExpression><![CDATA[$F{Hasil_Diagnosis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="98" width="100" height="20" uuid="a276c1bf-5a24-40e5-bb47-5caf274cc82e"/>
+				<textFieldExpression><![CDATA[$F{tanggal_pemeriksaan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="123" width="100" height="20" uuid="1be965a5-12e0-42da-aef7-652cdfa7cf23"/>
+				<textFieldExpression><![CDATA[$F{Nama_Dokter}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="34" y="6" width="100" height="20" uuid="34385f58-4668-4b13-9ff5-9a1e4e0a938f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Nama_Obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="6" width="100" height="20" uuid="d3ec3da8-2949-437b-8f6d-4c23d209628b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{jenis_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="6" width="100" height="20" uuid="b9cdc5ee-d167-446b-bae8-5374a760b6b5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="6" width="100" height="20" uuid="5c42680a-a36e-4362-8d21-c85fbee426fa"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pemakaian}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="53" y="15" width="440" height="55" uuid="5968bbba-db27-41f1-ac90-a41c62e8a393"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="20"/>
+				</textElement>
+				<text><![CDATA[PELAYANAN PRIMA YANG KAMI BERIKAN DEMI KESEMBUHAN DAN KEPUASAN ANDA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="2" width="550" height="1" uuid="cff63133-4cc2-4401-a388-ff5ba9138ba4"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="7" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="5" splitType="Stretch"/>
+	</summary>
+</jasperReport>
