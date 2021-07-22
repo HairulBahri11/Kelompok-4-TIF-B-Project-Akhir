@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="700" pageHeight="842" columnWidth="660" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="71689393-f804-4c31-9534-b9e40966e915">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from dokter]]>
+	</queryString>
+	<field name="Id_Dokter" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Dokter" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Gender" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Spesialis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_telp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="167" y="24" width="331" height="24" uuid="67d0b1ff-2df6-4722-92cb-a5e84d82930e"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="76" y="10" width="61" height="83" uuid="6309306a-cf27-4e36-8431-6f638cea586e"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="211" y="68" width="238" height="20" uuid="ba440605-03cc-483b-adc2-d9904c343728"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="48" width="272" height="20" uuid="bbde8d26-e28e-4c43-a110-8a44e962bb59"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="528" y="14" width="56" height="79" uuid="5e51578b-502d-42c9-890a-fa6954360091"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="275" y="16" width="100" height="20" uuid="e81eb177-4d09-4be2-a86a-1356cd44632f"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Dokter]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="100" height="1" uuid="c4c1bfbb-e1cc-4416-8612-fc096d44fcad"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="660" height="1" uuid="ed61fe07-f960-40de-a5ac-bc014496de05"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="28" width="100" height="20" uuid="faa84cdb-ce23-4628-a880-6b6ed696cfa3"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Id_Dokter]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="28" width="100" height="20" uuid="5413dd98-e191-45f6-977b-c2d9398740e0"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama_Dokter]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="28" width="61" height="20" uuid="2283d82d-cee1-4d7a-9433-71f00aa202e1"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="28" width="100" height="20" uuid="9f06c850-6414-4f8f-9aec-f760fb2e2adf"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Spesialis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="28" width="100" height="20" uuid="95e96af7-2f82-497b-8f06-00a2c0042623"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="550" y="28" width="100" height="20" uuid="8589bc82-4ff9-440e-9031-7ef9f9828dc1"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[no_telp]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="53" width="660" height="1" uuid="e029e3e5-6ad8-4243-9fdf-bbe966db0e9c"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="11" width="100" height="20" uuid="032b74f2-4608-434e-99fe-db591ebdcb3e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Id_Dokter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="11" width="100" height="20" uuid="77c6121c-8152-4b3c-9d19-19c097072b7b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Nama_Dokter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="11" width="61" height="20" uuid="95b75e30-bc79-404c-90d5-a25503f94deb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="11" width="100" height="20" uuid="8d811d27-7bdb-4598-9d9f-046665146177"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Spesialis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="11" width="100" height="20" uuid="bfcfa1c2-f454-4fd0-a2ef-cf436e851a7c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="11" width="100" height="20" uuid="6bd14668-35a7-4e33-911a-06b915465f86"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{no_telp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

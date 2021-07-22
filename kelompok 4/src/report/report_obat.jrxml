@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="850" pageHeight="842" columnWidth="810" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="57ce0632-7d2f-4a1f-b811-eaa17a9de903">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from obat]]>
+	</queryString>
+	<field name="Kode_Obat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Obat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kuantitas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="satuan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_kadaluarsa" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_inputdata" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<image>
+				<reportElement x="151" y="12" width="61" height="83" uuid="50d71e32-bc97-429e-b823-c4e3c91365f4"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="242" y="26" width="331" height="24" uuid="0c18a45b-3258-4d5f-bbae-15837fb78943"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="50" width="272" height="20" uuid="e2cd6a1e-8811-4261-9594-fd92904a35de"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="603" y="16" width="56" height="79" uuid="9f9e6a04-06bb-4701-ac4c-3bd100020565"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="286" y="70" width="238" height="20" uuid="87b670bc-ba6f-40da-90e6-488d25881f82"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="340" y="13" width="100" height="20" uuid="4a02fe46-99fc-4f1a-a927-7b1033a7ae55"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Obat]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="810" height="1" uuid="1a3a64fc-3c8e-44b9-acc3-6b81da26d61c"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="810" height="1" uuid="bbc0c987-91b2-4cfa-bc15-19a6ea90ced2"/>
+			</line>
+			<staticText>
+				<reportElement x="127" y="31" width="100" height="20" uuid="83e67c77-da7a-4a12-840e-221c7d002993"/>
+				<text><![CDATA[Nama Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="31" width="100" height="20" uuid="457a03f3-0187-4c13-bde5-6e2730ad8fb8"/>
+				<text><![CDATA[kuantitas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="31" width="100" height="20" uuid="6f01e6a8-953d-4346-a9f7-41bef4d4fd55"/>
+				<text><![CDATA[satuan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="31" width="100" height="20" uuid="64403fc3-8a71-42fb-a5ca-12750420fe5b"/>
+				<text><![CDATA[harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="576" y="31" width="100" height="20" uuid="422d7f50-dcd7-46d3-a08d-00b45865d1d8"/>
+				<text><![CDATA[tgl kadaluarsa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="686" y="31" width="100" height="20" uuid="cdc9aaaf-8c9f-44fc-ace9-24202583c2db"/>
+				<text><![CDATA[tgl inputdata]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="31" width="100" height="20" uuid="17eeaedb-5bc5-4cd3-9879-642d42cb0dcb"/>
+				<text><![CDATA[Kode Obat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="11" width="100" height="20" uuid="0bafecd6-5584-45c9-9838-5a8ecd43400b"/>
+				<textFieldExpression><![CDATA[$F{Kode_Obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="11" width="100" height="20" uuid="cdb03b17-065a-4ace-8cb8-ba927cb938cb"/>
+				<textFieldExpression><![CDATA[$F{Nama_Obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="241" y="11" width="100" height="20" uuid="0764b0cf-0e0e-401f-b7b3-2a8e7e4fe809"/>
+				<textFieldExpression><![CDATA[$F{kuantitas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="11" width="100" height="20" uuid="08ca1c12-6e83-4965-8e89-0b98904622c3"/>
+				<textFieldExpression><![CDATA[$F{satuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="11" width="100" height="20" uuid="4b3bb0cc-5145-4086-b32a-b8ba97842813"/>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="576" y="11" width="100" height="20" uuid="3b0e91c7-2b62-4513-980e-461c3da1222d"/>
+				<textFieldExpression><![CDATA[$F{tgl_kadaluarsa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="686" y="11" width="100" height="20" uuid="fb59c5ed-fd41-4d06-bcd2-c097eef0ed0a"/>
+				<textFieldExpression><![CDATA[$F{tgl_inputdata}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -328,7 +328,7 @@ public class Jadwal extends javax.swing.JFrame {
 
         jLabel127.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
         jLabel127.setText("Shift Malam");
-        getContentPane().add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, -1, -1));
+        getContentPane().add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, -1, -1));
 
         jLabel128.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
         jLabel128.setText("Nama Petugas");

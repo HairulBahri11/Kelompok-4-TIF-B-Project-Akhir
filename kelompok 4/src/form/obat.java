@@ -36,6 +36,12 @@ import static form.pasien.getTanggalFromTable;
 import static form.pasien.nampungtgl;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 import org.apache.commons.io.FileUtils;
 
 /**
@@ -173,6 +179,8 @@ public class obat extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         btnrefresh = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -359,13 +367,13 @@ public class obat extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabel);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, 780, 160));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 780, 160));
 
         btn_simpan.setBackground(new java.awt.Color(0, 204, 51));
 
         btnsimpan.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnsimpan.setForeground(new java.awt.Color(255, 255, 255));
-        btnsimpan.setText("SIMPAN");
+        btnsimpan.setText("Simpan");
         btnsimpan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnsimpanMouseClicked(evt);
@@ -400,7 +408,7 @@ public class obat extends javax.swing.JFrame {
 
         btnedit.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnedit.setForeground(new java.awt.Color(255, 255, 255));
-        btnedit.setText("EDIT");
+        btnedit.setText("Edit");
         btnedit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btneditMouseClicked(evt);
@@ -430,7 +438,7 @@ public class obat extends javax.swing.JFrame {
 
         btnhapus.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnhapus.setForeground(new java.awt.Color(255, 255, 255));
-        btnhapus.setText("DELETE");
+        btnhapus.setText("Delete");
         btnhapus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnhapusMouseClicked(evt);
@@ -889,7 +897,7 @@ public class obat extends javax.swing.JFrame {
         btnrefresh.setBackground(new java.awt.Color(204, 204, 0));
         btnrefresh.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel43.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel43.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 255, 255));
         jLabel43.setText("Refresh");
         jLabel43.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -902,20 +910,50 @@ public class obat extends javax.swing.JFrame {
         btnrefresh.setLayout(btnrefreshLayout);
         btnrefreshLayout.setHorizontalGroup(
             btnrefreshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnrefreshLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(jLabel43)
-                .addGap(37, 37, 37))
-        );
-        btnrefreshLayout.setVerticalGroup(
-            btnrefreshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnrefreshLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel43)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        btnrefreshLayout.setVerticalGroup(
+            btnrefreshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnrefreshLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel43)
+                .addContainerGap())
+        );
 
-        getContentPane().add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 430, 140, 40));
+        getContentPane().add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 430, 90, 40));
+
+        jPanel4.setBackground(new java.awt.Color(153, 0, 153));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Laporan");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addGap(19, 19, 19))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, -1, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1126,6 +1164,29 @@ public class obat extends javax.swing.JFrame {
        kosong();
     }//GEN-LAST:event_jLabel43MouseClicked
 
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        // TODO add your handling code here:
+        Connection koneksi = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            koneksi = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/puskesmas", "root", "");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(obat.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(obat.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\report_obat.jrxml";
+
+        JasperReport jr;
+        try {
+            jr = JasperCompileManager.compileReport(file);
+            JasperPrint jp = JasperFillManager.fillReport(jr, null, koneksi);
+            JasperViewer.viewReport(jp);
+        } catch (JRException ex) {
+            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jPanel4MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1201,6 +1262,7 @@ public class obat extends javax.swing.JFrame {
     private javax.swing.JPanel j8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1238,6 +1300,7 @@ public class obat extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private com.toedter.calendar.JDateChooser jdate_input;
