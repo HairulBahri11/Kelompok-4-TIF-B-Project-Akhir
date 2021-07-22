@@ -61,9 +61,9 @@ public class resep_obat extends javax.swing.JFrame {
     }
 
     public void kosong() {
-        cmb_obat.setSelectedItem("-- Select --");
-        cmb_jenis1.setSelectedItem("-- Select --");
-        cmb_pemakaian.setSelectedItem("-- Select --");
+        cmb_obat.setSelectedItem("--PILIH--");
+        cmb_jenis1.setSelectedItem("--PILIH--");
+        cmb_pemakaian.setSelectedItem("--PILIH--");
         txtjumlah.setText("");
     }
 
@@ -511,8 +511,8 @@ public class resep_obat extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "data gagal disimpan");
             System.out.println(e.getMessage());
         }
-        datatableResep();
         kosong();
+        datatableResep();
     }//GEN-LAST:event_btnsimpan4btnsimpanMouseClicked
 
     private void btnrefreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnrefreshMouseClicked
@@ -539,8 +539,8 @@ public class resep_obat extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
         txtrs.setText("");
-        datatableResep();
         kosong();
+        datatableResep();
     }//GEN-LAST:event_btneditMouseClicked
 
     private void btndeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteMouseClicked
@@ -555,8 +555,8 @@ public class resep_obat extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "data gagal Dihapus");
         }
         txtrs.setText("");
-        datatableResep();
         kosong();
+        datatableResep();
     }//GEN-LAST:event_btndeleteMouseClicked
 
     private void btnKembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKembaliMouseClicked

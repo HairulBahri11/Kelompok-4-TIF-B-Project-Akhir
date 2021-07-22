@@ -383,10 +383,10 @@ public class diagnosis extends javax.swing.JFrame {
         btndelete.setLayout(btndeleteLayout);
         btndeleteLayout.setHorizontalGroup(
             btndeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btndeleteLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+            .addGroup(btndeleteLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
                 .addComponent(btn_delete)
-                .addGap(45, 45, 45))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         btndeleteLayout.setVerticalGroup(
             btndeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,10 +414,10 @@ public class diagnosis extends javax.swing.JFrame {
         btnedit.setLayout(btneditLayout);
         btneditLayout.setHorizontalGroup(
             btneditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btneditLayout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
+            .addGroup(btneditLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
                 .addComponent(btn_edit)
-                .addGap(54, 54, 54))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         btneditLayout.setVerticalGroup(
             btneditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,17 +445,17 @@ public class diagnosis extends javax.swing.JFrame {
         btnrefresh.setLayout(btnrefreshLayout);
         btnrefreshLayout.setHorizontalGroup(
             btnrefreshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnrefreshLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+            .addGroup(btnrefreshLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
                 .addComponent(jLabel43)
-                .addGap(37, 37, 37))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         btnrefreshLayout.setVerticalGroup(
             btnrefreshLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnrefreshLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnrefreshLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel43)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(btnrefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 140, 40));
@@ -759,6 +759,7 @@ public class diagnosis extends javax.swing.JFrame {
         String kode = txtkdpemer.getText();
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
+            statement.executeUpdate("delete from resep_obat where Kode_Diagnosa ='" + kode + "';");
             statement.executeUpdate("delete from hasil_diagnosis where Kode_Diagnosis ='" + kode + "';");
             JOptionPane.showMessageDialog(null, "Data berhasil di HAPUS");
             refresh();
