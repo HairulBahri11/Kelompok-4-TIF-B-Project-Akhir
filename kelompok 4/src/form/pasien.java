@@ -185,6 +185,10 @@ public class pasien extends javax.swing.JFrame {
         btnpasien = new javax.swing.JPanel();
         j2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        btnhome1 = new javax.swing.JPanel();
+        j9 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
         btnrefresh = new javax.swing.JPanel();
         jLabel51 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -831,6 +835,61 @@ public class pasien extends javax.swing.JFrame {
 
         jPanel2.add(btnpasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 50));
 
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logout.png"))); // NOI18N
+        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
+
+        btnhome1.setBackground(new java.awt.Color(0, 0, 0));
+        btnhome1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnhome1MouseClicked(evt);
+            }
+        });
+
+        j9.setBackground(new java.awt.Color(0, 255, 51));
+        j9.setOpaque(false);
+
+        javax.swing.GroupLayout j9Layout = new javax.swing.GroupLayout(j9);
+        j9.setLayout(j9Layout);
+        j9Layout.setHorizontalGroup(
+            j9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        j9Layout.setVerticalGroup(
+            j9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        jLabel25.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logout2.png"))); // NOI18N
+        jLabel25.setText("  Logout");
+
+        javax.swing.GroupLayout btnhome1Layout = new javax.swing.GroupLayout(btnhome1);
+        btnhome1.setLayout(btnhome1Layout);
+        btnhome1Layout.setHorizontalGroup(
+            btnhome1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnhome1Layout.createSequentialGroup()
+                .addComponent(j9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel25)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        btnhome1Layout.setVerticalGroup(
+            btnhome1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnhome1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(btnhome1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(j9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel2.add(btnhome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 0, 50));
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -1025,6 +1084,8 @@ public class pasien extends javax.swing.JFrame {
         kosongPasien();
     }//GEN-LAST:event_btnsimpanMouseClicked
 
+    int x = 0;
+    int a = 0;
     private void btneditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btneditMouseClicked
         // TODO add your handling code here:
         int kode_pasien = Integer.parseInt(txt_kode.getText());
@@ -1139,6 +1200,60 @@ public class pasien extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jPanel4MouseClicked
 
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+        // TODO add your handling code here:
+        if (x == 0) {
+            btnhome1.setSize(x, 50);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 0; i <= 220; i++) {
+                            Thread.sleep(1);
+                            btnhome1.setSize(i, 50);
+                            btnhome1.setBackground(new Color(51, 51, 51));
+                        }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+            };
+            th.start();
+            x = 220;
+        } else if (x == 220) {
+            btnhome1.setSize(220, 50);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 0; i >= 0; i--) {
+                            Thread.sleep(1);
+                            btnhome1.setSize(i, 50);
+                            btnhome1.setBackground(new Color(0, 0, 0));
+                            a++;
+                        }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+            };
+            th.start();
+            x = 0;
+        }
+    }//GEN-LAST:event_jLabel17MouseClicked
+
+    private void btnhome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhome1MouseClicked
+        // TODO add your handling code here:
+        int a;
+        a = JOptionPane.showConfirmDialog(null, "Apakah Anda Akan Logout dari Aplikasi .?", "Informasi", JOptionPane.YES_NO_OPTION);
+        if (a == JOptionPane.YES_OPTION) {
+            new login1().show();
+            this.dispose();
+        } else {
+            return;
+        }
+    }//GEN-LAST:event_btnhome1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1182,6 +1297,7 @@ public class pasien extends javax.swing.JFrame {
     private javax.swing.JPanel btndokter;
     private javax.swing.JPanel btnedit;
     private javax.swing.JPanel btnhome;
+    private javax.swing.JPanel btnhome1;
     private javax.swing.JPanel btnjadwal;
     private javax.swing.JPanel btnobat;
     private javax.swing.JPanel btnpasien;
@@ -1200,6 +1316,7 @@ public class pasien extends javax.swing.JFrame {
     private javax.swing.JPanel j5;
     private javax.swing.JPanel j7;
     private javax.swing.JPanel j8;
+    private javax.swing.JPanel j9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1208,12 +1325,14 @@ public class pasien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel37;

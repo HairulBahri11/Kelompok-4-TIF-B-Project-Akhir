@@ -21,6 +21,7 @@ public class login1 extends javax.swing.JFrame {
      */
     public login1() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -57,6 +58,7 @@ public class login1 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));

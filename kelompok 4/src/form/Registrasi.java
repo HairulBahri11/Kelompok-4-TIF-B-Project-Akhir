@@ -20,6 +20,7 @@ public class Registrasi extends javax.swing.JFrame {
      */
     public Registrasi() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

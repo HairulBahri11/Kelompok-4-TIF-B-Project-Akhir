@@ -53,7 +53,6 @@ public class Jadwal extends javax.swing.JFrame {
     /**
      * Creates new form petugas
      */
-
     public Jadwal() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -160,9 +159,7 @@ public class Jadwal extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblJadwal = new javax.swing.JTable();
         jLabel127 = new javax.swing.JLabel();
-        jLabel128 = new javax.swing.JLabel();
         jLabel129 = new javax.swing.JLabel();
-        jLabel130 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -207,6 +204,10 @@ public class Jadwal extends javax.swing.JFrame {
         btnpasien = new javax.swing.JPanel();
         j2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnhome1 = new javax.swing.JPanel();
+        j9 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
         timeMalam = new cambodia.raven.Time();
         timeSiang = new cambodia.raven.Time();
         jLabel131 = new javax.swing.JLabel();
@@ -216,6 +217,7 @@ public class Jadwal extends javax.swing.JFrame {
         timeSiangend = new cambodia.raven.Time();
         timeMalamend = new cambodia.raven.Time();
         timePagiend = new cambodia.raven.Time();
+        jLabel134 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -330,17 +332,9 @@ public class Jadwal extends javax.swing.JFrame {
         jLabel127.setText("Shift Malam");
         getContentPane().add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, -1, -1));
 
-        jLabel128.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        jLabel128.setText("Nama Petugas");
-        getContentPane().add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
-
         jLabel129.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
         jLabel129.setText("Sampai");
         getContentPane().add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, -1, -1));
-
-        jLabel130.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        jLabel130.setText("Shift Siang");
-        getContentPane().add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel26.setText(":");
@@ -866,29 +860,87 @@ public class Jadwal extends javax.swing.JFrame {
 
         jPanel2.add(btnpasien, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 50));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logout.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
+
+        btnhome1.setBackground(new java.awt.Color(0, 0, 0));
+        btnhome1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnhome1MouseClicked(evt);
+            }
+        });
+
+        j9.setBackground(new java.awt.Color(0, 255, 51));
+        j9.setOpaque(false);
+
+        javax.swing.GroupLayout j9Layout = new javax.swing.GroupLayout(j9);
+        j9.setLayout(j9Layout);
+        j9Layout.setHorizontalGroup(
+            j9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        j9Layout.setVerticalGroup(
+            j9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        jLabel17.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logout2.png"))); // NOI18N
+        jLabel17.setText("  Logout");
+
+        javax.swing.GroupLayout btnhome1Layout = new javax.swing.GroupLayout(btnhome1);
+        btnhome1.setLayout(btnhome1Layout);
+        btnhome1Layout.setHorizontalGroup(
+            btnhome1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnhome1Layout.createSequentialGroup()
+                .addComponent(j9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel17)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        btnhome1Layout.setVerticalGroup(
+            btnhome1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnhome1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(btnhome1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(j9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel2.add(btnhome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 0, 50));
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel8))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(58, 58, 58)
+                                .addComponent(jLabel2))
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel9)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(42, 42, 42)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addComponent(jLabel8))
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jLabel9)))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -901,8 +953,8 @@ public class Jadwal extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -956,6 +1008,10 @@ public class Jadwal extends javax.swing.JFrame {
         timePagiend.setPreferredSize(new java.awt.Dimension(100, 80));
         getContentPane().add(timePagiend, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, 120, 70));
 
+        jLabel134.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
+        jLabel134.setText("Shift Pagi");
+        getContentPane().add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -972,7 +1028,7 @@ public class Jadwal extends javax.swing.JFrame {
 
     private void jdate_ttlPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jdate_ttlPropertyChange
         // TODO add your handling code here:
-         if (jdate_ttl.getDate() != null) {
+        if (jdate_ttl.getDate() != null) {
             SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd");
             nampungtgl = format.format(jdate_ttl.getDate());
             System.out.println(nampungtgl);
@@ -984,16 +1040,16 @@ public class Jadwal extends javax.swing.JFrame {
         String txtkd = txtkdjadwal.getText();
         String petugas = txtPetugas.getText();
         String tgl = nampungtgl;
-        String pagi = timePagi.getSelectedTimeDB()+":00";
-        String pagiEnd = timePagiend.getSelectedTimeDB()+":00";
-        String siang = timeSiang.getSelectedTimeDB()+":00";
-        String siangEnd = timeSiangend.getSelectedTimeDB()+":00";
-        String malam = timeMalam.getSelectedTimeDB()+":00";
-        String malamEnd = timeMalamend.getSelectedTimeDB()+":00";
+        String pagi = timePagi.getSelectedTimeDB() + ":00";
+        String pagiEnd = timePagiend.getSelectedTimeDB() + ":00";
+        String siang = timeSiang.getSelectedTimeDB() + ":00";
+        String siangEnd = timeSiangend.getSelectedTimeDB() + ":00";
+        String malam = timeMalam.getSelectedTimeDB() + ":00";
+        String malamEnd = timeMalamend.getSelectedTimeDB() + ":00";
 
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
-            statement.executeUpdate("insert into jadwal VALUES ('" + txtkd + "','"+ petugas +"','" + tgl + "','" + pagi + "','" + pagiEnd + "','" + siang + "','" + siangEnd + "','" + malam + "','" + malamEnd + "')");
+            statement.executeUpdate("insert into jadwal VALUES ('" + txtkd + "','" + petugas + "','" + tgl + "','" + pagi + "','" + pagiEnd + "','" + siang + "','" + siangEnd + "','" + malam + "','" + malamEnd + "')");
             statement.close();
             JOptionPane.showMessageDialog(null, "data berhasil disimpan");
         } catch (Exception e) {
@@ -1014,12 +1070,12 @@ public class Jadwal extends javax.swing.JFrame {
         String txtkd = txtkdjadwal.getText();
         String petugas = txtPetugas.getText();
         String tgl = nampungtgl;
-        String pagi = timePagi.getSelectedTimeDB()+":00";
-        String pagiEnd = timePagiend.getSelectedTimeDB()+":00";
-        String siang = timeSiang.getSelectedTimeDB()+":00";
-        String siangEnd = timeSiangend.getSelectedTimeDB()+":00";
-        String malam = timeMalam.getSelectedTimeDB()+":00";
-        String malamEnd = timeMalamend.getSelectedTimeDB()+":00";
+        String pagi = timePagi.getSelectedTimeDB() + ":00";
+        String pagiEnd = timePagiend.getSelectedTimeDB() + ":00";
+        String siang = timeSiang.getSelectedTimeDB() + ":00";
+        String siangEnd = timeSiangend.getSelectedTimeDB() + ":00";
+        String malam = timeMalam.getSelectedTimeDB() + ":00";
+        String malamEnd = timeMalamend.getSelectedTimeDB() + ":00";
 
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
@@ -1035,7 +1091,7 @@ public class Jadwal extends javax.swing.JFrame {
     }//GEN-LAST:event_btneditMouseClicked
 
     private void btndeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndeleteMouseClicked
-       // TODO add your handling code here:
+        // TODO add your handling code here:
         String txtkd = txtkdjadwal.getText();
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
@@ -1091,6 +1147,50 @@ public class Jadwal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btntransaksiMouseClicked
 
+    int x = 0;
+    int a = 0;
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        if (x == 0) {
+            btnhome1.setSize(x, 50);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 0; i <= 220; i++) {
+                            Thread.sleep(1);
+                            btnhome1.setSize(i, 50);
+                            btnhome1.setBackground(new Color(51, 51, 51));
+                        }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+            };
+            th.start();
+            x = 220;
+        } else if (x == 220) {
+            btnhome1.setSize(220, 50);
+            Thread th = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        for (int i = 0; i >= 0; i--) {
+                            Thread.sleep(1);
+                            btnhome1.setSize(i, 50);
+                            btnhome1.setBackground(new Color(0, 0, 0));
+                            a++;
+                        }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+            };
+            th.start();
+            x = 0;
+        }
+    }//GEN-LAST:event_jLabel3MouseClicked
+
     private void btnobatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnobatMouseClicked
         // TODO add your handling code here:
         new obat().show();
@@ -1102,6 +1202,22 @@ public class Jadwal extends javax.swing.JFrame {
         new pasien().show();
         dispose();
     }//GEN-LAST:event_btnpasienMouseClicked
+
+    private void btnhome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhome1MouseClicked
+        // TODO add your handling code here:
+        int a;
+        a=JOptionPane.showConfirmDialog(null, "Apakah Anda Akan Logout dari Aplikasi .?", "Informasi", JOptionPane. YES_NO_OPTION);
+        if(a==JOptionPane.YES_OPTION)
+        {
+            new login1().show();
+            this.dispose();
+        }
+        else
+        {
+            return;
+        }
+    }//GEN-LAST:event_btnhome1MouseClicked
+
     public static Date getTanggalFromTable(JTable table, int kolom) {
         JTable tabel = table;
         String str_tgl = String.valueOf(tabel.getValueAt(tabel.getSelectedRow(), kolom));
@@ -1217,6 +1333,7 @@ public class Jadwal extends javax.swing.JFrame {
     private javax.swing.JPanel btndokter;
     private javax.swing.JPanel btnedit;
     private javax.swing.JPanel btnhome;
+    private javax.swing.JPanel btnhome1;
     private javax.swing.JPanel btnjadwal;
     private javax.swing.JPanel btnobat;
     private javax.swing.JPanel btnpasien;
@@ -1233,6 +1350,7 @@ public class Jadwal extends javax.swing.JFrame {
     private javax.swing.JPanel j5;
     private javax.swing.JPanel j7;
     private javax.swing.JPanel j8;
+    private javax.swing.JPanel j9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel103;
@@ -1241,16 +1359,16 @@ public class Jadwal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel127;
-    private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
     private javax.swing.JLabel jLabel133;
+    private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -1261,6 +1379,7 @@ public class Jadwal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel38;
