@@ -56,6 +56,7 @@ public class Registrasi extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -254,6 +255,7 @@ public class Registrasi extends javax.swing.JFrame {
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
         // TODO add your handling code here:
+
         int username = Integer.parseInt(txt_user.getText());
         String password = txt_passwordr.getText();
         String akses = (String) cmb_akses.getSelectedItem();
@@ -264,17 +266,14 @@ public class Registrasi extends javax.swing.JFrame {
                     + password + "','" + akses + "');");
 
             JOptionPane.showMessageDialog(rootPane, "data berhasil disimpan");
-//            new Login().setVisible(true);
-//            this.dispose();
-           new login1().show();
+            new login11().show();
             statement.close();
-            
+
         } catch (Exception t) {
             JOptionPane.showMessageDialog(rootPane, "data gagal disimpan");
             System.out.println(t.getMessage());
 
         }
-                                     
     }//GEN-LAST:event_jPanel5MouseClicked
 
     /**

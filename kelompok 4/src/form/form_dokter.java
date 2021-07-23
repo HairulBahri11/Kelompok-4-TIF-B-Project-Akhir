@@ -370,7 +370,7 @@ public class form_dokter extends javax.swing.JFrame {
                 jLabel24MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
         btnhome1.setBackground(new java.awt.Color(0, 0, 0));
         btnhome1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -417,7 +417,7 @@ public class form_dokter extends javax.swing.JFrame {
                     .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jPanel2.add(btnhome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 0, 50));
+        jPanel2.add(btnhome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 0, 50));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -482,7 +482,7 @@ public class form_dokter extends javax.swing.JFrame {
 
     private void btnpemeriksaanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnpemeriksaanMouseClicked
         // TODO add your handling code here:
-        new pemeriksaan().show();
+        new diagnosis().show();
         this.dispose();
     }//GEN-LAST:event_btnpemeriksaanMouseClicked
     
