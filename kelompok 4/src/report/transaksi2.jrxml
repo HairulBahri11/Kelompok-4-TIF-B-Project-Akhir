@@ -64,12 +64,12 @@
 				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
 			</staticText>
 			<image>
-				<reportElement x="28" y="6" width="61" height="83" uuid="2509184d-c5ff-47cc-a2db-e030ceb4f989"/>
-				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
+				<reportElement x="10" y="10" width="61" height="83" uuid="df26c637-45c4-4442-98d3-929f8125fe04"/>
+				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\io.png"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement x="468" y="10" width="56" height="79" uuid="eb9bbace-c0b9-4542-ab3d-b70375362c8a"/>
-				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
+				<reportElement x="494" y="11" width="56" height="79" uuid="dcb95f03-a775-4fb2-a660-63c2b491543b"/>
+				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\gh.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

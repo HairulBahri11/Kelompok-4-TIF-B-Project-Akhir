@@ -218,6 +218,8 @@ public class Jadwal extends javax.swing.JFrame {
         timeMalamend = new cambodia.raven.Time();
         timePagiend = new cambodia.raven.Time();
         jLabel134 = new javax.swing.JLabel();
+        jLabel119 = new javax.swing.JLabel();
+        jLabel135 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -301,8 +303,8 @@ public class Jadwal extends javax.swing.JFrame {
         getContentPane().add(txtkdjadwal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 420, 30));
 
         jLabel117.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        jLabel117.setText("Kode Jadwal");
-        getContentPane().add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
+        jLabel117.setText("Nama Petugas");
+        getContentPane().add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
 
         jLabel118.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
         jLabel118.setText("Tanggal");
@@ -973,8 +975,8 @@ public class Jadwal extends javax.swing.JFrame {
         getContentPane().add(timeSiang, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, 120, 70));
 
         jLabel131.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
-        jLabel131.setText("Shift Pagi");
-        getContentPane().add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
+        jLabel131.setText("Shift Siang");
+        getContentPane().add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
 
         jLabel132.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
         jLabel132.setText("Sampai");
@@ -1011,6 +1013,14 @@ public class Jadwal extends javax.swing.JFrame {
         jLabel134.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
         jLabel134.setText("Shift Pagi");
         getContentPane().add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
+
+        jLabel119.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
+        jLabel119.setText("Kode Jadwal");
+        getContentPane().add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
+
+        jLabel135.setFont(new java.awt.Font("Calibri", 0, 20)); // NOI18N
+        jLabel135.setText("Shift Pagi");
+        getContentPane().add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1357,6 +1367,7 @@ public class Jadwal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel117;
     private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel129;
@@ -1365,6 +1376,7 @@ public class Jadwal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel132;
     private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
+    private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

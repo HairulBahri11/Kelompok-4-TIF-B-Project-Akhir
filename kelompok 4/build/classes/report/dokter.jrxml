@@ -36,10 +36,6 @@
 				</textElement>
 				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
 			</staticText>
-			<image>
-				<reportElement x="76" y="10" width="61" height="83" uuid="6309306a-cf27-4e36-8431-6f638cea586e"/>
-				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="211" y="68" width="238" height="20" uuid="ba440605-03cc-483b-adc2-d9904c343728"/>
 				<textElement>
@@ -55,8 +51,12 @@
 				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
 			</staticText>
 			<image>
-				<reportElement x="528" y="14" width="56" height="79" uuid="5e51578b-502d-42c9-890a-fa6954360091"/>
-				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
+				<reportElement x="64" y="10" width="61" height="83" uuid="49ef2af6-5fd4-41a5-bf9c-18119e182ecf"/>
+				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\io.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="548" y="11" width="56" height="79" uuid="ed3577e7-86f1-47a0-a3e8-443affde7b8f"/>
+				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\gh.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

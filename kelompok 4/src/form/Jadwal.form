@@ -188,11 +188,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="20" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Kode Jadwal"/>
+        <Property name="text" type="java.lang.String" value="Nama Petugas"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="310" y="180" width="-1" height="-1"/>
+          <AbsoluteConstraints x="310" y="220" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -1450,11 +1450,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="20" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Shift Pagi"/>
+        <Property name="text" type="java.lang.String" value="Shift Siang"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="310" y="320" width="-1" height="-1"/>
+          <AbsoluteConstraints x="310" y="390" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -1569,6 +1569,32 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel134">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="20" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Shift Pagi"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="310" y="320" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel119">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="20" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Kode Jadwal"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="310" y="180" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel135">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="20" style="0"/>

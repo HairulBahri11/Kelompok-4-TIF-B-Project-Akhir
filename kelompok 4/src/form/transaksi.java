@@ -1195,8 +1195,8 @@ public class transaksi extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             koneksi = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/puskesmas", "root", "");
             com.mysql.jdbc.Connection c = (com.mysql.jdbc.Connection) koneksi;
-            reportSource = System.getProperty("user.dir") + "/report/transaksi2.jrxml";
-            reportDest = System.getProperty("user.dir") + "/report/transaksi2.jasper";
+            reportSource = System.getProperty("user.dir") + "/src/report/transaksi2.jrxml";
+            reportDest = System.getProperty("user.dir") + "/src/report/transaksi2.jasper";
             HashMap hash = new HashMap();
             hash.put("detail", txtkdtransaksi.getText());
 

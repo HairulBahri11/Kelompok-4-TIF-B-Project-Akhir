@@ -40,6 +40,7 @@ import javax.swing.table.DefaultTableModel;
 import org.apache.commons.io.FileUtils;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -897,24 +898,24 @@ public class diagnosis extends javax.swing.JFrame {
 
     private void btn_cetakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cetakMouseClicked
         Connection koneksi = null;
+        String reportSource = null;
+        String reportDest = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             koneksi = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/puskesmas", "root", "");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(diagnosis.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(diagnosis.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\diagnosis.jrxml";;
-        HashMap hash = new HashMap();
-        hash.put("resep1", txtkdpemer.getText());
-        JasperReport jr;
-        try {
-            jr = JasperCompileManager.compileReport(file);
-            JasperPrint jp = JasperFillManager.fillReport(jr, hash, koneksi);
-            JasperViewer.viewReport(jp);
-        } catch (JRException ex) {
-            Logger.getLogger(diagnosis.class.getName()).log(Level.SEVERE, null, ex);
+            com.mysql.jdbc.Connection c = (com.mysql.jdbc.Connection) koneksi;
+            reportSource = System.getProperty("user.dir") + "/src/report/diagnosis.jrxml";
+            reportDest = System.getProperty("user.dir") + "/src/report/diagnosis.jasper";
+            HashMap hash = new HashMap();
+            hash.put("resep1", txtkdpemer.getText());
+
+            JasperReport jasperReport = JasperCompileManager.compileReport(reportSource);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hash, c);
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, reportDest);
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }//GEN-LAST:event_btn_cetakMouseClicked
 

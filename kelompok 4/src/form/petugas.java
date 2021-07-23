@@ -33,6 +33,12 @@ import javax.swing.JPanel;
 import java.text.SimpleDateFormat;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 import org.apache.commons.io.FileUtils;
 
 /**
@@ -182,6 +188,8 @@ public class petugas extends javax.swing.JFrame {
         btnhome1 = new javax.swing.JPanel();
         j9 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -969,6 +977,36 @@ public class petugas extends javax.swing.JFrame {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
 
+        jPanel4.setBackground(new java.awt.Color(153, 0, 153));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Laporan");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 500, -1, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1200,6 +1238,28 @@ public class petugas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnhome1MouseClicked
 
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        // TODO add your handling code here:
+        Connection koneksi = null;
+        String reportSource = null;
+        String reportDest = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            koneksi = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/puskesmas", "root", "");
+            com.mysql.jdbc.Connection c = (com.mysql.jdbc.Connection) koneksi;
+            reportSource = System.getProperty("user.dir") + "/src/report/report_petugas.jrxml";
+            reportDest = System.getProperty("user.dir") + "/src/report/report_petugas.jasper";
+
+            JasperReport jasperReport = JasperCompileManager.compileReport(reportSource);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, c);
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, reportDest);
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_jPanel4MouseClicked
+
     
     /**
      * @param args the command line arguments
@@ -1269,6 +1329,7 @@ public class petugas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1306,6 +1367,7 @@ public class petugas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;

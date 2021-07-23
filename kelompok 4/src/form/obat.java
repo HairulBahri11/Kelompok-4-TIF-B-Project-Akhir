@@ -38,6 +38,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -1226,23 +1227,23 @@ public class obat extends javax.swing.JFrame {
     private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
         // TODO add your handling code here:
         Connection koneksi = null;
+        String reportSource = null;
+        String reportDest = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             koneksi = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/puskesmas", "root", "");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(obat.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(obat.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\report_obat.jrxml";
+            com.mysql.jdbc.Connection c = (com.mysql.jdbc.Connection) koneksi;
+            reportSource = System.getProperty("user.dir") + "/src/report/report_obat.jrxml";
+            reportDest = System.getProperty("user.dir") + "/src/report/report_obat.jasper";
+            
 
-        JasperReport jr;
-        try {
-            jr = JasperCompileManager.compileReport(file);
-            JasperPrint jp = JasperFillManager.fillReport(jr, null, koneksi);
-            JasperViewer.viewReport(jp);
-        } catch (JRException ex) {
-            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
+            JasperReport jasperReport = JasperCompileManager.compileReport(reportSource);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, c);
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, reportDest);
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }//GEN-LAST:event_jPanel4MouseClicked
     
