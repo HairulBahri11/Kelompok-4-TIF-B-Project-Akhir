@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6aaef11d-6359-4be1-aa9a-364df38c90f9">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="740" pageHeight="842" columnWidth="700" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6aaef11d-6359-4be1-aa9a-364df38c90f9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="24"/>
+	<property name="ireport.y" value="24"/>
 	<queryString language="SQL">
 		<![CDATA[select* from petugas]]>
 	</queryString>
@@ -25,16 +28,110 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="221" y="34" width="272" height="20" uuid="9b5b0cdd-c7e5-48e0-a7e6-ef918689b1f1"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="54" width="238" height="20" uuid="7910c645-e564-4d88-88ce-11dbd290a52e"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="10" width="331" height="24" uuid="98d4a4e7-ebfe-4831-a621-632271ede89b"/>
+				<textElement>
+					<font fontName="Calibri" size="16"/>
+				</textElement>
+				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="99" y="6" width="61" height="83" uuid="66f0e717-121d-4ecc-b6ff-0e146965bddf"/>
+				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\io.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="555" y="6" width="56" height="79" uuid="3874bdab-ecbe-40a5-9592-fd4eaefc7630"/>
+				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\gh.png"]]></imageExpression>
+			</image>
+		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="99" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="18" width="700" height="1" uuid="83c23456-d9b0-4d0c-9d53-59b38595f6c3"/>
+			</line>
+			<staticText>
+				<reportElement x="271" y="33" width="155" height="40" uuid="b202b9cb-e39b-4fed-a83f-344926893cd1"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Petugas]]></text>
+			</staticText>
+		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="24" width="100" height="20" uuid="b987e770-b370-468e-bcc0-aec109fa72e8"/>
+				<text><![CDATA[Id_Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="24" width="100" height="20" uuid="a3c79595-d93d-4fc5-bc90-25ce8f672a8c"/>
+				<text><![CDATA[Nama_Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="24" width="61" height="20" uuid="976f9868-b2b8-4c2e-8fe7-6c1653359e2d"/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="24" width="155" height="20" uuid="6d4274ff-6a61-45b6-872c-b764a2583a67"/>
+				<text><![CDATA[alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="24" width="100" height="20" uuid="f102eeef-a368-46ff-a674-83359c79e313"/>
+				<text><![CDATA[No_Hp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="583" y="24" width="100" height="20" uuid="4086fa36-99da-4e05-aa08-d161faeaa312"/>
+				<text><![CDATA[gambar]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="50" width="700" height="1" uuid="2dd787d4-6cb3-4699-8816-19dc80fbb226"/>
+			</line>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="9" width="100" height="20" uuid="e21c95cc-1498-457c-bafe-4664649894b9"/>
+				<textFieldExpression><![CDATA[$F{Id_Petugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="10" width="100" height="20" uuid="637c1d4e-049b-4847-8bca-184ab607567d"/>
+				<textFieldExpression><![CDATA[$F{Nama_Petugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="11" width="60" height="20" uuid="d237d240-be02-49b5-92dc-3421dc0e188d"/>
+				<textFieldExpression><![CDATA[$F{Gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="299" y="11" width="155" height="20" uuid="5767f25b-f4c8-45f0-9494-721e0d1f47c4"/>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="16" width="100" height="20" uuid="04e33df6-1a4a-41b2-89b6-fa513f1e387e"/>
+				<textFieldExpression><![CDATA[$F{No_Hp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="583" y="16" width="100" height="20" uuid="1ab601dc-e056-489f-9176-72dfc1f37fcf"/>
+				<textFieldExpression><![CDATA[$F{gambar}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
