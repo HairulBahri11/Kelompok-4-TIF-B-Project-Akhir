@@ -1193,7 +1193,7 @@ public class petugas extends javax.swing.JFrame {
         int a;
         a = JOptionPane.showConfirmDialog(null, "Apakah Anda Akan Logout dari Aplikasi .?", "Informasi", JOptionPane.YES_NO_OPTION);
         if (a == JOptionPane.YES_OPTION) {
-            new login1().show();
+            new login().show();
             this.dispose();
         } else {
             return;

@@ -104,10 +104,10 @@ public class form_dokter extends javax.swing.JFrame {
         btnpemeriksaan = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         j6 = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         btnhome1 = new javax.swing.JPanel();
         j9 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1185, 695));
@@ -364,13 +364,13 @@ public class form_dokter extends javax.swing.JFrame {
 
         jPanel2.add(btnpemeriksaan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 220, 50));
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logout.png"))); // NOI18N
-        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logout.png"))); // NOI18N
+        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel24MouseClicked(evt);
+                jLabel25MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
+        jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
 
         btnhome1.setBackground(new java.awt.Color(0, 0, 0));
         btnhome1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -393,10 +393,10 @@ public class form_dokter extends javax.swing.JFrame {
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        jLabel25.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logout2.png"))); // NOI18N
-        jLabel25.setText("  Logout");
+        jLabel27.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/logout2.png"))); // NOI18N
+        jLabel27.setText("  Logout");
 
         javax.swing.GroupLayout btnhome1Layout = new javax.swing.GroupLayout(btnhome1);
         btnhome1.setLayout(btnhome1Layout);
@@ -405,7 +405,7 @@ public class form_dokter extends javax.swing.JFrame {
             .addGroup(btnhome1Layout.createSequentialGroup()
                 .addComponent(j9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(jLabel25)
+                .addComponent(jLabel27)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         btnhome1Layout.setVerticalGroup(
@@ -414,18 +414,15 @@ public class form_dokter extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(btnhome1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(j9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jPanel2.add(btnhome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 0, 50));
+        jPanel2.add(btnhome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 0, 50));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -440,7 +437,8 @@ public class form_dokter extends javax.swing.JFrame {
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
-                                .addComponent(jLabel9)))))
+                                .addComponent(jLabel9))))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -454,9 +452,8 @@ public class form_dokter extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(29, 29, 29)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 730));
@@ -487,61 +484,26 @@ public class form_dokter extends javax.swing.JFrame {
     }//GEN-LAST:event_btnpemeriksaanMouseClicked
     
     int x = 0;
-    int a = 0;
-    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
+    int a = 0; 
+    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
         // TODO add your handling code here:
-        if (x == 0) {
-            btnhome1.setSize(x, 50);
-            Thread th = new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 0; i <= 220; i++) {
-                            Thread.sleep(1);
-                            btnhome1.setSize(i, 50);
-                            btnhome1.setBackground(new Color(51, 51, 51));
-                        }
-                    } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-                }
-            };
-            th.start();
-            x = 220;
-        } else if (x == 220) {
-            btnhome1.setSize(220, 50);
-            Thread th = new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 0; i >= 0; i--) {
-                            Thread.sleep(1);
-                            btnhome1.setSize(i, 50);
-                            btnhome1.setBackground(new Color(0, 0, 0));
-                            a++;
-                        }
-                    } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, e);
-                    }
-                }
-            };
-            th.start();
-            x = 0;
-        }
-    }//GEN-LAST:event_jLabel24MouseClicked
+        
+    }//GEN-LAST:event_jLabel25MouseClicked
 
     private void btnhome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhome1MouseClicked
         // TODO add your handling code here:
         int a;
         a = JOptionPane.showConfirmDialog(null, "Apakah Anda Akan Logout dari Aplikasi .?", "Informasi", JOptionPane.YES_NO_OPTION);
         if (a == JOptionPane.YES_OPTION) {
-            new login1().show();
+            new login().show();
             this.dispose();
         } else {
             return;
         }
     }//GEN-LAST:event_btnhome1MouseClicked
 
+       
+    
     /**
      * @param args the command line arguments
      */
@@ -609,8 +571,8 @@ public class form_dokter extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

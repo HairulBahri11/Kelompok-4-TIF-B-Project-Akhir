@@ -1210,7 +1210,7 @@ public class dokter extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(dokter.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\dokter_2.jrxml";
+        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\dokter.jrxml";
 
         JasperReport jr;
         try {
@@ -1271,7 +1271,7 @@ public class dokter extends javax.swing.JFrame {
         int a;
         a = JOptionPane.showConfirmDialog(null, "Apakah Anda Akan Logout dari Aplikasi .?", "Informasi", JOptionPane.YES_NO_OPTION);
         if (a == JOptionPane.YES_OPTION) {
-            new login1().show();
+            new login().show();
             this.dispose();
         } else {
             return;
