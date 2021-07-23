@@ -5,7 +5,6 @@
  */
 package form;
 
-
 import java.sql.Driver;
 import com.toedter.calendar.JDateChooser;
 import java.awt.HeadlessException;
@@ -41,6 +40,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -60,6 +60,7 @@ public class transaksi extends javax.swing.JFrame {
      * Creates new form dashboard
      */
     public static String kode;
+
     public transaksi() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -1107,8 +1108,7 @@ public class transaksi extends javax.swing.JFrame {
         String transaksi = pembayaran.getText();
         String harga = txtharga.getText();
         String kembali = txtkembali.getText();
-        
-        
+
         try {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
             statement.executeUpdate("insert into transaksi VALUES ('" + txtkd + "','" + pasien + "','" + tgl + "','" + petugas + "','" + transaksi + "','" + harga + "','" + kembali + "')");
@@ -1158,7 +1158,7 @@ public class transaksi extends javax.swing.JFrame {
             Statement statement = (Statement) koneksi.GetConnection().createStatement();
             statement.executeUpdate("delete from detail_transaksi where id_transaksi = '" + txtkd + "';");
             statement.executeUpdate("delete from transaksi where Id_Transaksi = '" + txtkd + "';");
-            
+
             statement.close();
             JOptionPane.showMessageDialog(null, "data berhasil Dihapus");
         } catch (Exception e) {
@@ -1188,26 +1188,25 @@ public class transaksi extends javax.swing.JFrame {
 
     private void txt_cetakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_cetakMouseClicked
         // TODO add your handling code here:
-        
         Connection koneksi = null;
+        String reportSource = null;
+        String reportDest = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             koneksi = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/puskesmas", "root", "");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String file = "C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\report\\transaksi2.jrxml";;
-        HashMap hash = new HashMap();
-        hash.put("detail", txtkdtransaksi.getText());
-        JasperReport jr;
-        try {
-            jr = JasperCompileManager.compileReport(file);
-            JasperPrint jp = JasperFillManager.fillReport(jr, hash, koneksi);
-            JasperViewer.viewReport(jp);
-        } catch (JRException ex) {
-            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
+            com.mysql.jdbc.Connection c = (com.mysql.jdbc.Connection) koneksi;
+            reportSource = System.getProperty("user.dir") + "/report/transaksi2.jrxml";
+            reportDest = System.getProperty("user.dir") + "/report/transaksi2.jasper";
+            HashMap hash = new HashMap();
+            hash.put("detail", txtkdtransaksi.getText());
+
+            JasperReport jasperReport = JasperCompileManager.compileReport(reportSource);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hash, c);
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, reportDest);
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }//GEN-LAST:event_txt_cetakMouseClicked
 
@@ -1252,7 +1251,7 @@ public class transaksi extends javax.swing.JFrame {
         new pasien().show();
         dispose();
     }//GEN-LAST:event_btnpasienMouseClicked
-    
+
     int x = 0;
     int a = 0;
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
@@ -1308,7 +1307,7 @@ public class transaksi extends javax.swing.JFrame {
             return;
         }
     }//GEN-LAST:event_btnhome1MouseClicked
-    
+
     /**
      * @param args the command line arguments
      */
