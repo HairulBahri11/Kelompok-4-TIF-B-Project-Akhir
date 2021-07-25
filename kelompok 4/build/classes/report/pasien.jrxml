@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="1200" pageHeight="595" orientation="Landscape" columnWidth="1160" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3f36d22-523b-4460-888f-9b4aa2bc3b30">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="246"/>
+	<property name="ireport.x" value="97"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT * from pasien]]>
@@ -56,14 +56,6 @@
 				</textElement>
 				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
 			</staticText>
-			<image>
-				<reportElement x="305" y="10" width="61" height="83" uuid="f79ad891-64cc-43c3-b971-1214a30a1317"/>
-				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\io.png"]]></imageExpression>
-			</image>
-			<image>
-				<reportElement x="789" y="11" width="56" height="79" uuid="d757c7d6-0050-4186-848a-587251137a43"/>
-				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\gh.png"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>

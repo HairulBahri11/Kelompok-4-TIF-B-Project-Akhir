@@ -50,14 +50,6 @@
 				</textElement>
 				<text><![CDATA[PUSKESMAS KAPONGAN KABUPATEN SITUBONDO]]></text>
 			</staticText>
-			<image>
-				<reportElement x="99" y="6" width="61" height="83" uuid="66f0e717-121d-4ecc-b6ff-0e146965bddf"/>
-				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\io.png"]]></imageExpression>
-			</image>
-			<image>
-				<reportElement x="555" y="6" width="56" height="79" uuid="3874bdab-ecbe-40a5-9592-fd4eaefc7630"/>
-				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\gh.png"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>

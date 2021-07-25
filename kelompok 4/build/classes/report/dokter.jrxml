@@ -50,14 +50,6 @@
 				</textElement>
 				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
 			</staticText>
-			<image>
-				<reportElement x="64" y="10" width="61" height="83" uuid="49ef2af6-5fd4-41a5-bf9c-18119e182ecf"/>
-				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\io.png"]]></imageExpression>
-			</image>
-			<image>
-				<reportElement x="548" y="11" width="56" height="79" uuid="ed3577e7-86f1-47a0-a3e8-443affde7b8f"/>
-				<imageExpression><![CDATA["C:\\Folder1\\Kelompok-4-TIF-B-Project-Akhir\\kelompok 4\\src\\picture\\gh.png"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>

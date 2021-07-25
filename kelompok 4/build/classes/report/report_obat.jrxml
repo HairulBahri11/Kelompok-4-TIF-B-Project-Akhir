@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="850" pageHeight="842" columnWidth="810" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="57ce0632-7d2f-4a1f-b811-eaa17a9de903">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="130"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[select * from obat]]>
@@ -32,10 +32,6 @@
 	</background>
 	<title>
 		<band height="100" splitType="Stretch">
-			<image>
-				<reportElement x="151" y="12" width="61" height="83" uuid="50d71e32-bc97-429e-b823-c4e3c91365f4"/>
-				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="242" y="26" width="331" height="24" uuid="0c18a45b-3258-4d5f-bbae-15837fb78943"/>
 				<textElement>
@@ -50,10 +46,6 @@
 				</textElement>
 				<text><![CDATA[Jl. Banyuangi, Tengah, Kapongan, Kec. Kapongan,  ]]></text>
 			</staticText>
-			<image>
-				<reportElement x="603" y="16" width="56" height="79" uuid="9f9e6a04-06bb-4701-ac4c-3bd100020565"/>
-				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="286" y="70" width="238" height="20" uuid="87b670bc-ba6f-40da-90e6-488d25881f82"/>
 				<textElement>

@@ -63,14 +63,6 @@
 				</textElement>
 				<text><![CDATA[Kab. Situbondo Jawa Timur Kode Pos 38362  ]]></text>
 			</staticText>
-			<image>
-				<reportElement x="20" y="3" width="61" height="83" uuid="d4f4b5e9-624a-4ede-b781-162bda11253e"/>
-				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\io.png"]]></imageExpression>
-			</image>
-			<image>
-				<reportElement x="471" y="7" width="56" height="79" uuid="1909c8a2-423d-404b-be50-db9861f81d5f"/>
-				<imageExpression><![CDATA["C:\\Users\\user\\OneDrive\\Desktop\\gh.png"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>
